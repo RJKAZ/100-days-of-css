@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 6px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background-image: linear-gradient(225deg, #4EC5CA, #43399F);
+            color: #ffffff;
+            font-family: "Courier New", "Courier", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .onehundred {
+            position: relative;
+            height: 100px;
+            width: 200px;
+        }
+
+        .one-left {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: -16px;
+            height: 40px;
+            width: 20px;
+            background: #fff;
+            transform: rotate(50deg);
+            box-shadow: 0 0 13px 0 rgb(0, 0, 0, 0.2);
+            border-radius: 2px;
+        }
+
+        .one-right {
+            position: absolute;
+            z-index: 2;
+            width: 24px;
+            height: 100px;
+            background: #fff;
+            box-shadow: 0 0 13px 0 rgb(0, 0, 0, 0.2);
+            border-radius: 2px;
+        }
+
+        .zero-left {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 17px;
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0 0 13px 0 rgb(0, 0, 0, 0.2);
+            border-radius: 50%;
+            border: 24px solid #fff;
+        }
+
+        .zero-right {
+            position: absolute;
+            z-index: 0;
+            left: 100px;
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0 0 13px 0 rgb(0, 0, 0, 0.2);
+            border-radius: 50%;
+            border: 24px solid #fff;
+        }
+
+
+        span {
+            vertical-align: baseline;
+            word-spacing: 0px;
+            font-weight: 700;
+            text-align: start;
+        }
+
+        span.big {
+            font-size: 82px;
+            line-height: 60px;
+            letter-spacing: normal;
+            position: relative;
+            display: block;
+            margin-top: 6px;
+        }
+
+        span.small {
+            font-size: 23px;
+            line-height: 20px;
+            letter-spacing: 1px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="onehundred">
+                <div class="one-left"></div>
+                <div class="one-right"></div>
+                <div class="zero-left"></div>
+                <div class="zero-right"></div>
+            </div>
+            <span class="big">Days</span>
+            <br />
+            <span class="small">CSS Challenge</span>
+        </div>
+    </div>
+
+</body>
+
+</html>
