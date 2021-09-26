@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 Challenge</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            font-family: "Open Sans", Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-image: linear-gradient(rgb(224, 56, 56),
+                    rgb(238, 188, 95),
+                    yellow,
+                    rgb(121, 228, 121),
+                    rgb(101, 101, 226),
+                    indigo,
+                    violet
+            );
+        }
+
+            .center {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: black;
+            }
+
+            .bar1,
+            .bar2, 
+            .bar3 {
+                width: 70px;
+                height: 10px;
+                margin: 10px auto;
+                background-color: black;
+                display: block;
+                border-radius: 5px;
+                cursor: pointer;
+                z-index: 1;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            }
+
+            .animate_bar1 {
+                animation: animate1 200ms forwards;
+                animation-duration: 1s;
+            }
+
+            .animate_bar3 {
+                animation: animate3 200ms forwards;
+                animation-duration: 1s;
+            }
+
+            .animate_bar2 {
+                animation: animate2 200ms forwards;
+                animation-duration: 1s;
+            }
+
+            @keyframes animate1 {
+                50% {
+                    transform: translateY(19px);
+                }
+                100% {
+                    transform: translateY(20px) rotate(45deg);
+                }
+            }
+
+            @keyframes animate3 {
+                50% {
+                    transform: translateY(-19px);
+                }
+                100% {
+                    transform: translateY(-20px) rotate(135deg);
+                }
+            }
+
+            @keyframes animate2 {
+                50% {
+                    opacity: 0.5;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+
+            .reverse_bar1 {
+                animation: reverse1 200ms;
+                animation-duration: 1s;
+            }
+
+            .reverse_bar2 {
+                animation: reverse2 200ms;
+                animation-duration: 1s;
+            }
+
+            .reverse_bar3 {
+                animation: reverse3 200ms;
+                animation-duration: 1s;
+            }
+
+            @keyframes reverse1 {
+                100% {
+                    transform: translate(0px);
+                }
+                50% {
+                    transform: translateY(19px);
+                }
+                0% {
+                    transform: translateY(20px) rotate(45deg);
+                }
+            }
+
+            @keyframes reverse3{
+                100% {
+                    transform: translate(0px);
+                }
+                50% {
+                    transform: translateY(-19px);
+                }
+                0% {
+                    transform: translateY(-20px) rotate(135deg);
+                }
+            }
+
+            @keyframes reverse2 {
+                100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.5;
+                }
+                0% {
+                    opacity: 0;
+                }
+            }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center" onclick="menu()">
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+            <span class="bar3"></span>
+        </div>
+    </div>
+
+    <script>
+
+        let toggle = false;
+        let bar1 = document.querySelector('.bar1');
+        let bar2 = document.querySelector('.bar2');
+        let bar3 = document.querySelector('.bar3');
+
+        function menu() {
+            if (!toggle) {
+                bar1.classList.add('animate_bar1')
+                bar2.classList.add('animate_bar2')
+                bar3.classList.add('animate_bar3')
+                toggle = true;
+            } else {
+                bar1.classList.add('reverse_bar1')
+                bar2.classList.add('reverse_bar2')
+                bar3.classList.add('reverse_bar3')
+                toggle = false;
+            }
+        }
+    </script>
+</body>
+
+</html>
