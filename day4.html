@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4 CSS challenge</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #fff;
+            color: #333;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fcba03;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle {
+
+            width: 200px;
+            height: 200px;
+            background: white;
+            border-radius: 50%;
+            transition: all 0.25s ease-in-out;
+
+        }
+
+        #c1 {
+
+            position: absolute;
+            z-index: 1;
+            width: 100px;
+            height: 100px;
+            box-shadow: 20px 20px 20px rgba(black, 0.2);
+            animation: c1-animation infinite 5s;
+
+        }
+
+        #c2 {
+
+            position: absolute;
+            background-color: teal;
+            z-index: 2;
+            width: 65px;
+            height: 65px;
+            box-shadow: 10px 10px 20px rgba(black, 0.2);
+            animation: c2-animation infinite 5s;
+
+        }
+
+        #c3 {
+
+            position: absolute;
+            background-color: tomato;
+            z-index: 3;
+            width: 30px;
+            height: 30px;
+            box-shadow: 5px 5px 10px rgba(black, 0.2);
+            animation: c3-animation infinite 5s;
+
+        }
+
+        @keyframes c1-animation {
+
+            0% {
+                width: 0px;
+                height: 0px;
+            }
+
+            30% {
+                width: 100px;
+                height: 100px;
+            }
+
+            55% {
+                width: 100px;
+                height: 100px;
+            }
+
+            100% {
+                width: 0px;
+                height: 0px;
+            }
+
+        }
+
+        @keyframes c2-animation {
+
+            0% {
+                width: 0px;
+                height: 0px;
+            }
+
+            10% {
+                width: 0px;
+                height: 0px;
+            }
+
+            30% {
+                width: 65px;
+                height: 65px;
+            }
+
+            50% {
+                width: 65px;
+                height: 65px;
+            }
+
+            85% {
+                width: 0px;
+                height: 0px;
+            }
+
+            100% {
+                width: 0px;
+                height: 0px;
+            }
+
+        }
+
+        @keyframes c3-animation {
+
+            0% {
+                width: 0px;
+                height: 0px;
+            }
+
+            20% {
+                width: 0px;
+                height: 0px;
+            }
+
+            30% {
+                width: 30px;
+                height: 30px;
+            }
+
+            50% {
+                width: 30px;
+                height: 30px;
+            }
+
+            60% {
+                width: 0px;
+                height: 0px;
+            }
+
+            100% {
+                width: 0px;
+                height: 0px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="circle" id="c1"></div>
+            <div class="circle" id="c2"></div>
+            <div class="circle" id="c3"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
