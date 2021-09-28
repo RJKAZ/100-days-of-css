@@ -1,0 +1,377 @@
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: skyblue;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+}
+
+.cal {
+  height: 230px;
+  width: 300px;
+  // border:1px solid grey;
+  box-shadow: 5px 5px 15px rgb(0, 0, 0, 0.6);
+}
+
+.head {
+  height: 27%;
+  // border:1px solid black;
+  background-color: rgb(259, 189, 79);
+  padding: 10px 10px;
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+p {
+  margin: 0;
+}
+
+.left,
+.right {
+  color: white;
+}
+
+.left {
+  float: left;
+}
+
+.left p:first-child {
+  font-weight: bold;
+  font-size: 15px;
+}
+.right {
+  float: right;
+}
+
+.right p:last-child {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.footp {
+  font-size: 10px;
+  font-weight: bold;
+  float: right;
+  position: relative;
+  padding: 10px 5px;
+}
+
+.footp:before {
+  content: '';
+  width: 10px;
+  height: 3px;
+  position: absolute;
+  inset: 0;
+  background-color: red;
+  left: -15px;
+  bottom: 0;
+  margin: auto 0;
+}
+
+.twoo {
+  margin-left: 30px;
+}
+.twoo:before {
+  background: rgb(44, 206, 212);
+}
+.foot {
+  height: 73%;
+}
+.foothead {
+  height: 20%;
+  // border:1px solid black;
+}
+
+.footfoot {
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: bold;
+
+  padding: 7px 5px;
+}
+
+.weekday {
+  float: left;
+}
+
+.content {
+  height: 60%;
+  padding: 0 5px;
+}
+
+.inner {
+  height: 100%;
+  width: 100%;
+  border-top: 1px solid rgb(173, 175, 179);
+  border-bottom: 1px solid rgb(173, 175, 179);
+  position: relative;
+}
+
+.inner hr {
+  border-top: 1xp solid rgb(173, 175, 179);
+  margin: 17% 0;
+}
+
+.points {
+  display: inline-block;
+  height: 7px;
+  width: 7px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 50;
+}
+.blue {
+  background: skyblue;
+}
+.red {
+  background: red;
+}
+
+.one {
+  bottom: 35px;
+  left: 5px;
+}
+.one::after {
+  content: '';
+  height: 2px;
+  width: 73px;
+  background: red;
+  position: absolute;
+  transform: rotate(-44deg);
+  transform-origin: top left;
+  inset: 0;
+  margin: auto;
+}
+.two {
+  bottom: 20px;
+  left: 3px;
+}
+.three {
+  bottom: 85px;
+  left: 53px;
+}
+.three::after {
+  content: '';
+  height: 2px;
+  width: 63px;
+  background: red;
+  position: absolute;
+  transform: rotate(20deg);
+  transform-origin: top left;
+  inset: 0;
+  margin: auto;
+}
+.four {
+  bottom: 35px;
+  left: 52px;
+}
+.five {
+  left: 106px;
+  bottom: 65px;
+}
+.five::after {
+  content: '';
+  height: 2px;
+  width: 50px;
+  background: red;
+  position: absolute;
+  transform: rotate(-20deg);
+  transform-origin: top left;
+  inset: 0;
+  margin: auto;
+}
+
+.six {
+  bottom: 15px;
+  left: 106px;
+}
+.seven {
+  left: 150px;
+  bottom: 80px;
+}
+.seven::after {
+  content: '';
+  height: 2px;
+  width: 58px;
+  background: red;
+  position: absolute;
+  transform: rotate(35deg);
+  transform-origin: top left;
+  inset: 0;
+  margin: auto;
+}
+.eight {
+  left: 150px;
+  bottom: 30px;
+}
+.nine {
+  left: 190px;
+  bottom: 50px;
+}
+.nine::after {
+  content: '';
+  height: 2px;
+  width: 48px;
+  background: red;
+  position: absolute;
+  transform: rotate(15deg);
+  transform-origin: top left;
+  inset: 0;
+  margin: auto;
+}
+.ten {
+  left: 190px;
+  bottom: 25px;
+}
+.eleven {
+  left: 230px;
+  bottom: 40px;
+}
+.eleven::after {
+  content: '';
+  height: 2px;
+  width: 55px;
+  background: red;
+  position: absolute;
+  transform: rotate(-28deg);
+  transform-origin: top left;
+  inset: 0;
+  margin: auto;
+}
+.twelve {
+  left: 230px;
+  bottom: 10px;
+}
+.thirteen {
+  left: 275px;
+  bottom: 65px;
+}
+.one::after {
+  content: '';
+  height: 3px;
+  width: 75px;
+  background: red;
+  position: absolute;
+  transform: rotate(-44deg);
+  transform-origin: top left;
+  inset: 0;
+  margin: auto;
+}
+.fourteen {
+  left: 275px;
+  bottom: 15px;
+}
+
+.blue::after {
+  content: '';
+  height: 2px;
+  width: 75px;
+  background: skyblue;
+  position: absolute;
+  transform: rotate(-44deg);
+  transform-origin: top left;
+  inset: 0;
+  margin: auto;
+}
+.two::after {
+  transform: rotate(-18deg);
+  width: 55px;
+}
+.four::after {
+  transform: rotate(20deg);
+  width: 65px;
+}
+.six::after {
+  transform: rotate(-19deg);
+  width: 50px;
+}
+
+.eight::after {
+  transform: rotate(8deg);
+  width: 50px;
+}
+.ten::after {
+  transform: rotate(17deg);
+  width: 50px;
+}
+
+.twelve::after {
+  transform: rotate(-05deg);
+  width: 50px;
+}
+
+.fourteen::after {
+  display: none;
+}
+
+.red::before {
+  content: '22';
+  height: 30px;
+  width: 30px;
+  background: red;
+  opacity: 0.5;
+  position: absolute;
+  inset: 0;
+  top: -35px;
+  margin: 0 -10px;
+  text-align: center;
+  color: white;
+  font-size: 10px;
+  font-weight: bolder;
+  padding-top: 10px;
+  box-sizing: border-box;
+  transform: scaleY(0);
+  transition: all 250ms ease-in;
+  transform-origin: bottom;
+  border-radius: 5px;
+}
+
+.red:hover::before {
+  transform: scaleY(1);
+}
+.blue::before {
+  content: '22';
+  height: 30px;
+  width: 30px;
+  background: blue;
+  opacity: 0.5;
+  position: absolute;
+  inset: 0;
+  top: -35px;
+  margin: 0 -10px;
+  text-align: center;
+  color: white;
+  font-size: 10px;
+  font-weight: bolder;
+  padding-top: 10px;
+  box-sizing: border-box;
+  transform: scaleY(0);
+  transition: all 250ms ease-in;
+  transform-origin: bottom;
+  border-radius: 5px;
+}
+
+.blue:hover::before {
+  transform: scaleY(1);
+}
