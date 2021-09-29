@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
+
+
+
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: linear-gradient(to top right, #76a1ff 0%, #0d1777 100%);
+            color: #2685de;
+            font-family: "Open Sans", Helvetica, sans-serif;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .card {
+            width: 320px;
+            height: 299px;
+            background-color: #fff;
+            border-radius: 2px;
+            display: flex;
+            align-items: flex-start;
+            overflow: hidden;
+            box-shadow: 10px 10px 15px 0 rgb(0 0 0 / 30%);
+        }
+
+        .content {
+            height: 100%;
+            width: calc(100% - 120px);
+        }
+
+        .side {
+            width: 120px;
+            height: 100%;
+        }
+
+        .block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: #dfe2f5;
+            width: 100%;
+            height: calc((100% / 3) - 1px);
+            margin-bottom: 1.5px;
+            transition: all .4s ease-in-out;
+        }
+
+        .block:hover {
+            background: #969ed3;
+            color: white;
+            cursor: pointer;
+        }
+
+        .block:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .value {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .label {
+            font-size: 11px;
+        }
+
+        .header {
+            width: 100px;
+            margin: 38px auto 0 auto;
+        }
+
+        .figure {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .figure:hover .circle-1 {
+            transform: rotate(360deg);
+        }
+
+        .figure:hover .circle-2 {
+            transform: rotate(-360deg);
+        }
+
+        .circle-1 {
+            width: 82px;
+            height: 82px;
+            border-style: solid;
+            border-color: blue transparent blue blue;
+            border-width: 1px;
+            position: absolute;
+            border-radius: 50%;
+            transition: all 1.5s ease-in-out;
+        }
+
+        .circle-2 {
+            width: 76px;
+            height: 76px;
+            border-color: blue blue blue transparent;
+        }
+
+        .image {
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+
+        }
+
+        .name {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            margin: 20px auto 0 auto;
+            text-align: center;
+        }
+
+        .occupation {
+            display: block;
+            font-size: 11px;
+            line-height: 15px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .body {
+            margin: 33px auto 0 auto;
+            width: 120px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            height: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            color: blue;
+            margin-bottom: 10px;
+            background-color: #fff;
+            border: solid 1px blue;
+            border-radius: 15px;
+            transition: .5s;
+        }
+
+        button:hover {
+            background: blue;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="card">
+                <div class="content">
+                    <div class="header">
+                        <div class="figure">
+                            <div class="circle-1"></div>
+                            <div class="circle-2"></div>
+                            <!--<img src="picofme.jpeg">-->
+
+
+                        </div>
+                        <span class="name">Reese RJ Kaz</span>
+                        <span class="occupation">Web Developer</span>
+
+                    </div>
+                    <div class="body">
+                        <button>Follow</button>
+                        <button>Message</button>
+                    </div>
+                </div>
+                <div class="side">
+                    <div class="block">
+                        <span class="value">523</span>
+                        <span class="label">Posts</span>
+                    </div>
+
+
+                    <div class="block">
+                        <span class="value">1387</span>
+                        <span class="label">Likes</span>
+                    </div>
+
+                    <div class="block">
+                        <span class="value">146</span>
+                        <span class="label">Followers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
