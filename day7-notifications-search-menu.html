@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifcations Search and Menu</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400, 600);
+        @import url('https://css.gg/css');
+        @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+        * {
+            box-sizing: border-box;
+            font-weight: 400;
+        }
+
+        :root {
+            --blue: #5F98CD;
+            --blue-dark: #264057;
+            --blue-light: #B2DAFF;
+        }
+
+        /* use only the available space inside the 400x400 frame */
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: var(--blue-dark);
+            color: #666666;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .notifications-bar {
+            position: relative;
+            left: 0px;
+            width: 300px;
+            height: 300px;
+            background: var(--blue);
+            transition: all 1s ease;
+            box-shadow: 10px 10px 15px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .move-left {
+            left: 150px;
+        }
+
+        .header {
+            width: 100%;
+            height: 60px;
+            background: var(--blue);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .gg-menu-left-alt,
+        .gg-search {
+            color: var(--blue-light);
+            transform: scale(var(--ggs, 1.2));
+            cursor: pointer;
+        }
+
+        .gg-menu-left-alt:hover,
+        .gg-search:hover {
+            color: #fff;
+        }
+
+        .content {
+            width: 100%;
+            height: 80%;
+            background: #fff;
+            position: relative;
+        }
+
+        .time-line {
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            background: #EBEBEB;
+            margin-left: 30px;
+        }
+
+        .circle-1 {
+            width: 15px;
+            height: 15px;
+            background: #fff;
+            border: 2px solid var(--blue);
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 25px;
+        }
+
+        .circle-2 {
+            width: 15px;
+            height: 15px;
+            background: #fff;
+            border: 2px solid var(--blue);
+            border-radius: 50%;
+            position: absolute;
+            top: 100px;
+            left: 25px;
+        }
+
+        .circle-3 {
+            width: 15px;
+            height: 15px;
+            background: #fff;
+            border: 2px solid var(--blue);
+            border-radius: 50%;
+            position: absolute;
+            top: 180px;
+            left: 25px;
+        }
+
+        .time {
+            color: #666666;
+            font-size: 0.7em;
+        }
+
+        .message-1 {
+            position: relative;
+            top: 20px;
+            left: 50px;
+            justify-content: space-between;
+            width: 210px;
+        }
+
+        .message-2 {
+            position: relative;
+            top: 50px;
+            left: 50px;
+            justify-content: space-between;
+            width: 210px;
+        }
+
+        .message-3 {
+            position: relative;
+            top: 80px;
+            left: 50px;
+            justify-content: space-between;
+            width: 240px;
+        }
+
+        .msg:hover .time,
+        .msg:hover .notify {
+            cursor: pointer;
+            color: var(--blue);
+        }
+
+        .search-box {
+            position: absolute;
+            width: 200px;
+            height: 30px;
+            background: #fff;
+            border-radius: 20px;
+            border: none;
+            padding: 10px;
+            font-size: 15px;
+            color: #666;
+            outline: none;
+            transform: translateX(100px);
+            opacity: 0;
+            transition: all .5s;
+            visibility: hidden;
+        }
+
+        .show {
+            transition: all .5s;
+            transform: translateX(-10px);
+            visibility: visible;
+            opacity: 1;
+        }
+
+        span {
+            word-break: break-all;
+        }
+
+        name {
+            font-weight: 600;
+        }
+
+        .menu {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            width: 280px;
+            height: 280px;
+            background: #43627D;
+            color: #93B2CD;
+            transition: all 1s;
+            box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+        }
+
+        .move-bit {
+            left: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0px;
+            font-size: 14px;
+        }
+
+        li {
+            padding: 12px 15px 12px 20px;
+            display: flex;
+            align-items: center;
+            transition: all .5s;
+        }
+
+        li:hover {
+            background: #385269;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .icn {
+            margin: 0 10px 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+
+            <div class="menu">
+                <ul>
+                    <li><i class="material-icons icn">dashboard</i> Dashboard</li>
+                    <li><i class="material-icons icn">person</i>Profile</li>
+                    <li><i class="material-icons icn">notifications</i>Notifications</li>
+                    <li><i class="material-icons icn">chat</i>Messages</li>
+                    <li><i class="material-icons icn">settings</i>Settings</li>
+            </div>
+
+            <div class="notifications-bar ">
+                <div class="header">
+                    <i id="menuBtn" class="gg-menu-left-alt "></i>
+                    <span class="title"> Notifications </span>
+                    <i id="SearchBox" class="gg-search"></i>
+                    <input class="search-box" placeholder="Search...">
+                </div>
+
+                <div class="content">
+                    <div class="time-line"></div>
+                    <div class="circle-1"></div>
+                    <div class="circle-2"></div>
+                    <div class="circle-3"></div>
+
+                    <div class="message-1 msg">
+                        <div class="time"> 9:24 PM</div>
+                        <span class="notify">
+                            <name> God </name> posted a photo on your wall.
+                        </span>
+                    </div>
+
+                    <div class="message-2 msg">
+                        <div class="time"> 9:24 PM</div>
+                        <span class="notify">
+                            <name> Demon </name> commented your last post..
+                        </span>
+                    </div>
+
+                    <div class="message-3 msg">
+                        <div class="time "> Yesterday </div>
+                        <span class="notify">
+                            <name>Humans</name> Unlocked 100% of their brain power.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let SearchBox = document.getElementById('SearchBox');
+        let InputBox = document.querySelector('.search-box');
+
+        let notify = document.querySelector('.notifications-bar');
+        let menuBtn = document.getElementById('menuBtn');
+        let menuMove = document.querySelector('.menu');
+
+        SearchBox.addEventListener('click', () => {
+            InputBox.classList.toggle('show');
+        })
+
+        menuBtn.addEventListener('click', () => {
+            notify.classList.toggle('move-left');
+            menuMove.classList.toggle('move-bit');
+        })
+    </script>
+</body>
+
+</html>
