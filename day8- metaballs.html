@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Balls </title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #000;
+            color: #333;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            filter: contrast(25);
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .ball {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #fff;
+            filter: blur(15px);
+        }
+
+        div[class^="blob-"]::after {
+            background: #fff;
+        }
+
+        .blob-1 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            transform: rotate(16deg);
+        }
+
+        .blob-1::after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+            transform-origin: 37px 37px;
+            animation: rotate 2.7s ease-in-out 0.2s infinite;
+            filter: blur(5px);
+        }
+
+        .blob-2 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            transform: rotate(59deg);
+        }
+
+        .blob-2::after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+            transform-origin: 34px 34px;
+            animation: rotate 2.9s ease-in-out 0.4s infinite;
+            filter: blur(5px);
+        }
+
+        .blob-3 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            transform: rotate(284deg);
+        }
+
+        .blob-3::after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+            transform-origin: 31px 31px;
+            animation: rotate 3.1s ease-in-out 0.6s infinite;
+            filter: blur(5px);
+        }
+
+        .blob-4 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            transform: rotate(171deg);
+        }
+
+        .blob-4::after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+            transform-origin: 28px 28px;
+            animation: rotate 3.3s ease-in-out 0.8s infinite;
+            filter: blur(5px);
+        }
+
+        .blob-5 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            transform: rotate(15deg);
+        }
+
+        .blob-5::after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+            transform-origin: 25px 25px;
+            animation: rotate 3.5s ease-in-out 1s infinite;
+            filter: blur(5px);
+        }
+
+        .blob-6 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            transform: rotate(269deg);
+        }
+
+        .blob-6::after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+            transform-origin: 22px 22px;
+            animation: rotate 3.7s ease-in-out 1.2s infinite;
+            filter: blur(5px);
+        }
+
+        .blob-7 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            transform: rotate(230deg);
+        }
+
+        .blob-7::after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+            transform-origin: 19px 19px;
+            animation: rotate 3.9s ease-in-out 1.4s infinite;
+            filter: blur(5px);
+        }
+
+        .sm-balls-1 {
+            position: absolute;
+            top: 38px;
+            left: 38px;
+            width: 8px;
+            height: 8px;
+            transform: rotate(187deg);
+        }
+
+        .sm-balls-1:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            transform-origin: 30px 58px;
+            animation: rotate 3.7s ease-in-out 0.2s infinite;
+            filter: blur(3px);
+        }
+
+        .sm-balls-2 {
+            position: absolute;
+            top: 38px;
+            left: 38px;
+            width: 8px;
+            height: 8px;
+            transform: rotate(187deg);
+        }
+
+        .sm-balls-2:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            transform-origin: 40px -48px;
+            animation: rotate 3.7s ease-in-out 0.2s infinite;
+            filter: blur(3px);
+        }
+
+
+        .sm-balls-3 {
+            position: absolute;
+            top: 38px;
+            left: 38px;
+            width: 8px;
+            height: 8px;
+            transform: rotate(187deg);
+        }
+
+        .sm-balls-3:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 15px;
+            height: 15px;
+            background: #fff;
+            border-radius: 50%;
+            transform-origin: -30px 38px;
+            animation: rotate 3.7s ease-in-out 0.2s infinite;
+            filter: blur(3px);
+        }
+
+        .sm-balls-4 {
+            position: absolute;
+            top: 38px;
+            left: 38px;
+            width: 8px;
+            height: 8px;
+            transform: rotate(187deg);
+        }
+
+        .sm-balls-4:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            transform-origin: 20px 68px;
+            animation: rotate 2s ease-in-out 0.2s infinite;
+            filter: blur(3px);
+        }
+
+
+        .sm-balls-5 {
+            position: absolute;
+            top: 38px;
+            left: 38px;
+            width: 8px;
+            height: 8px;
+            transform: rotate(187deg);
+        }
+
+        .sm-balls-5:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            transform-origin: 60px 88px;
+            animation: rotate 2.7s ease-in-out 0.2s infinite;
+            filter: blur(3px);
+        }
+
+        .sm-balls-6 {
+            position: absolute;
+            top: 38px;
+            left: 38px;
+            width: 8px;
+            height: 8px;
+            transform: rotate(187deg);
+        }
+
+        .sm-balls-6:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            transform-origin: 60px 38px;
+            animation: rotate 4s ease-in-out 0.2s infinite;
+            filter: blur(3px);
+        }
+
+        .sm-balls-7 {
+            position: absolute;
+            top: 38px;
+            left: 38px;
+            width: 8px;
+            height: 8px;
+            transform: rotate(45deg);
+        }
+
+        .sm-balls-7:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 25px;
+            height: 25px;
+            background: #fff;
+            border-radius: 50%;
+            transform-origin: 30px 58px;
+            animation: rotate 3.7s ease-in-out 0.2s infinite;
+            filter: blur(3px);
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg) translate3d(0, 0, 0);
+            }
+
+            to {
+                transform: rotate(360deg) translate3d(0, 0, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="ball"> </div>
+            <div class="blob-1"></div>
+            <div class="blob-2"> </div>
+            <div class="blob-3"> </div>
+            <div class="blob-4"> </div>
+            <div class="blob-5"> </div>
+            <div class="blob-6"> </div>
+            <div class="blob-7"> </div>
+            <div class="blob-8"> </div>
+            <div class="sm-balls-1"></div>
+            <div class="sm-balls-2"></div>
+            <div class="sm-balls-3"></div>
+            <div class="sm-balls-4"></div>
+            <div class="sm-balls-5"></div>
+            <div class="sm-balls-6"></div>
+            <div class="sm-balls-7"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
