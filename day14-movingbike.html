@@ -1,12 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moving Bike</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #4B4841;
+        }
+
+        .card {
+            position: absolute;
+            top: 28%;
+            left: 10%;
+            height: 44%;
+            width: 80%;
+            perspective: 1000px;
+        }
+
+        .card-inner {
+            position: relative;
+            background: #FFCE4E;
+            border-radius: 3px;
+            box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.5);
+            height: 100%;
+            width: 100%;
+            transition: all 1s ease-in-out;
+            transform-style: preserve-3d;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateX(180deg) translate3d(0, 0, 0);
+            box-shadow: 8px -10px 15px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .bike-side {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+            transform: rotateX(0);
+        }
+
+        .bike-wrapper {
+            position: absolute;
+            bottom: 25%;
+            left: 30%;
+            transform-origin: 50% 100%;
+            animation: bounce-bike .3s ease-in-out alternate infinite;
+        }
+
+        .road {
+            position: absolute;
+            height: 10px;
+            width: 50%;
+            left: 25%;
+            bottom: 22%;
+            overflow: hidden;
+        }
+
+        .bump {
+            position: absolute;
+            height: 3px;
+            width: 20px;
+            left: -50%;
+            background: #4B4841;
+            border-radius: 2px;
+            animation: slide-across 1.8s linear infinite;
+        }
+
+        .bump:nth-child(2) {
+            width: 10px;
+            animation-delay: 0.2s;
+        }
+
+        .bump:nth-child(3) {
+            width: 13px;
+            animation-delay: 0.4s;
+        }
+
+        .bump:nth-child(4) {
+            width: 7px;
+            animation-delay: 0.6s;
+        }
+
+        .bump:nth-child(5) {
+            width: 5px;
+            animation: slide-across 1.9s linear infinite;
+            animation-delay: 0.8s;
+        }
+
+        .bump:nth-child(6) {
+            width: 3px;
+            animation-delay: 1.0s;
+        }
+
+        .bump:nth-child(7) {
+            width: 10px;
+            animation-delay: 1.2s;
+        }
+
+        .bump:nth-child(8) {
+            width: 16px;
+            animation: slide-across 1.9s linear infinite;
+            animation-delay: 1.4s;
+        }
+
+        .bump:nth-child(9) {
+            width: 4px;
+            animation: slide-across 2.1s linear infinite;
+            animation-delay: 1.6s;
+        }
+
+        .bump:nth-child(10) {
+            width: 8px;
+            animation-delay: 1.8s;
+        }
+
+        .heli-side {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+            transform: rotateX(180deg);
+        }
+
+        .heli-wrapper {
+            position: absolute;
+            bottom: 25%;
+            left: 30%;
+            animation: bounce-heli .7s ease-in-out alternate infinite;
+        }
+
+        .sky {
+            position: absolute;
+            height: 80%;
+            width: 50%;
+            left: 25%;
+            bottom: 10%;
+            overflow: hidden;
+        }
+
+        .cloud {
+            position: absolute;
+            height: 2.5px;
+            width: 20px;
+            left: -50%;
+            background: #4B4841;
+            border-radius: 2px;
+            animation: slide-across 1.2s linear infinite;
+        }
+
+        .cloud:nth-child(2) {
+            top: 10%;
+            width: 15px;
+            animation: slide-across 1.9s linear infinite;
+            animation-delay: -0.2s;
+        }
+
+        .cloud:nth-child(3) {
+            top: 19%;
+            width: 22px;
+            animation: slide-across 2.1s linear infinite;
+            animation-delay: -0.4s;
+        }
+
+        .cloud:nth-child(4) {
+            top: 29%;
+            width: 27px;
+            animation-delay: 0.2s;
+        }
+
+        .cloud:nth-child(5) {
+            top: 36%;
+            width: 18px;
+            animation: slide-across 1.7s linear infinite;
+            animation-delay: 0.5s;
+        }
+
+        .cloud:nth-child(6) {
+            top: 48%;
+            animation: slide-across 2.1s linear infinite;
+            animation-delay: 0.2s;
+        }
+
+        .cloud:nth-child(7) {
+            top: 56%;
+            width: 23px;
+            animation-delay: -0.2s;
+        }
+
+        .cloud:nth-child(8) {
+            top: 66%;
+            width: 10px;
+            animation-delay: -0.4s;
+        }
+
+        .cloud:nth-child(9) {
+            top: 79%;
+            width: 12px;
+            animation: slide-across 1.7s linear infinite;
+            animation-delay: -0.3s;
+        }
+
+        .cloud:nth-child(10) {
+            top: 95%;
+            width: 28px;
+            animation-delay: 0.2s;
+        }
+
+
+        @keyframes bounce-bike {
+            from {
+                transform: scaleY(1.0);
+            }
+
+            to {
+                transform: scaleY(0.95);
+            }
+        }
+
+        @keyframes bounce-heli {
+            from {
+                bottom: 25%;
+            }
+
+            to {
+                bottom: 30%;
+            }
+        }
+
+        @keyframes slide-across {
+            from {
+                left: 150%;
+            }
+
+            to {
+                left: -50%;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="frame">
+        <div class="card">
+            <div class="card-inner">
+                <div class="bike-side">
+                    <div class="bike-wrapper">
+                        <img src="https://100dayscss.com/codepen/bycicle.svg">
+                    </div>
+                    <div class="road">
+                        <div class="bump"></div>
+                        <div class="bump"></div>
+                        <div class="bump"></div>
+                        <div class="bump"></div>
+                        <div class="bump"></div>
+                        <div class="bump"></div>
+                        <div class="bump"></div>
+                        <div class="bump"></div>
+                        <div class="bump"></div>
+                        <div class="bump"></div>
+                    </div>
+                </div>
+                <div class="heli-side">
+                    <div class="sky">
+                        <div class="cloud"></div>
+                        <div class="cloud"></div>
+                        <div class="cloud"></div>
+                        <div class="cloud"></div>
+                        <div class="cloud"></div>
+                        <div class="cloud"></div>
+                        <div class="cloud"></div>
+                        <div class="cloud"></div>
+                        <div class="cloud"></div>
+                        <div class="cloud"></div>
+                    </div>
+                    <div class="heli-wrapper">
+                        <img src="https://100dayscss.com/codepen/helicopter.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
