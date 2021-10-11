@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 15 upload</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: linear-gradient(45deg, #3A92AF, #5CA05A);
+            color: #333;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .center {
+            width: 300px;
+            height: 280px;
+            position: absolute;
+            top: 60px;
+            left: 50px;
+            background: #fff;
+        }
+
+        .title {
+            line-height: 50px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            border-bottom: 1px solid #D8D8D8;
+        }
+
+        .complete-status {
+            width: 0px;
+            position: absolute;
+            top: 50px;
+            left: 0px;
+            height: 3px;
+            background: #6ECE3B;
+        }
+
+        .complete-status.active {
+            animation: complete_status 2.1s ease-in-out forwards;
+        }
+
+
+        .file-drop {
+            width: 80px;
+            height: 80px;
+            border: 1px dashed #A4A4A4;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 50px;
+            overflow: hidden;
+            transition: display 0.1s ease-in-out;
+        }
+
+        .file-drop .upload {
+            display: block;
+            width: 60px;
+            height: 60px;
+            margin: 10px auto;
+        }
+
+        .upload-remove {
+            display: none;
+        }
+
+        .file_name {
+            width: 100%;
+            text-align: center;
+            line-height: 80px;
+            font-size: 12px;
+            display: none;
+        }
+
+        .file_name_show {
+            display: block;
+        }
+
+        .file-input {
+            z-index: 2;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            opacity: 0;
+        }
+
+        .file-input .disable {
+            display: none;
+        }
+
+
+        .upload-button {
+            display: block;
+            background: #6ECE3B;
+            border: none;
+            border-radius: 5px;
+            width: 140px;
+            text-align: center;
+            line-height: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 30px;
+            left: 80px;
+            color: #fff;
+            border-bottom: 2px solid #498C25;
+            transition: all 0.1s ease-in-out;
+        }
+
+        .upload-button:active {
+            transform: scale(0.9);
+        }
+
+
+        .syncing {
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 120px;
+            left: 130px;
+            opacity: 0;
+        }
+
+        .syncing .active {
+            animation: uploading 2s ease-in-out 0.1s;
+        }
+
+
+        .done {
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 120px;
+            left: 130px;
+            opacity: 0;
+        }
+
+        .done .active {
+            animation: done 0.1s ease-in-out 2.1s forwards;
+        }
+
+
+
+        @keyframes uploading {
+            0% {
+                transform: rotate(0deg);
+                opacity: 1;
+            }
+
+            95% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes complete_status {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes done {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="title">
+                Drop file to upload
+            </div>
+            <div class="complete-status">
+            </div>
+            <div class="file-drop">
+                <img src="https://100dayscss.com/codepen/upload.svg" class="upload">
+                <div class="file_name">
+                </div>
+                <input type="file" class="file-input" />
+            </div>
+            <button class="upload-button">Upload file</button>
+            <img src="https://100dayscss.com/codepen/syncing.svg" class="syncing">
+            <img src="https://100dayscss.com/codepen/checkmark.svg" class="done">
+        </div>
+
+        <script>
+            var complete_status = document.querySelector('.complete-status')
+            var file_input = document.querySelector('.file-input')
+
+            file_input.addEventListener('change', (e) => {
+                document.querySelector('.file_name').innerHTML =
+                    e.target.files[0].name
+                document.querySelector('.upload').classList.add('upload-remove')
+                document.querySelector('.file_name').classList.add('file_name_show')
+            })
+
+            const upload_button = document.querySelector('.upload-button')
+            const file_drop = document.querySelector('.file-drop')
+            const syncing = document.querySelector('.syncing')
+            const completed = document.querySelector('.done')
+            var uploading = false;
+            upload_button.addEventListener('click', (e) => {
+                if (file_input.files.length == 1 && !uploading) {
+                    uploading = true
+                    complete_status.classList.add('active')
+                    file_drop.classList.add('disable')
+                    syncing.classList.add('active')
+                    completed.classList.add('active')
+                    upload_button.innerHTML = 'Uploading....'
+                    timeoutid = window.setTimeout(complete_upload, 2100)
+                }
+                else if (uploading) {
+                    uploading = false;
+                    complete_status.classList.remove('active')
+                    file_drop.classList.remove('disable')
+                    syncing.classList.remove('active')
+                    completed.classList.remove('active')
+                    upload_button.innerHTML = 'Upload file'
+                    document.querySelector('.upload').classList.remove('upload-remove')
+                    document.querySelector('.file_name').classList.remove('file_name_show')
+                }
+            })
+
+            function complete_upload() {
+                upload_button.innerHTML = 'Done'
+            }
+        </script>
+</body>
+
+</html>
