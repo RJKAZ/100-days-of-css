@@ -94,21 +94,21 @@
             background: var(--blob);
         }
 
-        .sparkle:after:after {
+        .sparkle:after {
             top: auto;
             bottom: 0;
         }
 
 
-        .s2 {
+        .sparkle .s2 {
             transform: rotate(45deg);
         }
 
-        .s3 {
+        .sparkle .s3 {
             transform: rotate(90deg);
         }
 
-        .s4 {
+        .sparkle .s4 {
             transform: rotate(135deg);
         }
 
@@ -130,41 +130,44 @@
             inline-size: 200px;
             block-size: 200px;
             animation: triangle-sparkle 5s ease-in-out infinite;
-
-            .sparkle {
-                position: absolute;
-                top: 0;
-                left: 98px;
-                inline-size: 4px;
-                block-size: 200px;
-
-                &:before,
-                &:after {
-                    display: block;
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    inline-size: 4px;
-                    block-size: 25px;
-                    border-radius: 2px;
-                    background: var(--blob);
-                }
-
-            }
-
-            .s1 {
-                top: 10px;
-            }
-
-            .s2 {
-                transform: rotate(124deg);
-            }
-
-            .s3 {
-                transform: rotate(237deg);
-            }
         }
+
+        .triange .sparkle {
+            position: absolute;
+            top: 0;
+            left: 98px;
+            inline-size: 4px;
+            block-size: 200px;
+        }
+
+
+        .triangle .sparkle:before,
+        .triangle .sparkle:after {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            inline-size: 4px;
+            block-size: 25px;
+            border-radius: 2px;
+            background: var(--blob);
+        }
+
+
+
+        .s1 {
+            top: 10px;
+        }
+
+        .s2 {
+            transform: rotate(124deg);
+        }
+
+        .s3 {
+            transform: rotate(237deg);
+        }
+
 
         @keyframes blobby {
             0% {
