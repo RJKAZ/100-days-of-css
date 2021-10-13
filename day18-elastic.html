@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 18 - elastic</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #37d493;
+        }
+
+        .grey {
+            background: #444;
+            width: 400px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: elastic 2s ease-in-out infinite;
+        }
+
+        .grey::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 380px;
+            background: #37d493;
+            border-top-right-radius: 0%;
+            border-top-left-radius: 0%;
+            top: 20px;
+            animation: elastic_rev 2s ease-in-out infinite;
+        }
+
+
+        @keyframes elastic {
+            0% {
+                height: 200px;
+                border-bottom-right-radius: 0%;
+                border-bottom-left-radius: 0%;
+            }
+
+            25% {
+                height: 380px;
+                border-bottom-right-radius: 50%;
+                border-bottom-left-radius: 50%;
+            }
+
+            50%,
+            100% {
+                height: 200px;
+                border-bottom-right-radius: 0%;
+                border-bottom-left-radius: 0%;
+            }
+        }
+
+        @keyframes elastic_rev {
+            0% {
+                top: 380px;
+                border-top-right-radius: 0%;
+                border-top-left-radius: 0%;
+                content: none;
+            }
+
+            45% {
+                top: 380px;
+                border-top-right-radius: 0%;
+                border-top-left-radius: 0%;
+                content: none;
+            }
+
+            50% {
+                top: 170px;
+                border-top-right-radius: 0%;
+                border-top-left-radius: 0%;
+                content: none;
+            }
+
+            75% {
+                top: 20px;
+                border-top-right-radius: 50%;
+                border-top-left-radius: 50%;
+            }
+
+            100% {
+                top: 170px;
+                border-top-right-radius: 0%;
+                border-top-left-radius: 0%;
+                content: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="grey"></div>
+    </div>
+
+</body>
+
+</html>
