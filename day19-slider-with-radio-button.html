@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider with Radio Buttons</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            color: #333;
+            background: red;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .background {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            left: 0;
+            top: 0;
+            background: #87CEEB;
+            border-left: 400px solid #9370DB;
+            border-right: 400px solid #3CB371;
+            transition: all 1s;
+            transform: translateX(-400px);
+
+        }
+
+        .background.one {
+            transform: translateX(0px);
+        }
+
+        .background.two {
+            transform: translateX(-400px);
+        }
+
+        .background.three {
+            transform: translateX(-800px);
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+        }
+
+        .circle {
+            width: 80px;
+            height: 80px;
+            border: 1px solid white;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+
+        .inner_circle {
+            width: 70px;
+            height: 70px;
+            background: #fff;
+            position: absolute;
+            border-radius: 50%;
+            transition: all 1s;
+        }
+
+        .inner_circle.one {
+            left: 73px;
+            top: 6px;
+        }
+
+        .inner_circle.two {
+            left: 165px;
+            top: 6px;
+        }
+
+        .inner_circle.three {
+            left: 257px;
+            top: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="background one"></div>
+        <div class="center">
+            <div class="one circle"></div>
+            <div class="two circle"></div>
+            <div class="three circle"></div>
+            <div class="inner_circle one"></div>
+        </div>
+    </div>
+
+    <script>
+        const circle = document.querySelector('.inner_circle');
+        const background = document.querySelector('.background');
+        const center = document.querySelector('.center');
+        console.log(circle);
+
+        center.addEventListener('click', e => {
+            let className = e.target.classList;
+            if (className.contains("circle")) {
+                circle.classList.add(className.item(0))
+                circle.classList.remove(circle.classList.item(1));
+
+                background.classList.add(className.item(0))
+                background.classList.remove(background.classList.item(1));
+            }
+        })
+    </script>
+
+</body>
+
+</html>
