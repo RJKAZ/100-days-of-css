@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 22 Fitness Tracker </title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #273E4C;
+            color: #fff;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 1em;
+            font-weight: normal;
+            text-align: center;
+            margin: 4em;
+        }
+
+        h1 strong {
+            font-size: 1.4em;
+        }
+
+        .container {
+            box-sizing: border-box;
+            width: 7.7em;
+            height: 7.7em;
+            border: .7em solid #1B2A33;
+            border-radius: 50%;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .big {
+            position: absolute;
+            left: calc(50% - 7.7em/2);
+            top: 8em;
+        }
+
+        .value {
+            font-size: 1.5em;
+            margin-bottom: .2em;
+        }
+
+        .unit {
+            font-size: 0.95em;
+            color: #648192;
+            margin: 0;
+        }
+
+        .progress {
+            position: absolute;
+            left: -.7em;
+            top: -.7em;
+            width: 7.7em;
+            height: 7.7em;
+        }
+
+        .progress circle {
+            fill: none;
+            stroke: #27E1AE;
+            stroke-width: .7em;
+            cx: 50%;
+            cy: 50%;
+            r: 3.5em;
+            stroke-linecap: round;
+            stroke-dasharray: 21.75em;
+            transform-origin: 50% 50%;
+            transform: rotate(-90deg);
+            animation: kcal-progression 1.5s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .small-left,
+        .small-right {
+            font-size: 11px;
+            position: absolute;
+            top: 65%;
+        }
+
+        .small-left .progress circle,
+        .small-right .progress circle {
+            stroke: #5CE1EC;
+            animation: kcal-progression 1.5s ease-out;
+        }
+
+        .small-left .progress circle {
+            animation: km-progression 1.5s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .small-right .progress circle {
+            animation: steps-progression 1.5s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .small-left .unit,
+        .small-right .unit {
+            font-size: 1.2em;
+        }
+
+        .small-left {
+            left: calc(68% - 7.7em/2);
+        }
+
+        .small-right {
+            left: calc(32% - 7.7em/2);
+        }
+
+        @keyframes kcal-progression {
+            from {
+                stroke-dashoffset: 21.75em;
+            }
+
+            to {
+                stroke-dashoffset: 3.5em;
+            }
+        }
+
+        @keyframes km-progression {
+            from {
+                stroke-dashoffset: 21.75em;
+            }
+
+            to {
+                stroke-dashoffset: 13.25em;
+            }
+        }
+
+        @keyframes steps-progression {
+            from {
+                stroke-dashoffset: 21.75em;
+            }
+
+            to {
+                stroke-dashoffset: 8.25em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <h1>Your daily<br /><strong>progress</strong></h1>
+        <div class="container big">
+            <svg class="progress">
+                <circle />
+            </svg>
+            <p class="value">2758</p>
+            <p class="unit">kcal</p>
+        </div>
+        <div class="container small-left">
+            <svg class="progress">
+                <circle />
+            </svg>
+            <p class="value">6,2</p>
+            <p class="unit">km</p>
+        </div>
+        <div class="container small-right">
+            <svg class="progress">
+                <circle />
+            </svg>
+            <p class="value">8563</p>
+            <p class="unit">steps</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
