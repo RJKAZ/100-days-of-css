@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 24</title>
+    <style>
+        .center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .frame {
+            width: 400px;
+            height: 400px;
+            background: #57D895;
+            border-radius: 3px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hidden {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .btn {
+            position: absolute;
+            box-sizing: border-box;
+            width: 260px;
+            height: 60px;
+            border: 2px solid #fff;
+            text-align: center;
+            line-height: 56px;
+            text-transform: uppercase;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: #fff;
+            transition: 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: #37be77;
+        }
+
+        .btn img {
+            position: absolute;
+            top: 16px;
+            left: 15px;
+            opacity: 0;
+        }
+
+        .load {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            fill: none;
+            stroke: #fff;
+            stroke-width: 2px;
+            stroke-linecap: round;
+            stroke-dasharray: 200 200;
+            stroke-dashoffset: 200;
+            pointer-events: none;
+            transform: rotate(-90deg);
+            z-index: 2;
+        }
+
+        input:checked~.btn {
+            animation: btn 0.5s ease both, fill 0.5s ease-in-out 1.5s forwards;
+        }
+
+        input:checked~.btn img {
+            animation: check 0.5s ease-out 1.5s both;
+        }
+
+        input:checked~.load {
+            animation: load 2s ease-out 0.5s both;
+        }
+
+        @keyframes btn {
+            0% {
+                width: 260px;
+                border-color: #fff;
+                color: #fff;
+            }
+
+            50% {
+                color: transparent;
+            }
+
+            100% {
+                width: 60px;
+                border-color: #45B078;
+                background: transparent;
+                color: transparent;
+            }
+        }
+
+        @keyframes fill {
+            0% {
+                background: transparent;
+                border-color: #fff;
+            }
+
+            100% {
+                background: #fff;
+            }
+        }
+
+        @keyframes load {
+            0% {
+                stroke-dashoffset: 200;
+            }
+
+            50% {
+                stroke-dashoffset: 0;
+                stroke-dasharray: 200;
+                transform: rotate(-90deg) scale(1);
+                opacity: 1;
+            }
+
+            90%,
+            100% {
+                stroke-dasharray: 500 500;
+                transform: rotate(-90deg) scale(2);
+                opacity: 0;
+            }
+        }
+
+        @keyframes check {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class='frame center'>
+        <input type='checkbox' id='btn' class='hidden'>
+        <label for='btn' class='btn'>finish
+            <img src="https://100dayscss.com/codepen/checkmark-green.svg" />
+        </label>
+        <svg class='load'>
+            <circle cx='30' cy='30' r='29' />
+        </svg>
+    </div>
+</body>
+
+</html>
