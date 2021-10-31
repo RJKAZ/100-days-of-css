@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 26</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Quicksand:300,700");
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-family: "Quicksand", sans-serif;
+            letter-spacing: 0.5px;
+            line-height: 1;
+        }
+
+        .frame {
+            width: 400px;
+            height: 400px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            background-color: #c7d6e1;
+            color: #8391a1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal {
+            background-color: white;
+            width: 240px;
+            height: 150px;
+            box-shadow: 4px 4px 8px #00000008;
+            position: absolute;
+            border-radius: 4px;
+            overflow: hidden;
+            text-align: center;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: scale(0.85);
+            transition: 1.2s;
+        }
+
+        .modal-body {
+            padding: 10px 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            line-height: 1.5;
+        }
+
+        .modal.show {
+            z-index: 2;
+            opacity: 1;
+            transform: scale(1);
+            transition: 0.8s;
+        }
+
+        .modal.show.out {
+            z-index: 2;
+            opacity: 0;
+            transform: scale(1.2);
+        }
+
+        .modal-body .head {
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 2.5;
+            color: #798696;
+        }
+
+        .modal-footer {
+            background-color: #3ca7fb;
+            color: white;
+            padding: 14px;
+            cursor: pointer;
+        }
+
+        .modal-footer:hover {
+            background-color: #3495e0;
+        }
+
+        .modal-number {
+            color: white;
+            position: absolute;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            line-height: 1;
+            font-size: 13px;
+        }
+
+        .modal-number::after {
+            content: " ";
+            width: 40px;
+            height: 40px;
+            background: white;
+            right: 0;
+            top: 0;
+            position: absolute;
+            z-index: -1;
+            border-right: #8391a1 40px solid;
+            border-bottom: transparent 40px solid;
+        }
+
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="modal-container">
+            <div class="modal" id="modal-1">
+                <div class="modal-number">
+                    <span>1</span>
+                </div>
+                <div class="modal-body">
+                    <div class="head">The couch</div>
+                    <p>If you want to grow, get outside your comfort zone.</p>
+                </div>
+                <div class="modal-footer" data-modal-id="1">OK</div>
+            </div>
+            <div class="modal" id="modal-2">
+                <div class="modal-number">
+                    <span>2</span>
+                </div>
+                <div class="modal-body">
+                    <div class="head">Failing is learning</div>
+                    <p>Pick yourself up, dust yourself off, and start again.</p>
+                </div>
+                <div class="modal-footer" data-modal-id="2">OK</div>
+            </div>
+            <div class="modal" id="modal-3">
+                <div class="modal-number">
+                    <span>3</span>
+                </div>
+                <div class="modal-body">
+                    <div class="head">Flowers and rainbows</div>
+                    <p>Always be yourself, unless you can be a unicorn.</p>
+                </div>
+                <div class="modal-footer" data-modal-id="3">OK</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function next(active) {
+        active = parseInt(active);
+        if (active + 1 < 4) {
+            return active + 1;
+        } else {
+            return 1;
+        }
+    }
+
+    var toggleModal = function () {
+        var active = this.getAttribute("data-modal-id");
+        document.getElementById("modal-" + active).classList.add("out");
+        setTimeout(function () {
+            document.getElementById("modal-" + active).classList.remove("show", "out");
+            document.getElementById("modal-" + next(active)).classList.add("show");
+        }, 800);
+    };
+
+    var modal_toggles = document.getElementsByClassName("modal-footer");
+
+    for (var i = modal_toggles.length - 1; i >= 0; i--) {
+        var toggle = modal_toggles[i];
+        toggle.addEventListener("click", toggleModal);
+    }
+
+    setTimeout(function () {
+        document.getElementById("modal-1").classList.add("show");
+    }, 300);
+
+</script>
+
+</html>
