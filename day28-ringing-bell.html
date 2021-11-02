@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ringing Bell</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #cc0000;
+            color: #333;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        svg {
+            fill: #fff;
+            animation: animateBell 2.1s linear infinite;
+        }
+
+        @keyframes animateBell {
+            0% {
+                transform: rotate(12deg);
+            }
+
+            5% {
+                transform: rotate(-12deg);
+            }
+
+            10% {
+                transform: rotate(12deg);
+            }
+
+            15% {
+                transform: rotate(-12deg);
+            }
+
+            20% {
+                transform: rotate(12deg);
+            }
+
+            25% {
+                transform: rotate(-12deg);
+            }
+
+            30% {
+                transform: rotate(12deg);
+            }
+
+            35% {
+                transform: rotate(-12deg);
+            }
+
+            40% {
+                transform: rotate(12deg);
+            }
+
+            45% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+
+        }
+
+        .circle {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            left: -12px;
+            top: -3.5px;
+            border-radius: 50%;
+            border-left: 1.5px solid #fff;
+            border-right: 1.5px solid #fff;
+            border-top: 1.5px solid transparent;
+            border-bottom: 1.5px solid transparent;
+            animation: animateCircle 2s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes animateCircle {
+            0% {
+                opacity: 0;
+                transform: scale(1);
+            }
+
+            20% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 0;
+                transform: scale(2.4);
+            }
+
+            100% {}
+        }
+
+        #circle2 {
+            animation-delay: 0.4s;
+        }
+
+        #circle3 {
+            animation-delay: 0.8s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="circle" id="circle1"></div>
+            <div class="circle" id="circle2"></div>
+            <div class="circle" id="circle3"></div>
+            <svg viewBox="0 0 448 512" width="60" title="bell">
+                <path
+                    d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z" />
+            </svg>
+        </div>
+    </div>
+
+</body>
+
+</html>
