@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckList</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Quicksand:300,700");
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-family: "Quicksand", sans-serif;
+            letter-spacing: 0.5px;
+            line-height: 1;
+            color: white;
+        }
+
+        .frame {
+            width: 400px;
+            height: 400px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to top right, #fda231 0%, #fdca31 100%);
+            color: #497081;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .checklist-container {
+            width: 240px;
+            height: 280px;
+            background: white;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 0px 30px;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 0px;
+            border-bottom: 1px solid #49708140;
+        }
+
+        .header b {
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        .checklists {
+            font-size: 13px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: space-evenly;
+        }
+
+        .checklist {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .checklist-icon {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: 1px solid #497081;
+            transition: all 0.6s;
+            position: relative;
+            overflow: visible;
+            transition-delay: 0.5s;
+        }
+
+        .checklist.clicked {
+            color: #49708150;
+        }
+
+        .checklist.clicked .checklist-icon {
+            transition-delay: 0s;
+            border: 1px solid #49708100;
+            transform: scale(1.4);
+        }
+
+        .checklist-text {
+            transition: all 0.6s;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .poly {
+            stroke: #49708170;
+            stroke-width: 1.2px;
+            fill: transparent;
+            stroke-linecap: round;
+        }
+
+        .svg {
+            position: absolute;
+            width: 16px;
+            height: 14px;
+            top: -3px;
+            stroke-dasharray: 20;
+            stroke-dashoffset: 20;
+            transition: all 0.6s;
+            transition-delay: 0s;
+        }
+
+        .checklist.clicked .svg {
+            stroke-dashoffset: 0;
+            transition-delay: 0.4s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="checklist-container">
+            <div class="header">
+                <b>Monday</b>
+                <p>November 1, 2021</p>
+            </div>
+            <div class="checklists">
+                <div class="checklist">
+                    <div class="checklist-text">
+                        Create a list
+                    </div>
+                    <div class="checklist-icon">
+                        <svg viewBox="0 0 18 14" class="svg">
+                            <polyline class="poly" points="1,9 6,13 14,4" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="checklist">
+                    <div class="checklist-text">
+                        Complete first task
+                    </div>
+                    <div class="checklist-icon">
+                        <svg viewBox="0 0 18 14" class="svg">
+                            <polyline class="poly" points="1,9 6,13 14,4" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="checklist">
+                    <div class="checklist-text">
+                        Write some CSS code
+                    </div>
+                    <div class="checklist-icon">
+                        <svg viewBox="0 0 18 14" class="svg">
+                            <polyline class="poly" points="1,9 6,13 14,4" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="checklist">
+                    <div class="checklist-text">
+                        Amaze the world
+                    </div>
+                    <div class="checklist-icon">
+                        <svg viewBox="0 0 16 14" class="svg">
+                            <polyline class="poly" points="1,9 6,13 14,4" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var click_checklist = function () {
+            this.classList.toggle("clicked");
+        };
+
+        var checklists = document.getElementsByClassName("checklist");
+        for (var i = checklists.length - 1; i >= 0; i--) {
+            var item = checklists[i];
+            item.addEventListener("click", click_checklist);
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
