@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swirl</title>
+
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #4C4BA2;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            perspective: 350px;
+        }
+
+
+
+        .dot {
+            position: relative;
+            width: 0;
+            height: 0;
+            background-color: #FFF;
+            border-radius: 50%;
+            margin: 16px auto;
+            transform-style: preserve-3d;
+            transform: rotateY(0deg);
+            animation: 5s linear infinite c-a;
+        }
+
+        .dots {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: #FFF;
+            border-radius: 50%;
+            top: 17px;
+            transform-style: preserve-3d;
+            transform-origin: top;
+            transform: rotateX(0deg);
+            animation: 2.5s linear infinite d-a;
+        }
+
+        .frame:active .dots,
+        .frame:active .dot {
+            animation-play-state: paused;
+        }
+
+        @keyframes d-a {
+            0% {
+                transform: rotateX(0deg);
+                height: 12px;
+            }
+
+            50% {
+                transform: rotateX(30deg);
+                height: 125px;
+            }
+
+            100% {
+                transform: rotateX(0deg);
+                height: 12px;
+            }
+        }
+
+        @keyframes c-a {
+            0% {
+                margin: 16px auto;
+                transform: rotateY(0deg);
+            }
+
+            50% {
+                margin: calc(50% - 8px) auto;
+                transform: rotateY(360deg);
+            }
+
+            100% {
+                margin: 16px auto;
+                transform: rotateY(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="dot">
+            <div class="dots">
+                <div class="dots">
+                    <div class="dots">
+                        <div class="dots">
+                            <div class="dots">
+                                <div class="dots">
+                                    <div class="dots">
+                                        <div class="dots">
+                                            <div class="dots">
+                                                <div class="dots">
+                                                    <div class="dots">
+                                                        <div class="dots">
+                                                            <div class="dots">
+                                                                <div class="dots">
+                                                                    <div class="dots">
+                                                                        <div class="dots">
+                                                                            <div class="dots">
+                                                                                <div class="dots">
+                                                                                    <div class="dots">
+                                                                                        <div class="dots">
+                                                                                            <div class="dots"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
