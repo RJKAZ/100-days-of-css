@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 41 Error</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #3F3F3F;
+            color: #333;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .center {
+            position: absolute;
+            top: 90px;
+            left: 60px;
+            width: 280px;
+            height: 210px;
+        }
+
+        .popup {
+            width: 280px;
+            background-color: white;
+            height: 210px;
+            border-radius: 5px;
+            box-shadow: 4px 8px 12px 0 rgba(0, 0, 0, 0.4);
+            animation: popup 1s ease-in-out both;
+        }
+
+        .button {
+            background-color: #F65656;
+            width: 280px;
+            height: 40px;
+            position: absolute;
+            bottom: 0;
+            border-radius: 0px 0px 5px 5px;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        img {
+            width: 45px;
+            position: absolute;
+            left: 117.5px;
+            top: 25px;
+        }
+
+        .title {
+            position: absolute;
+            top: 65px;
+            font-size: 18px;
+            font-weight: 400;
+            left: 103.5px;
+        }
+
+        .text {
+            position: absolute;
+            top: 95px;
+            font-size: 14px;
+            left: 50px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .button p {
+            color: white;
+            margin: 0px;
+            margin-top: 11px;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .button:hover {
+            background: #EC3434;
+        }
+
+        @keyframes popup {
+            0% {
+                transform: scale(0);
+            }
+
+            60% {
+                transform: scale(1.1);
+            }
+
+            80% {
+                transform: scale(.95);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .hide {
+            animation: popup 1s reverse ease-in-out both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="popup">
+                <img src="https://100dayscss.com/codepen/alert.png">
+                <p class="title">Oh snap!</p>
+                <p class="text">An error has occured while<br>creating an error report.</p>
+                <div class="button">
+                    <p>Dismiss</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('.button').bind('click', function () {
+            $('.center').addClass('hide');
+        });
+    </script>
+</body>
+
+</html>
