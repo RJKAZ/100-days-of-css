@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twisted Pyramid</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #000;
+            color: #333;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .rect {
+            box-sizing: border-box;
+            position: absolute;
+            border: 1px solid #888;
+            background: #222;
+            animation: rotate 2s ease-in-out 0.6666666667s alternate infinite;
+        }
+
+        .rect-1 {
+            z-index: 20;
+            width: 10px;
+            height: 10px;
+            top: 195px;
+            left: 195px;
+            border-color: #e6e6e6;
+            -webkit-animation: rotate 2s ease-in-out 0.6666666667s alternate infinite;
+            animation: rotate 2s ease-in-out 0.6666666667s alternate infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg) translate3d(0, 0, 0);
+            }
+
+            100% {
+                transform: rotate(360deg) translate3d(0, 0, 0);
+            }
+        }
+
+        .frame:hover .rect {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+
+    </div>
+    <script>
+        const GRAY_SHADES = ['#696969', '#696969', '#707070', '#787878', '#808080', '#888888', '#909090', '#989898', '#A0A0A0', '#A8A8A8', '#A9A9A9', '#B0B0B0', '#B8B8B8', '#BEBEBE', '#C0C0C0', '#C8C8C8', '#D0D0D0', '#D3D3D3', '#D8D8D8', '#DCDCDC', '#E0E0E0', '#E8E8E8'];
+        let center = document.querySelector('.frame');
+
+        for (let i = 20, delay = 0.6666666667, place = 195; i >= 1; i--, place -= 5, delay -= 0.033333333) {
+            let rect = document.createElement('div');
+            rect.className = 'rect rect-' + i;
+            rect.style.top = place + 'px';
+            rect.style.left = place + 'px';
+            rect.style.animationDelay = delay + 's';
+            rect.style.zIndex = i;
+            rect.style.width = ((21 - i) * 10) + 'px';
+            rect.style.height = ((21 - i) * 10) + 'px';
+            rect.style.borderColor = GRAY_SHADES[i];
+
+            // center.appendChild(rect);
+            center.insertBefore(rect, center.firstChild);
+        }
+
+
+    </script>
+</body>
+
+</html>
