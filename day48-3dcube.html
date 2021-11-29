@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Cube</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            background: #e47512;
+            overflow: hidden;
+            color: #fff;
+            box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+        }
+
+        .center {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 100px;
+            left: 100px;
+            perspective: 1000px;
+        }
+
+        .cube {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            transform-style: preserve-3d;
+            transform: translateZ(-100px) rotateX(70deg) rotateZ(-45deg);
+            transition: all 1s ease-in-out;
+            cursor: pointer;
+        }
+
+        .cube:hover {
+            transform: translateZ(-100px) rotateX(-120deg) rotateZ(135deg);
+        }
+
+        .side {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+        }
+
+        .front {
+            transform: rotateY(0deg) translateZ(100px);
+            background: #fff;
+        }
+
+        .back {
+            transform: rotateX(180deg) translateZ(100px);
+            background: #ccc;
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(100px);
+            background: #ddd;
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(100px);
+            background: #eee;
+        }
+
+        .top {
+            transform: rotateX(90deg) translateZ(100px);
+            background: #eee;
+        }
+
+        .bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+            background: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="cube" onclick="void(0);">
+                <div class="side front"></div>
+                <div class="side back"></div>
+                <div class="side right"></div>
+                <div class="side left"></div>
+                <div class="side top"></div>
+                <div class="side bottom"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
