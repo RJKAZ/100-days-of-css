@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Ball</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            background: #2d3e50;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+            cursor: pointer;
+            color: #333;
+            overflow: hidden;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 1s linear;
+        }
+
+        .dot {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background: #2dcc6f;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            animation: press 1.5s linear infinite;
+        }
+
+        .pulse {
+            background: transparent;
+            width: 15px;
+            height: 15px;
+            border: 2px solid #2dcc6f;
+            border-radius: 100%;
+            animation: pulse 1.5s linear infinite;
+        }
+
+        @keyframes press {
+            0% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(2);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="dot"></div>
+            <div class="pulse"></div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('mousemove', function (e) {
+            let center = document.querySelector('.center');
+            let x = e.offsetX;
+            let y = e.offsetY;
+            center.style.left = x + 'px';
+            center.style.top = y + 'px';
+        });
+
+        document.addEventListener('mouseleave', function (e) {
+            let center = document.querySelector('.center');
+            center.style.top = '50%';
+            center.style.left = '50%';
+        })
+    </script>
+</body>
+
+</html>
