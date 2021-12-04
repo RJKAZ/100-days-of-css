@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range Slider</title>
+    <style>
+        .frame {
+            position: absolute;
+            background: #506172;
+            overflow: hidden;
+            width: 400px;
+            height: 400px;
+            top: 50%;
+            left: 50%;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .box {
+            width: 300px;
+            height: 40px;
+            background-color: #fff;
+            position: absolute;
+            z-index: -1;
+            bottom: -14px;
+            right: -16px;
+            border-radius: 5px;
+            box-shadow: 4px 12px 20px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            background-color: #79d074;
+            height: 4px;
+            width: 270px;
+            border-radius: 50px;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+            border-radius: 50px;
+            border: solid 2px #79d074;
+            background: #fff url(https://100dayscss.com/codepen/slider-thumb.png) center center no-repeat;
+            background-size: 50% 50%;
+            box-shadow: 4px 8px 10px 0 rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="slidecontainer">
+                <input type="range" min="1" max="100" value="50" class="slider">
+                <div class="box"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
