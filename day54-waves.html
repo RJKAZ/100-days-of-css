@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 54</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #263A4D;
+            color: #333;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .main {
+            width: 100%;
+            height: 80px;
+            background: #7EB3E6;
+            position: relative;
+            top: 84%;
+            box-shadow: 0 -55px #5D90BF, 0 -115px #406384;
+        }
+
+        .vave-1 {
+            height: 52px;
+            width: 52px;
+            background: #7EB3E6;
+            border-radius: 50%;
+            position: relative;
+            top: 230px;
+            left: 105px;
+            box-shadow: -52px 0 #5D90BF, -104px 0 #7EB3E6, -156px 0 #5D90BF, -208px 0 #7EB3E6, 52px 0 #5D90BF, 104px 0 #7EB3E6, 156px 0 #5D90BF, 208px 0 #7EB3E6, 260px 0 #5D90BF;
+            animation: left 4s ease-in-out alternate infinite;
+        }
+
+        .vave-2 {
+            background: #5D90BF;
+            height: 52px;
+            width: 52px;
+            border-radius: 50%;
+            position: relative;
+            top: 120px;
+            left: 70px;
+            box-shadow: -52px 0 #406384, -104px 0 #5D90BF, -156px 0 #406384, -208px 0 #5D90BF, 52px 0 #406384, 104px 0 #5D90BF, 156px 0 #406384, 208px 0 #5D90BF, 260px 0 #406384, 312px 0 #5D90BF, 364px 0 #406384;
+            animation: right 4s ease-in-out alternate infinite;
+        }
+
+        .vave-3 {
+            background: #406384;
+            height: 52px;
+            width: 52px;
+            border-radius: 50%;
+            position: relative;
+            top: 10px;
+            left: 30px;
+            box-shadow: -52px 0 #263A4D, -104px 0 #406384, -156px 0 #263A4D, -208px 0 #406384, 52px 0 #263A4D, 104px 0 #406384, 156px 0 #263A4D, 208px 0 #406384, 260px 0 #263A4D, 312px 0 #406384, 364px 0 #263A4D;
+            animation: left-2 4s ease-in-out alternate infinite;
+        }
+
+        @keyframes left {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(100px)
+            }
+        }
+
+        @keyframes right {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(-20px)
+            }
+        }
+
+        @keyframes left-2 {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(40px)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="main"></div>
+        <div class="vave-1"></div>
+        <div class="vave-2"></div>
+        <div class="vave-3"></div>
+    </div>
+
+</body>
+
+</html>
