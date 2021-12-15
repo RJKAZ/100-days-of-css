@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Effect</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            background: #2c3e50;
+            overflow: hidden;
+            color: #333;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            cursor: pointer;
+        }
+
+        .container div {
+            grid-row-start: 1;
+            grid-column-start: 1;
+        }
+
+        .top {
+            background-color: #fff;
+            width: 170px;
+            text-align: center;
+            color: #2c3e50;
+            font-weight: 400;
+            font-size: 22px;
+            padding: 20px 0px;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .back {
+            background-color: #8d44ac;
+            width: 170px;
+            font-weight: 400;
+            font-size: 22px;
+            padding: 20px 0px;
+            position: relative;
+            top: 10px;
+            left: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .container:hover div.top {
+            color: #333;
+            background-color: #8d44ac;
+            transform: translate(6%, 6%);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .container:hover div.back {
+            background-color: #fff;
+            transform: translate(-6%, -25%);
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="container">
+                <div class="back"></div>
+                <div class="top">HOVER ME</div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
