@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wired Effect</title>
+    <style>
+        .frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #69BCF0;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  transform: translate(-50%,-50%);
+	
+}
+
+.square{
+	width: 10rem;
+	height:10rem;
+	border: 1px solid white;
+	position: absolute;
+	
+	animation-name: a0;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes a0{
+	50% {
+		transform: rotate(180deg);
+		height: 2.5rem;
+		border-radius: 50%;
+	}
+}
+
+#s0{
+	animation-name: a0;
+}
+
+@keyframes a1{
+	50% {
+		transform: rotate(160deg);
+		height: 2.5rem;
+		border-radius: 50%;
+	}
+}
+
+#s1{
+	animation-name: a1;
+}
+
+@keyframes a2{
+	50% {
+		transform: rotate(140deg);
+		height: 2.5rem;
+		border-radius: 50%;
+	}
+}
+
+#s2{
+	animation-name: a2;
+}
+
+@keyframes a3{
+	50% {
+		transform: rotate(120deg);
+		height: 2.5rem;
+		border-radius: 50%;
+	}
+}
+
+#s3{
+	animation-name: a3;
+}
+
+@keyframes a4{
+	50% {
+		transform: rotate(100deg);
+		height: 2.5rem;
+		border-radius: 50%;
+	}
+}
+
+#s4{
+	animation-name: a4;
+}
+
+@keyframes a5{
+	50% {
+		transform: rotate(80deg);
+		height: 2.5rem;
+		border-radius: 50%;
+	}
+}
+
+#s5{
+	animation-name: a5;
+}
+
+@keyframes a6{
+	50% {
+		transform: rotate(60deg);
+		height: 2.5rem;
+		border-radius: 50%;
+	}
+}
+
+#s6{
+	animation-name: a6;
+}
+
+@keyframes a7{
+	50% {
+		transform: rotate(40deg);
+		height: 2.5rem;
+		border-radius: 50%;
+	}
+}
+
+#s7{
+	animation-name: a7;
+}
+
+@keyframes a8{
+	50% {
+		transform: rotate(20deg);
+		height: 2.5rem;
+		border-radius: 50%;
+	}
+}
+
+#s8{
+	animation-name: a8;
+}
+    </style>
+</head>
+<body>
+
+    <div class="frame">
+        <div class="center">
+              <div class="square" id="s0"> </div>
+              <div class="square" id="s1"> </div>
+              <div class="square" id="s2"> </div>
+              <div class="square" id="s3"> </div>
+              <div class="square" id="s4"> </div>
+              <div class="square" id="s5"> </div>
+              <div class="square" id="s6"> </div>
+              <div class="square" id="s7"> </div>
+              <div class="square" id="s8"> </div>
+              <div class="square" id="s9"> </div>
+        </div>
+      </div>
+    
+</body>
+</html>
