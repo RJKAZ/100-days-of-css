@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Audio Recording</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 5px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #684595;
+            color: #333;
+            font-family: "Open Sans", Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .center {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            border: 3px solid white;
+            cursor: pointer;
+        }
+
+        #mic {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .micro {
+            display: flex;
+            justify-content: center;
+            align-items: top;
+            height: 52px;
+            width: 25px;
+            background: white;
+            border-radius: 25px;
+        }
+
+        .manche {
+            height: 10px;
+            width: 4px;
+            background: white;
+        }
+
+        .pied {
+            height: 4px;
+            width: 24px;
+            background: white;
+            border-radius: 3px;
+        }
+
+        .buble {
+            margin-top: 7px;
+            height: 16px;
+            width: 7px;
+            background: #684595;
+            border-radius: 3px;
+        }
+
+        #mic.active {
+            animation: disapear 0.8s cubic-bezier(0.28, -0.5, 0.68, 0.98) both;
+        }
+
+        @keyframes disapear {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(0);
+            }
+        }
+
+        #dots {
+            animation: disapear 1s reverse both;
+            display: none;
+        }
+
+        .dot {
+            width: 11px;
+            height: 11px;
+            margin: 0 5px;
+            background-color: white;
+            border-radius: 50%;
+            transform: 1s;
+            animation: jump 1s ease-in-out infinite;
+        }
+
+        .dot2 {
+            animation-delay: 0.2s;
+        }
+
+        .dot3 {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes jump {
+
+            0%,
+            100% {
+                transform: translateY(5px);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center" id="center">
+
+            <div id="mic">
+                <div class="micro">
+                    <div class="buble"></div>
+                </div>
+                <div class="manche"></div>
+                <div class="pied"></div>
+            </div>
+
+            <div id="dots">
+                <div class="dot dot1"></div>
+                <div class="dot dot2"></div>
+                <div class="dot dot3"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let wrap = document.getElementById("center");
+        let mic = document.getElementById("mic");
+        let dots = document.getElementById("dots");
+        wrap.addEventListener("click", function () {
+            mic.classList.toggle("active");
+            if (mic.className == "active") {
+                setTimeout(function () {
+                    mic.style.display = "none";
+                }, 500);
+                setTimeout(function () {
+                    dots.style.display = "flex";
+                }, 500);
+            } else {
+                mic.style.display = "flex";
+                dots.style.display = "none";
+            }
+        });
+
+    </script>
+</body>
+
+</html>
