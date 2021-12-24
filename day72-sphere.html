@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sphere</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+        .frame {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #fff;
+            color: #333;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #2ec6f0;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            width: 200px;
+            height: 200px;
+
+            animation: c-spin 5s ease infinite;
+        }
+
+        #b {
+            animation-delay: 0s;
+        }
+
+        #b {
+            animation-delay: .1s;
+        }
+
+        #c {
+            animation-delay: .2s;
+        }
+
+        #d {
+            animation-delay: .3s;
+        }
+
+        #e {
+            animation-delay: .4s;
+        }
+
+        #f {
+            animation-delay: .5s;
+        }
+
+        #g {
+            animation-delay: .6s;
+        }
+
+        #h {
+            animation-delay: .7s;
+        }
+
+        #i {
+            animation-delay: .8s;
+        }
+
+        #j {
+            animation-delay: .9s;
+        }
+
+        #k {
+            animation-delay: 1s;
+        }
+
+        @keyframes c-spin {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+
+            50% {
+                border: 3px solid #fff;
+            }
+
+            100% {
+                transform: rotateX(-360deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+
+        <div class="circle" id="a"></div>
+        <div class="circle" id="b"></div>
+        <div class="circle" id="c"></div>
+        <div class="circle" id="d"></div>
+        <div class="circle" id="e"></div>
+        <div class="circle" id="f"></div>
+        <div class="circle" id="g"></div>
+        <div class="circle" id="h"></div>
+        <div class="circle" id="i"></div>
+        <div class="circle" id="j"></div>
+        <div class="circle" id="k"></div>
+
+    </div>
+
+</body>
+
+</html>
