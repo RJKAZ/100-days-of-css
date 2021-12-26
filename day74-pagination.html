@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #1abc9c;
+            color: #fff;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circles {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circles input {
+            display: none;
+        }
+
+        .circles label {
+            width: 35px;
+            height: 35px;
+            margin: 5px 10px;
+            border-radius: 50%;
+            color: white;
+            text-align: center;
+            line-height: 35px;
+            border: 1px solid white;
+            cursor: pointer;
+            transition: all .5s ease-in-out;
+            position: relative;
+            font-weight: bold;
+        }
+
+        .circles label:hover {
+            background: #16a085;
+        }
+
+        .circles label::after {
+            content: attr(data-id);
+            background: white;
+            color: #1abc9c;
+            transform: scale(0);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            font-weight: bold;
+            transition: all .5s ease-in-out;
+        }
+
+        input[type="radio"]:checked+label::after {
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="circles">
+                <input type="radio" name="circleBtn" id="circle1" checked><label for="circle1" data-id="1">1</label>
+                <input type="radio" name="circleBtn" id="circle2"><label for="circle2" data-id="2">2</label>
+                <input type="radio" name="circleBtn" id="circle3"><label for="circle3" data-id="3">3</label>
+                <input type="radio" name="circleBtn" id="circle4"><label for="circle4" data-id="4">4</label>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
