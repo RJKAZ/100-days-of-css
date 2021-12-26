@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Carousel</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+       
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 5px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            background: #F39C12;
+            color: #fff;
+            font-size: 30px;
+            font-weight: 400;
+            text-shadow: 2px 2px 2px #e67e22;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+        }
+
+        .pre {
+            margin-right: 5px;
+        }
+
+        .out {
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .element {
+            margin-bottom: 10px;
+        }
+
+        .carrousel {
+            font-weight: 600;
+            animation: carrousel 8s backwards infinite;
+        }
+
+        @keyframes carrousel {
+
+            0%,
+            20% {
+                transform: translateY(0px);
+            }
+
+            25%,
+            45% {
+                transform: translateY(-45px);
+            }
+
+            50%,
+            70% {
+                transform: translateY(-87px);
+            }
+
+            75%,
+            95% {
+                transform: translateY(-133px);
+            }
+
+            100% {
+                transform: translateY(-178px);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="title">
+            <div class="pre">I'm a</div>
+            <div class="out">
+                <div class="carrousel">
+                    <div class="element">Panther</div>
+                    <div class="element">Leopard</div>
+                    <div class="element">Tiger</div>
+                    <div class="element">Jaguar</div>
+                    <div class="element">Panther</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
