@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinning Sphere</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #e23b31;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .shape {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            animation: roll 7s ease 0s infinite;
+        }
+
+        .shape li {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        @keyframes roll {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%);
+            }
+
+            25% {
+                transform: translate(-50%, -50%) rotateX(180deg) rotateZ(35deg) rotateZ(35deg);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) rotateX(-180deg) rotateZ(90deg) rotateZ(185deg);
+            }
+
+            75% {
+                transform: translate(-50%, -50%) rotateY(-60deg) rotateX(90deg) rotateZ(-100deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <ul class="shape"></ul>
+    </div>
+    <script>
+        const renderCircle = () => {
+            const shape = document.querySelector('.shape');
+            for (let i = 0; i < 6; i++) {
+                const circle = document.createElement('LI');
+                circle.style.transform = `rotateX(${30 * i}deg)`;
+
+                shape.appendChild(circle);
+            };
+        };
+        renderCircle();
+    </script>
+</body>
+
+</html>
