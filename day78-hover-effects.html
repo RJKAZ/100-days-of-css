@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effects</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+        
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #3498db;
+            color: #333;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .container {
+            background-color: white;
+            width: 200px;
+            height: 60px;
+            line-height: 2.5;
+        }
+
+        p {
+            text-align: center;
+            font-size: 26px;
+            text-transform: uppercase;
+        }
+
+        .uno:hover {
+            cursor: pointer;
+            box-shadow: 5px 5px 4px rgb(23, 87, 130);
+            transition: all 600ms;
+            transform: scale(1.05);
+        }
+
+        .dos:hover {
+            cursor: pointer;
+            box-shadow: 8px 8px 8px rgb(23, 87, 130);
+            transition: all 1s;
+            transform: scale(1.05);
+        }
+
+        .tres:hover {
+            cursor: pointer;
+            box-shadow: 10px 10px 14px rgb(23, 87, 130);
+            transition: all 1.5s;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="container uno">
+                <p>Hover Me</p>
+            </div>
+            <div class="container dos">
+                <p>Hover Me</p>
+            </div>
+            <div class="container tres">
+                <p>Hover Me</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
