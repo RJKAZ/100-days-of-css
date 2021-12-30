@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Blur Effect</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #9b59b6;
+            color: #333;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Main ball element */
+        .ball {
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            left: 30px;
+            top: 175px;
+            background-color: white;
+            border-radius: 50%;
+            /* animation parameters */
+            animation-name: bouncy;
+            animation-duration: 2.5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            z-index: 1;
+        }
+
+        /* Ensure all shadows are at front */
+        .shadow {
+            z-index: 4;
+        }
+
+        /* Series of IDs applied to each shadow with increasing delay and reducing opacity */
+        #shad1 {
+            animation-delay: 10ms;
+            opacity: 0.3;
+        }
+
+        #shad2 {
+            animation-delay: 15ms;
+            opacity: 0.26;
+        }
+
+        #shad3 {
+            animation-delay: 30ms;
+            opacity: 0.22;
+        }
+
+        #shad4 {
+            animation-delay: 45ms;
+            opacity: 0.18;
+        }
+
+        #shad5 {
+            animation-delay: 60ms;
+            opacity: 0.14;
+        }
+
+        #shad6 {
+            animation-delay: 75ms;
+            opacity: 0.10;
+        }
+
+        @keyframes bouncy {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(290px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Thats it */
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+
+        <div class='ball'></div>
+        <div id='shad1' class='ball shadow'></div>
+        <div id='shad2' class='ball shadow'></div>
+        <div id='shad3' class='ball shadow'></div>
+        <div id='shad4' class='ball shadow'></div>
+        <div id='shad5' class='ball shadow'></div>
+        <div id='shad6' class='ball shadow'></div>
+    </div>
+</body>
+
+</html>
