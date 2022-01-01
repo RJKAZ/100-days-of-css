@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Accordion</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    main{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .outer{
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        border-radius: 20px;
+        border: none;
+    }
+
+    .card {
+        width: 25%;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .card:nth-child(odd){
+        background-color: #E67E22;
+    }
+
+    .card:nth-child(even){
+        background-color: #34495E;
+    }
+
+    .card:hover{
+        width: 60%;
+        font-size: 200%;
+    }
+
+
+    </style>
+</head>
+<body>
+    <main>
+        <section class="outer">
+            <div class="card">
+                <p>First</p>
+            </div>
+            <div class="card">
+                <p>Second</p>
+            </div>
+            <div class="card">
+                <p>Third</p>
+            </div>
+            <div class="card">
+                <p>Forth</p>
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>
