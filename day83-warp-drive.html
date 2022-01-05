@@ -1,0 +1,3145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warp Drive</title>
+    <style>
+        .frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  background: #1E3242;
+  color: #fff;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.warp {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 100px;
+  left: 100px;
+}
+.warp .ring {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+.warp .ring .stripe {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  top: 90px;
+  left: 99px;
+  background: #C3DCEC;
+}
+.warp .ring-1 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) 0s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) 0s infinite;
+}
+.warp .ring-1 .stripe-1 {
+  transform: rotate(-0.6327146183deg) translate3d(0, 62.7108386123px, 0) scaleY(0.6271083861);
+}
+.warp .ring-1 .stripe-2 {
+  transform: rotate(7.6145980907deg) translate3d(0, 90.1774143233px, 0) scaleY(0.9017741432);
+}
+.warp .ring-1 .stripe-3 {
+  transform: rotate(28.9740121329deg) translate3d(0, 70.4930620219px, 0) scaleY(0.7049306202);
+}
+.warp .ring-1 .stripe-4 {
+  transform: rotate(39.6989023823deg) translate3d(0, 70.3970134191px, 0) scaleY(0.7039701342);
+}
+.warp .ring-1 .stripe-5 {
+  transform: rotate(59.7826973115deg) translate3d(0, 66.7064027529px, 0) scaleY(0.6670640275);
+}
+.warp .ring-1 .stripe-6 {
+  transform: rotate(65.008090271deg) translate3d(0, 76.0854104472px, 0) scaleY(0.7608541045);
+}
+.warp .ring-1 .stripe-7 {
+  transform: rotate(86.3470835424deg) translate3d(0, 73.0402362356px, 0) scaleY(0.7304023624);
+}
+.warp .ring-1 .stripe-8 {
+  transform: rotate(97.5718226642deg) translate3d(0, 67.8646948823px, 0) scaleY(0.6786469488);
+}
+.warp .ring-1 .stripe-9 {
+  transform: rotate(117.3121636667deg) translate3d(0, 81.0094704668px, 0) scaleY(0.8100947047);
+}
+.warp .ring-1 .stripe-10 {
+  transform: rotate(129.9844358927deg) translate3d(0, 94.0033226888px, 0) scaleY(0.9400332269);
+}
+.warp .ring-1 .stripe-11 {
+  transform: rotate(141.126025997deg) translate3d(0, 64.6272001797px, 0) scaleY(0.6462720018);
+}
+.warp .ring-1 .stripe-12 {
+  transform: rotate(164.4318407303deg) translate3d(0, 78.6117609195px, 0) scaleY(0.7861176092);
+}
+.warp .ring-1 .stripe-13 {
+  transform: rotate(174.3483010529deg) translate3d(0, 70.6592046821px, 0) scaleY(0.7065920468);
+}
+.warp .ring-1 .stripe-14 {
+  transform: rotate(189.754835552deg) translate3d(0, 94.334215384px, 0) scaleY(0.9433421538);
+}
+.warp .ring-1 .stripe-15 {
+  transform: rotate(206.7442724138deg) translate3d(0, 89.9712672021px, 0) scaleY(0.899712672);
+}
+.warp .ring-1 .stripe-16 {
+  transform: rotate(218.7020427693deg) translate3d(0, 77.4904680479px, 0) scaleY(0.7749046805);
+}
+.warp .ring-1 .stripe-17 {
+  transform: rotate(233.9168943235deg) translate3d(0, 95.133551185px, 0) scaleY(0.9513355118);
+}
+.warp .ring-1 .stripe-18 {
+  transform: rotate(251.611153574deg) translate3d(0, 63.5838552325px, 0) scaleY(0.6358385523);
+}
+.warp .ring-1 .stripe-19 {
+  transform: rotate(267.826629986deg) translate3d(0, 74.8111758535px, 0) scaleY(0.7481117585);
+}
+.warp .ring-1 .stripe-20 {
+  transform: rotate(284.3498266372deg) translate3d(0, 94.3535203537px, 0) scaleY(0.9435352035);
+}
+.warp .ring-1 .stripe-21 {
+  transform: rotate(299.0914384207deg) translate3d(0, 70.970514844px, 0) scaleY(0.7097051484);
+}
+.warp .ring-1 .stripe-22 {
+  transform: rotate(310.3671876133deg) translate3d(0, 95.1149359019px, 0) scaleY(0.951149359);
+}
+.warp .ring-1 .stripe-23 {
+  transform: rotate(321.9286408244deg) translate3d(0, 96.0765004964px, 0) scaleY(0.960765005);
+}
+.warp .ring-1 .stripe-24 {
+  transform: rotate(344.7016707732deg) translate3d(0, 75.3870159802px, 0) scaleY(0.7538701598);
+}
+.warp .ring-2 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -0.1333333333s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -0.1333333333s infinite;
+}
+.warp .ring-2 .stripe-1 {
+  transform: rotate(-0.1869018252deg) translate3d(0, 61.7973957711px, 0) scaleY(0.6179739577);
+}
+.warp .ring-2 .stripe-2 {
+  transform: rotate(11.4459763128deg) translate3d(0, 99.5390285511px, 0) scaleY(0.9953902855);
+}
+.warp .ring-2 .stripe-3 {
+  transform: rotate(29.1370191677deg) translate3d(0, 88.0446860324px, 0) scaleY(0.8804468603);
+}
+.warp .ring-2 .stripe-4 {
+  transform: rotate(37.7282347965deg) translate3d(0, 64.0273087384px, 0) scaleY(0.6402730874);
+}
+.warp .ring-2 .stripe-5 {
+  transform: rotate(59.050348046deg) translate3d(0, 83.1145772604px, 0) scaleY(0.8311457726);
+}
+.warp .ring-2 .stripe-6 {
+  transform: rotate(67.9250973832deg) translate3d(0, 95.6043087157px, 0) scaleY(0.9560430872);
+}
+.warp .ring-2 .stripe-7 {
+  transform: rotate(84.7515044237deg) translate3d(0, 71.3334490132px, 0) scaleY(0.7133344901);
+}
+.warp .ring-2 .stripe-8 {
+  transform: rotate(95.7318232063deg) translate3d(0, 95.9164042462px, 0) scaleY(0.9591640425);
+}
+.warp .ring-2 .stripe-9 {
+  transform: rotate(110.6145086511deg) translate3d(0, 99.6834950616px, 0) scaleY(0.9968349506);
+}
+.warp .ring-2 .stripe-10 {
+  transform: rotate(127.2017107343deg) translate3d(0, 74.6225047821px, 0) scaleY(0.7462250478);
+}
+.warp .ring-2 .stripe-11 {
+  transform: rotate(143.0847497069deg) translate3d(0, 60.1965401772px, 0) scaleY(0.6019654018);
+}
+.warp .ring-2 .stripe-12 {
+  transform: rotate(157.1876453924deg) translate3d(0, 60.6582678215px, 0) scaleY(0.6065826782);
+}
+.warp .ring-2 .stripe-13 {
+  transform: rotate(171.7424513779deg) translate3d(0, 83.8038188989px, 0) scaleY(0.838038189);
+}
+.warp .ring-2 .stripe-14 {
+  transform: rotate(190.4521681189deg) translate3d(0, 86.6137448346px, 0) scaleY(0.8661374483);
+}
+.warp .ring-2 .stripe-15 {
+  transform: rotate(209.3016563976deg) translate3d(0, 62.6076741729px, 0) scaleY(0.6260767417);
+}
+.warp .ring-2 .stripe-16 {
+  transform: rotate(218.9811804709deg) translate3d(0, 62.2469283111px, 0) scaleY(0.6224692831);
+}
+.warp .ring-2 .stripe-17 {
+  transform: rotate(239.1637477358deg) translate3d(0, 78.9107653948px, 0) scaleY(0.7891076539);
+}
+.warp .ring-2 .stripe-18 {
+  transform: rotate(249.8934751546deg) translate3d(0, 95.348594349px, 0) scaleY(0.9534859435);
+}
+.warp .ring-2 .stripe-19 {
+  transform: rotate(263.7961060132deg) translate3d(0, 68.7663454128px, 0) scaleY(0.6876634541);
+}
+.warp .ring-2 .stripe-20 {
+  transform: rotate(279.9778407858deg) translate3d(0, 79.9700590262px, 0) scaleY(0.7997005903);
+}
+.warp .ring-2 .stripe-21 {
+  transform: rotate(294.2550981416deg) translate3d(0, 73.2666374069px, 0) scaleY(0.7326663741);
+}
+.warp .ring-2 .stripe-22 {
+  transform: rotate(314.153188325deg) translate3d(0, 76.1673005624px, 0) scaleY(0.7616730056);
+}
+.warp .ring-2 .stripe-23 {
+  transform: rotate(325.2994298549deg) translate3d(0, 70.6489168291px, 0) scaleY(0.7064891683);
+}
+.warp .ring-2 .stripe-24 {
+  transform: rotate(335.4720516516deg) translate3d(0, 91.8624933325px, 0) scaleY(0.9186249333);
+}
+.warp .ring-3 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -0.2666666667s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -0.2666666667s infinite;
+}
+.warp .ring-3 .stripe-1 {
+  transform: rotate(-5.4193500511deg) translate3d(0, 75.6211222206px, 0) scaleY(0.7562112222);
+}
+.warp .ring-3 .stripe-2 {
+  transform: rotate(10.1722140827deg) translate3d(0, 66.945336219px, 0) scaleY(0.6694533622);
+}
+.warp .ring-3 .stripe-3 {
+  transform: rotate(23.3001688298deg) translate3d(0, 64.7275143997px, 0) scaleY(0.647275144);
+}
+.warp .ring-3 .stripe-4 {
+  transform: rotate(35.3921773184deg) translate3d(0, 76.0005962859px, 0) scaleY(0.7600059629);
+}
+.warp .ring-3 .stripe-5 {
+  transform: rotate(55.9797503691deg) translate3d(0, 76.707731558px, 0) scaleY(0.7670773156);
+}
+.warp .ring-3 .stripe-6 {
+  transform: rotate(68.8500921329deg) translate3d(0, 70.3794653841px, 0) scaleY(0.7037946538);
+}
+.warp .ring-3 .stripe-7 {
+  transform: rotate(85.9046472276deg) translate3d(0, 83.8615658838px, 0) scaleY(0.8386156588);
+}
+.warp .ring-3 .stripe-8 {
+  transform: rotate(99.826160729deg) translate3d(0, 64.4811715586px, 0) scaleY(0.6448117156);
+}
+.warp .ring-3 .stripe-9 {
+  transform: rotate(119.903115086deg) translate3d(0, 78.4187505059px, 0) scaleY(0.7841875051);
+}
+.warp .ring-3 .stripe-10 {
+  transform: rotate(131.5417598103deg) translate3d(0, 61.8673268436px, 0) scaleY(0.6186732684);
+}
+.warp .ring-3 .stripe-11 {
+  transform: rotate(141.1284993078deg) translate3d(0, 79.3023472671px, 0) scaleY(0.7930234727);
+}
+.warp .ring-3 .stripe-12 {
+  transform: rotate(160.7408959154deg) translate3d(0, 97.866920191px, 0) scaleY(0.9786692019);
+}
+.warp .ring-3 .stripe-13 {
+  transform: rotate(176.3746720584deg) translate3d(0, 91.9451194866px, 0) scaleY(0.9194511949);
+}
+.warp .ring-3 .stripe-14 {
+  transform: rotate(191.0490335709deg) translate3d(0, 65.369349782px, 0) scaleY(0.6536934978);
+}
+.warp .ring-3 .stripe-15 {
+  transform: rotate(204.3484746195deg) translate3d(0, 98.0864640053px, 0) scaleY(0.9808646401);
+}
+.warp .ring-3 .stripe-16 {
+  transform: rotate(223.1446849028deg) translate3d(0, 96.6121505281px, 0) scaleY(0.9661215053);
+}
+.warp .ring-3 .stripe-17 {
+  transform: rotate(233.0036076364deg) translate3d(0, 98.8424874278px, 0) scaleY(0.9884248743);
+}
+.warp .ring-3 .stripe-18 {
+  transform: rotate(251.8807376126deg) translate3d(0, 61.0638088018px, 0) scaleY(0.610638088);
+}
+.warp .ring-3 .stripe-19 {
+  transform: rotate(263.6624525102deg) translate3d(0, 62.1419637482px, 0) scaleY(0.6214196375);
+}
+.warp .ring-3 .stripe-20 {
+  transform: rotate(278.982209158deg) translate3d(0, 85.8268429165px, 0) scaleY(0.8582684292);
+}
+.warp .ring-3 .stripe-21 {
+  transform: rotate(294.4294564904deg) translate3d(0, 78.9463280521px, 0) scaleY(0.7894632805);
+}
+.warp .ring-3 .stripe-22 {
+  transform: rotate(312.7997117595deg) translate3d(0, 92.8677276747px, 0) scaleY(0.9286772767);
+}
+.warp .ring-3 .stripe-23 {
+  transform: rotate(320.2801329314deg) translate3d(0, 88.1026421325px, 0) scaleY(0.8810264213);
+}
+.warp .ring-3 .stripe-24 {
+  transform: rotate(344.6374923613deg) translate3d(0, 78.8767492949px, 0) scaleY(0.7887674929);
+}
+.warp .ring-4 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -0.4s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -0.4s infinite;
+}
+.warp .ring-4 .stripe-1 {
+  transform: rotate(-9.927307012deg) translate3d(0, 64.8687326221px, 0) scaleY(0.6486873262);
+}
+.warp .ring-4 .stripe-2 {
+  transform: rotate(14.6747673606deg) translate3d(0, 64.8979624755px, 0) scaleY(0.6489796248);
+}
+.warp .ring-4 .stripe-3 {
+  transform: rotate(23.9678112307deg) translate3d(0, 98.2361365489px, 0) scaleY(0.9823613655);
+}
+.warp .ring-4 .stripe-4 {
+  transform: rotate(39.7567844006deg) translate3d(0, 88.1118999487px, 0) scaleY(0.8811189995);
+}
+.warp .ring-4 .stripe-5 {
+  transform: rotate(55.5288367326deg) translate3d(0, 62.2161437653px, 0) scaleY(0.6221614377);
+}
+.warp .ring-4 .stripe-6 {
+  transform: rotate(69.4276960095deg) translate3d(0, 66.8284415952px, 0) scaleY(0.668284416);
+}
+.warp .ring-4 .stripe-7 {
+  transform: rotate(81.7732678492deg) translate3d(0, 64.6705651829px, 0) scaleY(0.6467056518);
+}
+.warp .ring-4 .stripe-8 {
+  transform: rotate(104.8028913043deg) translate3d(0, 90.7808680844px, 0) scaleY(0.9078086808);
+}
+.warp .ring-4 .stripe-9 {
+  transform: rotate(112.4965458545deg) translate3d(0, 87.4778703624px, 0) scaleY(0.8747787036);
+}
+.warp .ring-4 .stripe-10 {
+  transform: rotate(134.668486691deg) translate3d(0, 88.0596281739px, 0) scaleY(0.8805962817);
+}
+.warp .ring-4 .stripe-11 {
+  transform: rotate(145.0741392838deg) translate3d(0, 80.369146509px, 0) scaleY(0.8036914651);
+}
+.warp .ring-4 .stripe-12 {
+  transform: rotate(164.3746036575deg) translate3d(0, 68.893868203px, 0) scaleY(0.688938682);
+}
+.warp .ring-4 .stripe-13 {
+  transform: rotate(172.6105432142deg) translate3d(0, 83.5488811368px, 0) scaleY(0.8354888114);
+}
+.warp .ring-4 .stripe-14 {
+  transform: rotate(194.6852102838deg) translate3d(0, 79.3836841795px, 0) scaleY(0.7938368418);
+}
+.warp .ring-4 .stripe-15 {
+  transform: rotate(209.629368872deg) translate3d(0, 81.1354341299px, 0) scaleY(0.8113543413);
+}
+.warp .ring-4 .stripe-16 {
+  transform: rotate(221.59107537deg) translate3d(0, 80.7996892869px, 0) scaleY(0.8079968929);
+}
+.warp .ring-4 .stripe-17 {
+  transform: rotate(231.8317031344deg) translate3d(0, 70.0843253013px, 0) scaleY(0.700843253);
+}
+.warp .ring-4 .stripe-18 {
+  transform: rotate(251.929166049deg) translate3d(0, 64.4731573px, 0) scaleY(0.644731573);
+}
+.warp .ring-4 .stripe-19 {
+  transform: rotate(264.6077325211deg) translate3d(0, 75.5022984257px, 0) scaleY(0.7550229843);
+}
+.warp .ring-4 .stripe-20 {
+  transform: rotate(281.0769598059deg) translate3d(0, 95.3608244643px, 0) scaleY(0.9536082446);
+}
+.warp .ring-4 .stripe-21 {
+  transform: rotate(293.5835601394deg) translate3d(0, 70.8331128191px, 0) scaleY(0.7083311282);
+}
+.warp .ring-4 .stripe-22 {
+  transform: rotate(306.6145411402deg) translate3d(0, 78.3153137412px, 0) scaleY(0.7831531374);
+}
+.warp .ring-4 .stripe-23 {
+  transform: rotate(322.7385403211deg) translate3d(0, 71.0783208694px, 0) scaleY(0.7107832087);
+}
+.warp .ring-4 .stripe-24 {
+  transform: rotate(340.9627365017deg) translate3d(0, 85.8431030369px, 0) scaleY(0.8584310304);
+}
+.warp .ring-5 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -0.5333333333s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -0.5333333333s infinite;
+}
+.warp .ring-5 .stripe-1 {
+  transform: rotate(-9.7753970034deg) translate3d(0, 73.7913587254px, 0) scaleY(0.7379135873);
+}
+.warp .ring-5 .stripe-2 {
+  transform: rotate(13.9379476809deg) translate3d(0, 66.0434431532px, 0) scaleY(0.6604344315);
+}
+.warp .ring-5 .stripe-3 {
+  transform: rotate(26.5144251342deg) translate3d(0, 60.7360669767px, 0) scaleY(0.6073606698);
+}
+.warp .ring-5 .stripe-4 {
+  transform: rotate(40.0951609099deg) translate3d(0, 82.11638495px, 0) scaleY(0.8211638495);
+}
+.warp .ring-5 .stripe-5 {
+  transform: rotate(52.845313728deg) translate3d(0, 74.2945923541px, 0) scaleY(0.7429459235);
+}
+.warp .ring-5 .stripe-6 {
+  transform: rotate(74.1676126687deg) translate3d(0, 83.6368265979px, 0) scaleY(0.836368266);
+}
+.warp .ring-5 .stripe-7 {
+  transform: rotate(84.6680399203deg) translate3d(0, 73.9005797788px, 0) scaleY(0.7390057978);
+}
+.warp .ring-5 .stripe-8 {
+  transform: rotate(101.301425449deg) translate3d(0, 66.8453275803px, 0) scaleY(0.6684532758);
+}
+.warp .ring-5 .stripe-9 {
+  transform: rotate(117.6046643716deg) translate3d(0, 81.5045813375px, 0) scaleY(0.8150458134);
+}
+.warp .ring-5 .stripe-10 {
+  transform: rotate(126.9112476336deg) translate3d(0, 92.3000260779px, 0) scaleY(0.9230002608);
+}
+.warp .ring-5 .stripe-11 {
+  transform: rotate(141.2435274093deg) translate3d(0, 87.6409187216px, 0) scaleY(0.8764091872);
+}
+.warp .ring-5 .stripe-12 {
+  transform: rotate(157.9642741051deg) translate3d(0, 94.0665673125px, 0) scaleY(0.9406656731);
+}
+.warp .ring-5 .stripe-13 {
+  transform: rotate(173.8736478131deg) translate3d(0, 92.1365710048px, 0) scaleY(0.92136571);
+}
+.warp .ring-5 .stripe-14 {
+  transform: rotate(193.6905568941deg) translate3d(0, 86.3403306814px, 0) scaleY(0.8634033068);
+}
+.warp .ring-5 .stripe-15 {
+  transform: rotate(200.6682233311deg) translate3d(0, 79.9631199603px, 0) scaleY(0.7996311996);
+}
+.warp .ring-5 .stripe-16 {
+  transform: rotate(215.3688060347deg) translate3d(0, 77.1435953974px, 0) scaleY(0.771435954);
+}
+.warp .ring-5 .stripe-17 {
+  transform: rotate(231.1947147908deg) translate3d(0, 68.7005692208px, 0) scaleY(0.6870056922);
+}
+.warp .ring-5 .stripe-18 {
+  transform: rotate(250.7744553023deg) translate3d(0, 93.5396472846px, 0) scaleY(0.9353964728);
+}
+.warp .ring-5 .stripe-19 {
+  transform: rotate(268.2966562119deg) translate3d(0, 87.0866769333px, 0) scaleY(0.8708667693);
+}
+.warp .ring-5 .stripe-20 {
+  transform: rotate(283.2252494648deg) translate3d(0, 69.6979934709px, 0) scaleY(0.6969799347);
+}
+.warp .ring-5 .stripe-21 {
+  transform: rotate(293.6255662072deg) translate3d(0, 83.8547648044px, 0) scaleY(0.838547648);
+}
+.warp .ring-5 .stripe-22 {
+  transform: rotate(306.5753030026deg) translate3d(0, 83.754433752px, 0) scaleY(0.8375443375);
+}
+.warp .ring-5 .stripe-23 {
+  transform: rotate(327.7882401303deg) translate3d(0, 85.5291392509px, 0) scaleY(0.8552913925);
+}
+.warp .ring-5 .stripe-24 {
+  transform: rotate(337.0984235191deg) translate3d(0, 61.3259698462px, 0) scaleY(0.6132596985);
+}
+.warp .ring-6 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -0.6666666667s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -0.6666666667s infinite;
+}
+.warp .ring-6 .stripe-1 {
+  transform: rotate(-2.0228327009deg) translate3d(0, 69.5225855056px, 0) scaleY(0.6952258551);
+}
+.warp .ring-6 .stripe-2 {
+  transform: rotate(11.2456072969deg) translate3d(0, 76.4564190142px, 0) scaleY(0.7645641901);
+}
+.warp .ring-6 .stripe-3 {
+  transform: rotate(29.7998479553deg) translate3d(0, 66.7192680877px, 0) scaleY(0.6671926809);
+}
+.warp .ring-6 .stripe-4 {
+  transform: rotate(36.6688788369deg) translate3d(0, 78.6505884555px, 0) scaleY(0.7865058846);
+}
+.warp .ring-6 .stripe-5 {
+  transform: rotate(55.947191159deg) translate3d(0, 63.5324978319px, 0) scaleY(0.6353249783);
+}
+.warp .ring-6 .stripe-6 {
+  transform: rotate(70.798706293deg) translate3d(0, 81.7018128722px, 0) scaleY(0.8170181287);
+}
+.warp .ring-6 .stripe-7 {
+  transform: rotate(85.7150558035deg) translate3d(0, 75.3087999284px, 0) scaleY(0.7530879993);
+}
+.warp .ring-6 .stripe-8 {
+  transform: rotate(99.450740894deg) translate3d(0, 85.6469195889px, 0) scaleY(0.8564691959);
+}
+.warp .ring-6 .stripe-9 {
+  transform: rotate(116.7700114175deg) translate3d(0, 96.3411091744px, 0) scaleY(0.9634110917);
+}
+.warp .ring-6 .stripe-10 {
+  transform: rotate(134.2305393471deg) translate3d(0, 88.2561773845px, 0) scaleY(0.8825617738);
+}
+.warp .ring-6 .stripe-11 {
+  transform: rotate(140.2972649361deg) translate3d(0, 85.3985135101px, 0) scaleY(0.8539851351);
+}
+.warp .ring-6 .stripe-12 {
+  transform: rotate(157.0982964124deg) translate3d(0, 67.6722651667px, 0) scaleY(0.6767226517);
+}
+.warp .ring-6 .stripe-13 {
+  transform: rotate(170.9440803768deg) translate3d(0, 61.607882921px, 0) scaleY(0.6160788292);
+}
+.warp .ring-6 .stripe-14 {
+  transform: rotate(190.1319800411deg) translate3d(0, 85.8905274305px, 0) scaleY(0.8589052743);
+}
+.warp .ring-6 .stripe-15 {
+  transform: rotate(203.0781564702deg) translate3d(0, 71.9631690031px, 0) scaleY(0.71963169);
+}
+.warp .ring-6 .stripe-16 {
+  transform: rotate(220.4868367899deg) translate3d(0, 65.7089302421px, 0) scaleY(0.6570893024);
+}
+.warp .ring-6 .stripe-17 {
+  transform: rotate(235.9849577029deg) translate3d(0, 95.8358305742px, 0) scaleY(0.9583583057);
+}
+.warp .ring-6 .stripe-18 {
+  transform: rotate(249.8792542255deg) translate3d(0, 91.8728372369px, 0) scaleY(0.9187283724);
+}
+.warp .ring-6 .stripe-19 {
+  transform: rotate(268.5661751361deg) translate3d(0, 95.8584820201px, 0) scaleY(0.9585848202);
+}
+.warp .ring-6 .stripe-20 {
+  transform: rotate(283.8101948247deg) translate3d(0, 75.0785336726px, 0) scaleY(0.7507853367);
+}
+.warp .ring-6 .stripe-21 {
+  transform: rotate(291.6858896803deg) translate3d(0, 81.2396896909px, 0) scaleY(0.8123968969);
+}
+.warp .ring-6 .stripe-22 {
+  transform: rotate(308.2715602337deg) translate3d(0, 95.5689343732px, 0) scaleY(0.9556893437);
+}
+.warp .ring-6 .stripe-23 {
+  transform: rotate(322.4520170638deg) translate3d(0, 62.7968764317px, 0) scaleY(0.6279687643);
+}
+.warp .ring-6 .stripe-24 {
+  transform: rotate(336.7323327826deg) translate3d(0, 72.3393288571px, 0) scaleY(0.7233932886);
+}
+.warp .ring-7 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -0.8s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -0.8s infinite;
+}
+.warp .ring-7 .stripe-1 {
+  transform: rotate(-9.4240074805deg) translate3d(0, 68.8119621471px, 0) scaleY(0.6881196215);
+}
+.warp .ring-7 .stripe-2 {
+  transform: rotate(8.1240570091deg) translate3d(0, 84.2706823103px, 0) scaleY(0.8427068231);
+}
+.warp .ring-7 .stripe-3 {
+  transform: rotate(25.6940595698deg) translate3d(0, 73.5735284671px, 0) scaleY(0.7357352847);
+}
+.warp .ring-7 .stripe-4 {
+  transform: rotate(44.5799794445deg) translate3d(0, 73.2604074822px, 0) scaleY(0.7326040748);
+}
+.warp .ring-7 .stripe-5 {
+  transform: rotate(56.810560045deg) translate3d(0, 91.6687198663px, 0) scaleY(0.9166871987);
+}
+.warp .ring-7 .stripe-6 {
+  transform: rotate(70.6733933439deg) translate3d(0, 88.2874762033px, 0) scaleY(0.882874762);
+}
+.warp .ring-7 .stripe-7 {
+  transform: rotate(89.5265525157deg) translate3d(0, 74.1037821011px, 0) scaleY(0.741037821);
+}
+.warp .ring-7 .stripe-8 {
+  transform: rotate(96.170562313deg) translate3d(0, 83.4138956944px, 0) scaleY(0.8341389569);
+}
+.warp .ring-7 .stripe-9 {
+  transform: rotate(119.8383530865deg) translate3d(0, 69.8258086963px, 0) scaleY(0.698258087);
+}
+.warp .ring-7 .stripe-10 {
+  transform: rotate(129.181494462deg) translate3d(0, 66.9186003622px, 0) scaleY(0.6691860036);
+}
+.warp .ring-7 .stripe-11 {
+  transform: rotate(145.2141467021deg) translate3d(0, 91.1158712965px, 0) scaleY(0.911158713);
+}
+.warp .ring-7 .stripe-12 {
+  transform: rotate(163.00922586deg) translate3d(0, 73.9191717976px, 0) scaleY(0.739191718);
+}
+.warp .ring-7 .stripe-13 {
+  transform: rotate(178.0465388041deg) translate3d(0, 76.1519991862px, 0) scaleY(0.7615199919);
+}
+.warp .ring-7 .stripe-14 {
+  transform: rotate(186.2736967416deg) translate3d(0, 93.1624262406px, 0) scaleY(0.9316242624);
+}
+.warp .ring-7 .stripe-15 {
+  transform: rotate(205.5996744904deg) translate3d(0, 84.2771580116px, 0) scaleY(0.8427715801);
+}
+.warp .ring-7 .stripe-16 {
+  transform: rotate(224.4292151154deg) translate3d(0, 73.8821661797px, 0) scaleY(0.7388216618);
+}
+.warp .ring-7 .stripe-17 {
+  transform: rotate(237.2248064714deg) translate3d(0, 73.4703928742px, 0) scaleY(0.7347039287);
+}
+.warp .ring-7 .stripe-18 {
+  transform: rotate(252.8550152249deg) translate3d(0, 85.9989440776px, 0) scaleY(0.8599894408);
+}
+.warp .ring-7 .stripe-19 {
+  transform: rotate(265.6925821829deg) translate3d(0, 67.462385045px, 0) scaleY(0.6746238504);
+}
+.warp .ring-7 .stripe-20 {
+  transform: rotate(283.1076248454deg) translate3d(0, 71.0786888588px, 0) scaleY(0.7107868886);
+}
+.warp .ring-7 .stripe-21 {
+  transform: rotate(294.8450510034deg) translate3d(0, 78.6624446071px, 0) scaleY(0.7866244461);
+}
+.warp .ring-7 .stripe-22 {
+  transform: rotate(306.6726589318deg) translate3d(0, 88.5955910158px, 0) scaleY(0.8859559102);
+}
+.warp .ring-7 .stripe-23 {
+  transform: rotate(322.3895560458deg) translate3d(0, 99.5130210618px, 0) scaleY(0.9951302106);
+}
+.warp .ring-7 .stripe-24 {
+  transform: rotate(340.3931312782deg) translate3d(0, 68.3689362412px, 0) scaleY(0.6836893624);
+}
+.warp .ring-8 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -0.9333333333s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -0.9333333333s infinite;
+}
+.warp .ring-8 .stripe-1 {
+  transform: rotate(-2.6375896103deg) translate3d(0, 99.7256569306px, 0) scaleY(0.9972565693);
+}
+.warp .ring-8 .stripe-2 {
+  transform: rotate(12.5796796865deg) translate3d(0, 97.3716689043px, 0) scaleY(0.973716689);
+}
+.warp .ring-8 .stripe-3 {
+  transform: rotate(22.9182776958deg) translate3d(0, 90.9370160594px, 0) scaleY(0.9093701606);
+}
+.warp .ring-8 .stripe-4 {
+  transform: rotate(40.5596909641deg) translate3d(0, 84.8011094243px, 0) scaleY(0.8480110942);
+}
+.warp .ring-8 .stripe-5 {
+  transform: rotate(54.1947073782deg) translate3d(0, 76.5664758231px, 0) scaleY(0.7656647582);
+}
+.warp .ring-8 .stripe-6 {
+  transform: rotate(71.0056742942deg) translate3d(0, 79.9991007976px, 0) scaleY(0.799991008);
+}
+.warp .ring-8 .stripe-7 {
+  transform: rotate(82.0491675532deg) translate3d(0, 82.9244006958px, 0) scaleY(0.829244007);
+}
+.warp .ring-8 .stripe-8 {
+  transform: rotate(98.1887742716deg) translate3d(0, 80.8523970501px, 0) scaleY(0.8085239705);
+}
+.warp .ring-8 .stripe-9 {
+  transform: rotate(119.1071136227deg) translate3d(0, 87.428435152px, 0) scaleY(0.8742843515);
+}
+.warp .ring-8 .stripe-10 {
+  transform: rotate(125.9721937193deg) translate3d(0, 81.6685096332px, 0) scaleY(0.8166850963);
+}
+.warp .ring-8 .stripe-11 {
+  transform: rotate(147.0416639944deg) translate3d(0, 64.9658337223px, 0) scaleY(0.6496583372);
+}
+.warp .ring-8 .stripe-12 {
+  transform: rotate(162.7813515934deg) translate3d(0, 64.1901289118px, 0) scaleY(0.6419012891);
+}
+.warp .ring-8 .stripe-13 {
+  transform: rotate(178.9320001983deg) translate3d(0, 83.8574321177px, 0) scaleY(0.8385743212);
+}
+.warp .ring-8 .stripe-14 {
+  transform: rotate(189.8380621013deg) translate3d(0, 86.0627601552px, 0) scaleY(0.8606276016);
+}
+.warp .ring-8 .stripe-15 {
+  transform: rotate(208.0690976894deg) translate3d(0, 60.783044719px, 0) scaleY(0.6078304472);
+}
+.warp .ring-8 .stripe-16 {
+  transform: rotate(217.7944602696deg) translate3d(0, 73.9959620898px, 0) scaleY(0.7399596209);
+}
+.warp .ring-8 .stripe-17 {
+  transform: rotate(234.1610602596deg) translate3d(0, 88.8825446517px, 0) scaleY(0.8888254465);
+}
+.warp .ring-8 .stripe-18 {
+  transform: rotate(253.7290667287deg) translate3d(0, 67.1370289446px, 0) scaleY(0.6713702894);
+}
+.warp .ring-8 .stripe-19 {
+  transform: rotate(265.7300947001deg) translate3d(0, 93.8179476301px, 0) scaleY(0.9381794763);
+}
+.warp .ring-8 .stripe-20 {
+  transform: rotate(276.5601203673deg) translate3d(0, 67.4188746445px, 0) scaleY(0.6741887464);
+}
+.warp .ring-8 .stripe-21 {
+  transform: rotate(298.6608474096deg) translate3d(0, 97.1183170615px, 0) scaleY(0.9711831706);
+}
+.warp .ring-8 .stripe-22 {
+  transform: rotate(308.3249959766deg) translate3d(0, 87.8199381826px, 0) scaleY(0.8781993818);
+}
+.warp .ring-8 .stripe-23 {
+  transform: rotate(327.3441156174deg) translate3d(0, 95.8763348766px, 0) scaleY(0.9587633488);
+}
+.warp .ring-8 .stripe-24 {
+  transform: rotate(335.6558934861deg) translate3d(0, 66.1292803869px, 0) scaleY(0.6612928039);
+}
+.warp .ring-9 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -1.0666666667s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -1.0666666667s infinite;
+}
+.warp .ring-9 .stripe-1 {
+  transform: rotate(-8.8778194284deg) translate3d(0, 83.1127428416px, 0) scaleY(0.8311274284);
+}
+.warp .ring-9 .stripe-2 {
+  transform: rotate(12.2338777497deg) translate3d(0, 71.3307056453px, 0) scaleY(0.7133070565);
+}
+.warp .ring-9 .stripe-3 {
+  transform: rotate(22.8867914649deg) translate3d(0, 95.3346558387px, 0) scaleY(0.9533465584);
+}
+.warp .ring-9 .stripe-4 {
+  transform: rotate(35.7848539712deg) translate3d(0, 66.1668149006px, 0) scaleY(0.661668149);
+}
+.warp .ring-9 .stripe-5 {
+  transform: rotate(53.5581290477deg) translate3d(0, 75.1282140029px, 0) scaleY(0.75128214);
+}
+.warp .ring-9 .stripe-6 {
+  transform: rotate(65.8961299934deg) translate3d(0, 69.8415125617px, 0) scaleY(0.6984151256);
+}
+.warp .ring-9 .stripe-7 {
+  transform: rotate(85.4053769951deg) translate3d(0, 60.4265912411px, 0) scaleY(0.6042659124);
+}
+.warp .ring-9 .stripe-8 {
+  transform: rotate(96.364596968deg) translate3d(0, 93.7637263969px, 0) scaleY(0.937637264);
+}
+.warp .ring-9 .stripe-9 {
+  transform: rotate(117.6770022816deg) translate3d(0, 91.5308378602px, 0) scaleY(0.9153083786);
+}
+.warp .ring-9 .stripe-10 {
+  transform: rotate(133.0524682944deg) translate3d(0, 71.9934723581px, 0) scaleY(0.7199347236);
+}
+.warp .ring-9 .stripe-11 {
+  transform: rotate(148.5056667775deg) translate3d(0, 98.1477184074px, 0) scaleY(0.9814771841);
+}
+.warp .ring-9 .stripe-12 {
+  transform: rotate(163.4472284882deg) translate3d(0, 67.7341493963px, 0) scaleY(0.677341494);
+}
+.warp .ring-9 .stripe-13 {
+  transform: rotate(176.7870493467deg) translate3d(0, 93.343608608px, 0) scaleY(0.9334360861);
+}
+.warp .ring-9 .stripe-14 {
+  transform: rotate(191.1444277557deg) translate3d(0, 93.2337170525px, 0) scaleY(0.9323371705);
+}
+.warp .ring-9 .stripe-15 {
+  transform: rotate(208.5145502387deg) translate3d(0, 91.417642176px, 0) scaleY(0.9141764218);
+}
+.warp .ring-9 .stripe-16 {
+  transform: rotate(217.8220802518deg) translate3d(0, 90.7286386748px, 0) scaleY(0.9072863867);
+}
+.warp .ring-9 .stripe-17 {
+  transform: rotate(239.1232659943deg) translate3d(0, 64.4565754037px, 0) scaleY(0.644565754);
+}
+.warp .ring-9 .stripe-18 {
+  transform: rotate(248.3698299352deg) translate3d(0, 76.5138027183px, 0) scaleY(0.7651380272);
+}
+.warp .ring-9 .stripe-19 {
+  transform: rotate(266.3465208714deg) translate3d(0, 75.4000074654px, 0) scaleY(0.7540000747);
+}
+.warp .ring-9 .stripe-20 {
+  transform: rotate(282.9805757731deg) translate3d(0, 76.2790969565px, 0) scaleY(0.7627909696);
+}
+.warp .ring-9 .stripe-21 {
+  transform: rotate(299.4841011547deg) translate3d(0, 87.5333179237px, 0) scaleY(0.8753331792);
+}
+.warp .ring-9 .stripe-22 {
+  transform: rotate(310.9063922781deg) translate3d(0, 97.2777502066px, 0) scaleY(0.9727775021);
+}
+.warp .ring-9 .stripe-23 {
+  transform: rotate(324.0367677516deg) translate3d(0, 84.8445298708px, 0) scaleY(0.8484452987);
+}
+.warp .ring-9 .stripe-24 {
+  transform: rotate(341.9663583104deg) translate3d(0, 72.6799212872px, 0) scaleY(0.7267992129);
+}
+.warp .ring-10 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -1.2s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -1.2s infinite;
+}
+.warp .ring-10 .stripe-1 {
+  transform: rotate(-5.1531266143deg) translate3d(0, 68.3318207372px, 0) scaleY(0.6833182074);
+}
+.warp .ring-10 .stripe-2 {
+  transform: rotate(7.4083755182deg) translate3d(0, 79.4584150405px, 0) scaleY(0.7945841504);
+}
+.warp .ring-10 .stripe-3 {
+  transform: rotate(27.5826684344deg) translate3d(0, 95.3226562518px, 0) scaleY(0.9532265625);
+}
+.warp .ring-10 .stripe-4 {
+  transform: rotate(37.9330810327deg) translate3d(0, 87.2823259692px, 0) scaleY(0.8728232597);
+}
+.warp .ring-10 .stripe-5 {
+  transform: rotate(51.0614331773deg) translate3d(0, 74.2011148165px, 0) scaleY(0.7420111482);
+}
+.warp .ring-10 .stripe-6 {
+  transform: rotate(68.4668380069deg) translate3d(0, 78.3980833553px, 0) scaleY(0.7839808336);
+}
+.warp .ring-10 .stripe-7 {
+  transform: rotate(89.3581812584deg) translate3d(0, 83.6349499596px, 0) scaleY(0.8363494996);
+}
+.warp .ring-10 .stripe-8 {
+  transform: rotate(99.7645522865deg) translate3d(0, 73.4902980269px, 0) scaleY(0.7349029803);
+}
+.warp .ring-10 .stripe-9 {
+  transform: rotate(112.2431227122deg) translate3d(0, 82.7998310068px, 0) scaleY(0.8279983101);
+}
+.warp .ring-10 .stripe-10 {
+  transform: rotate(133.6092068801deg) translate3d(0, 89.8791953415px, 0) scaleY(0.8987919534);
+}
+.warp .ring-10 .stripe-11 {
+  transform: rotate(145.7234931808deg) translate3d(0, 93.3576730349px, 0) scaleY(0.9335767303);
+}
+.warp .ring-10 .stripe-12 {
+  transform: rotate(155.5310461889deg) translate3d(0, 79.743422945px, 0) scaleY(0.7974342294);
+}
+.warp .ring-10 .stripe-13 {
+  transform: rotate(173.7905262391deg) translate3d(0, 73.7172885715px, 0) scaleY(0.7371728857);
+}
+.warp .ring-10 .stripe-14 {
+  transform: rotate(186.7413204deg) translate3d(0, 78.5283035546px, 0) scaleY(0.7852830355);
+}
+.warp .ring-10 .stripe-15 {
+  transform: rotate(204.8044324359deg) translate3d(0, 95.4880450306px, 0) scaleY(0.9548804503);
+}
+.warp .ring-10 .stripe-16 {
+  transform: rotate(222.8507543084deg) translate3d(0, 73.622880788px, 0) scaleY(0.7362288079);
+}
+.warp .ring-10 .stripe-17 {
+  transform: rotate(239.3206227174deg) translate3d(0, 81.804138941px, 0) scaleY(0.8180413894);
+}
+.warp .ring-10 .stripe-18 {
+  transform: rotate(251.5033199142deg) translate3d(0, 71.8656998693px, 0) scaleY(0.7186569987);
+}
+.warp .ring-10 .stripe-19 {
+  transform: rotate(263.4539603375deg) translate3d(0, 90.8317572247px, 0) scaleY(0.9083175722);
+}
+.warp .ring-10 .stripe-20 {
+  transform: rotate(276.2301452341deg) translate3d(0, 77.7488811199px, 0) scaleY(0.7774888112);
+}
+.warp .ring-10 .stripe-21 {
+  transform: rotate(298.5362632592deg) translate3d(0, 78.512218064px, 0) scaleY(0.7851221806);
+}
+.warp .ring-10 .stripe-22 {
+  transform: rotate(309.6768200685deg) translate3d(0, 60.6336001721px, 0) scaleY(0.6063360017);
+}
+.warp .ring-10 .stripe-23 {
+  transform: rotate(322.8844005784deg) translate3d(0, 64.8600871013px, 0) scaleY(0.648600871);
+}
+.warp .ring-10 .stripe-24 {
+  transform: rotate(343.9024627422deg) translate3d(0, 81.0668855567px, 0) scaleY(0.8106688556);
+}
+.warp .ring-11 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -1.3333333333s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -1.3333333333s infinite;
+}
+.warp .ring-11 .stripe-1 {
+  transform: rotate(-0.4626212967deg) translate3d(0, 95.4664285954px, 0) scaleY(0.954664286);
+}
+.warp .ring-11 .stripe-2 {
+  transform: rotate(13.3463169424deg) translate3d(0, 90.5580246048px, 0) scaleY(0.905580246);
+}
+.warp .ring-11 .stripe-3 {
+  transform: rotate(27.3253195376deg) translate3d(0, 88.6220604083px, 0) scaleY(0.8862206041);
+}
+.warp .ring-11 .stripe-4 {
+  transform: rotate(35.949293294deg) translate3d(0, 78.6805047012px, 0) scaleY(0.786805047);
+}
+.warp .ring-11 .stripe-5 {
+  transform: rotate(57.0426736121deg) translate3d(0, 83.9682188943px, 0) scaleY(0.8396821889);
+}
+.warp .ring-11 .stripe-6 {
+  transform: rotate(72.917205919deg) translate3d(0, 87.51082281px, 0) scaleY(0.8751082281);
+}
+.warp .ring-11 .stripe-7 {
+  transform: rotate(80.0747527216deg) translate3d(0, 62.0230496893px, 0) scaleY(0.6202304969);
+}
+.warp .ring-11 .stripe-8 {
+  transform: rotate(97.7087607006deg) translate3d(0, 97.0798100671px, 0) scaleY(0.9707981007);
+}
+.warp .ring-11 .stripe-9 {
+  transform: rotate(118.6043145973deg) translate3d(0, 95.7626165466px, 0) scaleY(0.9576261655);
+}
+.warp .ring-11 .stripe-10 {
+  transform: rotate(131.6916774302deg) translate3d(0, 69.0845627534px, 0) scaleY(0.6908456275);
+}
+.warp .ring-11 .stripe-11 {
+  transform: rotate(149.0230527249deg) translate3d(0, 94.4888701786px, 0) scaleY(0.9448887018);
+}
+.warp .ring-11 .stripe-12 {
+  transform: rotate(158.4188601684deg) translate3d(0, 60.4983434519px, 0) scaleY(0.6049834345);
+}
+.warp .ring-11 .stripe-13 {
+  transform: rotate(176.4211639977deg) translate3d(0, 86.3330262679px, 0) scaleY(0.8633302627);
+}
+.warp .ring-11 .stripe-14 {
+  transform: rotate(194.0352137502deg) translate3d(0, 61.3649784975px, 0) scaleY(0.613649785);
+}
+.warp .ring-11 .stripe-15 {
+  transform: rotate(206.3006430175deg) translate3d(0, 78.2257933431px, 0) scaleY(0.7822579334);
+}
+.warp .ring-11 .stripe-16 {
+  transform: rotate(219.3528357273deg) translate3d(0, 77.5694136121px, 0) scaleY(0.7756941361);
+}
+.warp .ring-11 .stripe-17 {
+  transform: rotate(232.0929752473deg) translate3d(0, 61.6399453349px, 0) scaleY(0.6163994533);
+}
+.warp .ring-11 .stripe-18 {
+  transform: rotate(249.8693442342deg) translate3d(0, 83.0773878927px, 0) scaleY(0.8307738789);
+}
+.warp .ring-11 .stripe-19 {
+  transform: rotate(269.171267122deg) translate3d(0, 90.6748915518px, 0) scaleY(0.9067489155);
+}
+.warp .ring-11 .stripe-20 {
+  transform: rotate(283.0170275716deg) translate3d(0, 96.0118698224px, 0) scaleY(0.9601186982);
+}
+.warp .ring-11 .stripe-21 {
+  transform: rotate(295.2567568899deg) translate3d(0, 70.6690150412px, 0) scaleY(0.7066901504);
+}
+.warp .ring-11 .stripe-22 {
+  transform: rotate(310.9998836107deg) translate3d(0, 94.278509247px, 0) scaleY(0.9427850925);
+}
+.warp .ring-11 .stripe-23 {
+  transform: rotate(321.1490433944deg) translate3d(0, 67.8375833062px, 0) scaleY(0.6783758331);
+}
+.warp .ring-11 .stripe-24 {
+  transform: rotate(344.7655318016deg) translate3d(0, 66.0798464226px, 0) scaleY(0.6607984642);
+}
+.warp .ring-12 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -1.4666666667s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -1.4666666667s infinite;
+}
+.warp .ring-12 .stripe-1 {
+  transform: rotate(-4.2719429438deg) translate3d(0, 87.9264662532px, 0) scaleY(0.8792646625);
+}
+.warp .ring-12 .stripe-2 {
+  transform: rotate(12.3087092536deg) translate3d(0, 84.0344953019px, 0) scaleY(0.840344953);
+}
+.warp .ring-12 .stripe-3 {
+  transform: rotate(21.7428590605deg) translate3d(0, 90.8605047503px, 0) scaleY(0.9086050475);
+}
+.warp .ring-12 .stripe-4 {
+  transform: rotate(36.5827517207deg) translate3d(0, 67.4258080369px, 0) scaleY(0.6742580804);
+}
+.warp .ring-12 .stripe-5 {
+  transform: rotate(56.5014180404deg) translate3d(0, 80.5747593592px, 0) scaleY(0.8057475936);
+}
+.warp .ring-12 .stripe-6 {
+  transform: rotate(74.3433831518deg) translate3d(0, 63.3357885891px, 0) scaleY(0.6333578859);
+}
+.warp .ring-12 .stripe-7 {
+  transform: rotate(89.8673994383deg) translate3d(0, 74.1356748444px, 0) scaleY(0.7413567484);
+}
+.warp .ring-12 .stripe-8 {
+  transform: rotate(103.9354369023deg) translate3d(0, 94.4930756512px, 0) scaleY(0.9449307565);
+}
+.warp .ring-12 .stripe-9 {
+  transform: rotate(119.4640747448deg) translate3d(0, 62.9657410425px, 0) scaleY(0.6296574104);
+}
+.warp .ring-12 .stripe-10 {
+  transform: rotate(130.174008055deg) translate3d(0, 88.6966118392px, 0) scaleY(0.8869661184);
+}
+.warp .ring-12 .stripe-11 {
+  transform: rotate(145.4058782041deg) translate3d(0, 78.5542822px, 0) scaleY(0.785542822);
+}
+.warp .ring-12 .stripe-12 {
+  transform: rotate(158.7224920832deg) translate3d(0, 67.5098317661px, 0) scaleY(0.6750983177);
+}
+.warp .ring-12 .stripe-13 {
+  transform: rotate(173.8619605666deg) translate3d(0, 64.1688360756px, 0) scaleY(0.6416883608);
+}
+.warp .ring-12 .stripe-14 {
+  transform: rotate(185.2561471592deg) translate3d(0, 64.9394516978px, 0) scaleY(0.649394517);
+}
+.warp .ring-12 .stripe-15 {
+  transform: rotate(201.8914584886deg) translate3d(0, 93.9624698077px, 0) scaleY(0.9396246981);
+}
+.warp .ring-12 .stripe-16 {
+  transform: rotate(224.9380049527deg) translate3d(0, 99.1977962688px, 0) scaleY(0.9919779627);
+}
+.warp .ring-12 .stripe-17 {
+  transform: rotate(234.6061154347deg) translate3d(0, 89.065735206px, 0) scaleY(0.8906573521);
+}
+.warp .ring-12 .stripe-18 {
+  transform: rotate(247.6393581168deg) translate3d(0, 94.1595879949px, 0) scaleY(0.9415958799);
+}
+.warp .ring-12 .stripe-19 {
+  transform: rotate(269.7966885622deg) translate3d(0, 60.1161744468px, 0) scaleY(0.6011617445);
+}
+.warp .ring-12 .stripe-20 {
+  transform: rotate(279.6131963857deg) translate3d(0, 72.9125366581px, 0) scaleY(0.7291253666);
+}
+.warp .ring-12 .stripe-21 {
+  transform: rotate(292.4252758012deg) translate3d(0, 64.3589527625px, 0) scaleY(0.6435895276);
+}
+.warp .ring-12 .stripe-22 {
+  transform: rotate(310.1299683685deg) translate3d(0, 74.7009992147px, 0) scaleY(0.7470099921);
+}
+.warp .ring-12 .stripe-23 {
+  transform: rotate(326.3500447418deg) translate3d(0, 74.378633801px, 0) scaleY(0.743786338);
+}
+.warp .ring-12 .stripe-24 {
+  transform: rotate(339.8185434422deg) translate3d(0, 98.5999741955px, 0) scaleY(0.985999742);
+}
+.warp .ring-13 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -1.6s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -1.6s infinite;
+}
+.warp .ring-13 .stripe-1 {
+  transform: rotate(-5.5009323751deg) translate3d(0, 82.8596603448px, 0) scaleY(0.8285966034);
+}
+.warp .ring-13 .stripe-2 {
+  transform: rotate(8.431841059deg) translate3d(0, 90.0422029628px, 0) scaleY(0.9004220296);
+}
+.warp .ring-13 .stripe-3 {
+  transform: rotate(21.8345459175deg) translate3d(0, 73.4922386535px, 0) scaleY(0.7349223865);
+}
+.warp .ring-13 .stripe-4 {
+  transform: rotate(38.5610435306deg) translate3d(0, 92.4450798158px, 0) scaleY(0.9244507982);
+}
+.warp .ring-13 .stripe-5 {
+  transform: rotate(55.5290031594deg) translate3d(0, 97.1936108609px, 0) scaleY(0.9719361086);
+}
+.warp .ring-13 .stripe-6 {
+  transform: rotate(68.6101194239deg) translate3d(0, 86.3098582125px, 0) scaleY(0.8630985821);
+}
+.warp .ring-13 .stripe-7 {
+  transform: rotate(86.1622884964deg) translate3d(0, 60.6419671565px, 0) scaleY(0.6064196716);
+}
+.warp .ring-13 .stripe-8 {
+  transform: rotate(101.5879562021deg) translate3d(0, 73.5327048197px, 0) scaleY(0.7353270482);
+}
+.warp .ring-13 .stripe-9 {
+  transform: rotate(117.1668268445deg) translate3d(0, 87.395383186px, 0) scaleY(0.8739538319);
+}
+.warp .ring-13 .stripe-10 {
+  transform: rotate(129.3118225196deg) translate3d(0, 67.8316783908px, 0) scaleY(0.6783167839);
+}
+.warp .ring-13 .stripe-11 {
+  transform: rotate(146.2942386463deg) translate3d(0, 78.3603206507px, 0) scaleY(0.7836032065);
+}
+.warp .ring-13 .stripe-12 {
+  transform: rotate(158.9693131653deg) translate3d(0, 87.0350648654px, 0) scaleY(0.8703506487);
+}
+.warp .ring-13 .stripe-13 {
+  transform: rotate(170.0134184588deg) translate3d(0, 75.9848596815px, 0) scaleY(0.7598485968);
+}
+.warp .ring-13 .stripe-14 {
+  transform: rotate(192.336279111deg) translate3d(0, 82.9412761434px, 0) scaleY(0.8294127614);
+}
+.warp .ring-13 .stripe-15 {
+  transform: rotate(203.2203963237deg) translate3d(0, 66.6378209584px, 0) scaleY(0.6663782096);
+}
+.warp .ring-13 .stripe-16 {
+  transform: rotate(217.6838627665deg) translate3d(0, 70.2103851736px, 0) scaleY(0.7021038517);
+}
+.warp .ring-13 .stripe-17 {
+  transform: rotate(232.7996274563deg) translate3d(0, 71.3115458201px, 0) scaleY(0.7131154582);
+}
+.warp .ring-13 .stripe-18 {
+  transform: rotate(250.3551187659deg) translate3d(0, 65.77357525px, 0) scaleY(0.6577357525);
+}
+.warp .ring-13 .stripe-19 {
+  transform: rotate(267.4208021503deg) translate3d(0, 86.7719177704px, 0) scaleY(0.8677191777);
+}
+.warp .ring-13 .stripe-20 {
+  transform: rotate(284.2676546209deg) translate3d(0, 82.295552032px, 0) scaleY(0.8229555203);
+}
+.warp .ring-13 .stripe-21 {
+  transform: rotate(294.8163613195deg) translate3d(0, 98.7338856044px, 0) scaleY(0.987338856);
+}
+.warp .ring-13 .stripe-22 {
+  transform: rotate(313.8069467491deg) translate3d(0, 78.9357131517px, 0) scaleY(0.7893571315);
+}
+.warp .ring-13 .stripe-23 {
+  transform: rotate(328.1794462793deg) translate3d(0, 81.4598076295px, 0) scaleY(0.8145980763);
+}
+.warp .ring-13 .stripe-24 {
+  transform: rotate(336.3980577844deg) translate3d(0, 62.9535157069px, 0) scaleY(0.6295351571);
+}
+.warp .ring-14 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -1.7333333333s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -1.7333333333s infinite;
+}
+.warp .ring-14 .stripe-1 {
+  transform: rotate(-0.4547422688deg) translate3d(0, 99.2132619964px, 0) scaleY(0.99213262);
+}
+.warp .ring-14 .stripe-2 {
+  transform: rotate(6.0589510735deg) translate3d(0, 83.0059218896px, 0) scaleY(0.8300592189);
+}
+.warp .ring-14 .stripe-3 {
+  transform: rotate(26.137135755deg) translate3d(0, 89.9156894017px, 0) scaleY(0.899156894);
+}
+.warp .ring-14 .stripe-4 {
+  transform: rotate(43.9988718905deg) translate3d(0, 76.8732652633px, 0) scaleY(0.7687326526);
+}
+.warp .ring-14 .stripe-5 {
+  transform: rotate(51.5490385061deg) translate3d(0, 81.5007962578px, 0) scaleY(0.8150079626);
+}
+.warp .ring-14 .stripe-6 {
+  transform: rotate(71.6104021061deg) translate3d(0, 70.6916907189px, 0) scaleY(0.7069169072);
+}
+.warp .ring-14 .stripe-7 {
+  transform: rotate(87.6851182587deg) translate3d(0, 83.1846958434px, 0) scaleY(0.8318469584);
+}
+.warp .ring-14 .stripe-8 {
+  transform: rotate(104.7401110375deg) translate3d(0, 92.6731437617px, 0) scaleY(0.9267314376);
+}
+.warp .ring-14 .stripe-9 {
+  transform: rotate(113.7151939709deg) translate3d(0, 63.2477108464px, 0) scaleY(0.6324771085);
+}
+.warp .ring-14 .stripe-10 {
+  transform: rotate(125.2703734206deg) translate3d(0, 65.7266522373px, 0) scaleY(0.6572665224);
+}
+.warp .ring-14 .stripe-11 {
+  transform: rotate(144.5444513456deg) translate3d(0, 91.4790690986px, 0) scaleY(0.914790691);
+}
+.warp .ring-14 .stripe-12 {
+  transform: rotate(160.783266788deg) translate3d(0, 86.2266071761px, 0) scaleY(0.8622660718);
+}
+.warp .ring-14 .stripe-13 {
+  transform: rotate(170.9192266722deg) translate3d(0, 93.7192761135px, 0) scaleY(0.9371927611);
+}
+.warp .ring-14 .stripe-14 {
+  transform: rotate(185.7779825709deg) translate3d(0, 80.3519655775px, 0) scaleY(0.8035196558);
+}
+.warp .ring-14 .stripe-15 {
+  transform: rotate(208.525243988deg) translate3d(0, 70.4470929857px, 0) scaleY(0.7044709299);
+}
+.warp .ring-14 .stripe-16 {
+  transform: rotate(216.1967502539deg) translate3d(0, 99.1745706313px, 0) scaleY(0.9917457063);
+}
+.warp .ring-14 .stripe-17 {
+  transform: rotate(238.661686536deg) translate3d(0, 87.9778535756px, 0) scaleY(0.8797785358);
+}
+.warp .ring-14 .stripe-18 {
+  transform: rotate(250.6378967274deg) translate3d(0, 73.5507639952px, 0) scaleY(0.73550764);
+}
+.warp .ring-14 .stripe-19 {
+  transform: rotate(265.6972939039deg) translate3d(0, 65.7734531138px, 0) scaleY(0.6577345311);
+}
+.warp .ring-14 .stripe-20 {
+  transform: rotate(281.3379465335deg) translate3d(0, 74.6423996335px, 0) scaleY(0.7464239963);
+}
+.warp .ring-14 .stripe-21 {
+  transform: rotate(290.6272223904deg) translate3d(0, 75.9635841337px, 0) scaleY(0.7596358413);
+}
+.warp .ring-14 .stripe-22 {
+  transform: rotate(313.5985047695deg) translate3d(0, 92.6204908756px, 0) scaleY(0.9262049088);
+}
+.warp .ring-14 .stripe-23 {
+  transform: rotate(327.8901621401deg) translate3d(0, 70.4838458891px, 0) scaleY(0.7048384589);
+}
+.warp .ring-14 .stripe-24 {
+  transform: rotate(339.2287839847deg) translate3d(0, 96.7675303985px, 0) scaleY(0.967675304);
+}
+.warp .ring-15 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -1.8666666667s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -1.8666666667s infinite;
+}
+.warp .ring-15 .stripe-1 {
+  transform: rotate(-9.1773189647deg) translate3d(0, 79.4247874338px, 0) scaleY(0.7942478743);
+}
+.warp .ring-15 .stripe-2 {
+  transform: rotate(7.4250137723deg) translate3d(0, 89.0357011092px, 0) scaleY(0.8903570111);
+}
+.warp .ring-15 .stripe-3 {
+  transform: rotate(25.1249651473deg) translate3d(0, 90.4575221197px, 0) scaleY(0.9045752212);
+}
+.warp .ring-15 .stripe-4 {
+  transform: rotate(38.4349358462deg) translate3d(0, 73.1930001871px, 0) scaleY(0.7319300019);
+}
+.warp .ring-15 .stripe-5 {
+  transform: rotate(59.1404318863deg) translate3d(0, 81.1051081664px, 0) scaleY(0.8110510817);
+}
+.warp .ring-15 .stripe-6 {
+  transform: rotate(69.6790107977deg) translate3d(0, 78.2894105041px, 0) scaleY(0.782894105);
+}
+.warp .ring-15 .stripe-7 {
+  transform: rotate(82.9315460286deg) translate3d(0, 84.2458251129px, 0) scaleY(0.8424582511);
+}
+.warp .ring-15 .stripe-8 {
+  transform: rotate(100.5728401585deg) translate3d(0, 68.0106149066px, 0) scaleY(0.6801061491);
+}
+.warp .ring-15 .stripe-9 {
+  transform: rotate(119.4921967973deg) translate3d(0, 65.5232521941px, 0) scaleY(0.6552325219);
+}
+.warp .ring-15 .stripe-10 {
+  transform: rotate(134.2866450402deg) translate3d(0, 77.5436923182px, 0) scaleY(0.7754369232);
+}
+.warp .ring-15 .stripe-11 {
+  transform: rotate(144.2651417138deg) translate3d(0, 98.1190361211px, 0) scaleY(0.9811903612);
+}
+.warp .ring-15 .stripe-12 {
+  transform: rotate(162.2029893179deg) translate3d(0, 63.7321169674px, 0) scaleY(0.6373211697);
+}
+.warp .ring-15 .stripe-13 {
+  transform: rotate(171.4150496859deg) translate3d(0, 70.8208965385px, 0) scaleY(0.7082089654);
+}
+.warp .ring-15 .stripe-14 {
+  transform: rotate(190.3593778204deg) translate3d(0, 87.9382403495px, 0) scaleY(0.8793824035);
+}
+.warp .ring-15 .stripe-15 {
+  transform: rotate(206.0363807679deg) translate3d(0, 67.3657267011px, 0) scaleY(0.673657267);
+}
+.warp .ring-15 .stripe-16 {
+  transform: rotate(217.5841586232deg) translate3d(0, 68.1244863931px, 0) scaleY(0.6812448639);
+}
+.warp .ring-15 .stripe-17 {
+  transform: rotate(237.1144116779deg) translate3d(0, 66.4043900843px, 0) scaleY(0.6640439008);
+}
+.warp .ring-15 .stripe-18 {
+  transform: rotate(253.2338405044deg) translate3d(0, 85.9189737744px, 0) scaleY(0.8591897377);
+}
+.warp .ring-15 .stripe-19 {
+  transform: rotate(261.1781710661deg) translate3d(0, 71.5585006577px, 0) scaleY(0.7155850066);
+}
+.warp .ring-15 .stripe-20 {
+  transform: rotate(275.6966870155deg) translate3d(0, 87.4908942584px, 0) scaleY(0.8749089426);
+}
+.warp .ring-15 .stripe-21 {
+  transform: rotate(293.9417533799deg) translate3d(0, 89.613973717px, 0) scaleY(0.8961397372);
+}
+.warp .ring-15 .stripe-22 {
+  transform: rotate(308.5397610179deg) translate3d(0, 89.6747432355px, 0) scaleY(0.8967474324);
+}
+.warp .ring-15 .stripe-23 {
+  transform: rotate(325.4427105626deg) translate3d(0, 92.3048575416px, 0) scaleY(0.9230485754);
+}
+.warp .ring-15 .stripe-24 {
+  transform: rotate(341.6277808292deg) translate3d(0, 83.1026814203px, 0) scaleY(0.8310268142);
+}
+.warp .ring-16 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -2s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -2s infinite;
+}
+.warp .ring-16 .stripe-1 {
+  transform: rotate(-3.5390092292deg) translate3d(0, 78.9440004655px, 0) scaleY(0.7894400047);
+}
+.warp .ring-16 .stripe-2 {
+  transform: rotate(10.3748165564deg) translate3d(0, 65.1283601775px, 0) scaleY(0.6512836018);
+}
+.warp .ring-16 .stripe-3 {
+  transform: rotate(22.508493892deg) translate3d(0, 99.2345342002px, 0) scaleY(0.992345342);
+}
+.warp .ring-16 .stripe-4 {
+  transform: rotate(40.1271155838deg) translate3d(0, 76.7065379392px, 0) scaleY(0.7670653794);
+}
+.warp .ring-16 .stripe-5 {
+  transform: rotate(54.0716450302deg) translate3d(0, 67.958098909px, 0) scaleY(0.6795809891);
+}
+.warp .ring-16 .stripe-6 {
+  transform: rotate(66.6130243387deg) translate3d(0, 78.9434276121px, 0) scaleY(0.7894342761);
+}
+.warp .ring-16 .stripe-7 {
+  transform: rotate(86.8874661372deg) translate3d(0, 76.9617421269px, 0) scaleY(0.7696174213);
+}
+.warp .ring-16 .stripe-8 {
+  transform: rotate(96.3713809796deg) translate3d(0, 83.5215447184px, 0) scaleY(0.8352154472);
+}
+.warp .ring-16 .stripe-9 {
+  transform: rotate(110.6579255568deg) translate3d(0, 72.911321838px, 0) scaleY(0.7291132184);
+}
+.warp .ring-16 .stripe-10 {
+  transform: rotate(132.6969494704deg) translate3d(0, 92.5058967079px, 0) scaleY(0.9250589671);
+}
+.warp .ring-16 .stripe-11 {
+  transform: rotate(142.0048904402deg) translate3d(0, 62.7856831584px, 0) scaleY(0.6278568316);
+}
+.warp .ring-16 .stripe-12 {
+  transform: rotate(155.377630936deg) translate3d(0, 80.40239531px, 0) scaleY(0.8040239531);
+}
+.warp .ring-16 .stripe-13 {
+  transform: rotate(177.9191309732deg) translate3d(0, 92.7518603394px, 0) scaleY(0.9275186034);
+}
+.warp .ring-16 .stripe-14 {
+  transform: rotate(191.7190903713deg) translate3d(0, 86.320442365px, 0) scaleY(0.8632044237);
+}
+.warp .ring-16 .stripe-15 {
+  transform: rotate(202.477812247deg) translate3d(0, 95.0325495841px, 0) scaleY(0.9503254958);
+}
+.warp .ring-16 .stripe-16 {
+  transform: rotate(222.4359960587deg) translate3d(0, 65.8231102508px, 0) scaleY(0.6582311025);
+}
+.warp .ring-16 .stripe-17 {
+  transform: rotate(232.1376393562deg) translate3d(0, 89.5616040451px, 0) scaleY(0.8956160405);
+}
+.warp .ring-16 .stripe-18 {
+  transform: rotate(246.0258984075deg) translate3d(0, 61.8842215439px, 0) scaleY(0.6188422154);
+}
+.warp .ring-16 .stripe-19 {
+  transform: rotate(268.0659089018deg) translate3d(0, 89.1932035591px, 0) scaleY(0.8919320356);
+}
+.warp .ring-16 .stripe-20 {
+  transform: rotate(278.7112982043deg) translate3d(0, 68.0224139749px, 0) scaleY(0.6802241397);
+}
+.warp .ring-16 .stripe-21 {
+  transform: rotate(290.6585769207deg) translate3d(0, 92.5096673337px, 0) scaleY(0.9250966733);
+}
+.warp .ring-16 .stripe-22 {
+  transform: rotate(306.4920566902deg) translate3d(0, 67.452420398px, 0) scaleY(0.674524204);
+}
+.warp .ring-16 .stripe-23 {
+  transform: rotate(325.3983378623deg) translate3d(0, 63.5167984921px, 0) scaleY(0.6351679849);
+}
+.warp .ring-16 .stripe-24 {
+  transform: rotate(341.4102471459deg) translate3d(0, 60.8141766037px, 0) scaleY(0.608141766);
+}
+.warp .ring-17 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -2.1333333333s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -2.1333333333s infinite;
+}
+.warp .ring-17 .stripe-1 {
+  transform: rotate(-8.3743336803deg) translate3d(0, 85.790739861px, 0) scaleY(0.8579073986);
+}
+.warp .ring-17 .stripe-2 {
+  transform: rotate(5.5235480794deg) translate3d(0, 78.8384790654px, 0) scaleY(0.7883847907);
+}
+.warp .ring-17 .stripe-3 {
+  transform: rotate(21.1810496665deg) translate3d(0, 83.5598089836px, 0) scaleY(0.8355980898);
+}
+.warp .ring-17 .stripe-4 {
+  transform: rotate(37.3595688702deg) translate3d(0, 83.1118224457px, 0) scaleY(0.8311182245);
+}
+.warp .ring-17 .stripe-5 {
+  transform: rotate(52.1426713895deg) translate3d(0, 91.9443708784px, 0) scaleY(0.9194437088);
+}
+.warp .ring-17 .stripe-6 {
+  transform: rotate(72.1096789027deg) translate3d(0, 87.1775545024px, 0) scaleY(0.871775545);
+}
+.warp .ring-17 .stripe-7 {
+  transform: rotate(84.3548894427deg) translate3d(0, 66.5640735632px, 0) scaleY(0.6656407356);
+}
+.warp .ring-17 .stripe-8 {
+  transform: rotate(100.950539043deg) translate3d(0, 73.3322943907px, 0) scaleY(0.7333229439);
+}
+.warp .ring-17 .stripe-9 {
+  transform: rotate(118.702738318deg) translate3d(0, 66.6688781905px, 0) scaleY(0.6666887819);
+}
+.warp .ring-17 .stripe-10 {
+  transform: rotate(130.8574433481deg) translate3d(0, 70.2320787318px, 0) scaleY(0.7023207873);
+}
+.warp .ring-17 .stripe-11 {
+  transform: rotate(146.7198291945deg) translate3d(0, 90.6834807465px, 0) scaleY(0.9068348075);
+}
+.warp .ring-17 .stripe-12 {
+  transform: rotate(164.23488682deg) translate3d(0, 88.8710274411px, 0) scaleY(0.8887102744);
+}
+.warp .ring-17 .stripe-13 {
+  transform: rotate(176.8936486653deg) translate3d(0, 61.554255951px, 0) scaleY(0.6155425595);
+}
+.warp .ring-17 .stripe-14 {
+  transform: rotate(194.8045020585deg) translate3d(0, 98.7838255333px, 0) scaleY(0.9878382553);
+}
+.warp .ring-17 .stripe-15 {
+  transform: rotate(205.5825792552deg) translate3d(0, 66.3060768821px, 0) scaleY(0.6630607688);
+}
+.warp .ring-17 .stripe-16 {
+  transform: rotate(223.3570978082deg) translate3d(0, 74.7795282487px, 0) scaleY(0.7477952825);
+}
+.warp .ring-17 .stripe-17 {
+  transform: rotate(234.9835206428deg) translate3d(0, 64.4302691274px, 0) scaleY(0.6443026913);
+}
+.warp .ring-17 .stripe-18 {
+  transform: rotate(251.6058672874deg) translate3d(0, 69.4673882773px, 0) scaleY(0.6946738828);
+}
+.warp .ring-17 .stripe-19 {
+  transform: rotate(260.1471460443deg) translate3d(0, 82.9093133557px, 0) scaleY(0.8290931336);
+}
+.warp .ring-17 .stripe-20 {
+  transform: rotate(282.123204235deg) translate3d(0, 70.0154166727px, 0) scaleY(0.7001541667);
+}
+.warp .ring-17 .stripe-21 {
+  transform: rotate(299.3224538357deg) translate3d(0, 67.6437611835px, 0) scaleY(0.6764376118);
+}
+.warp .ring-17 .stripe-22 {
+  transform: rotate(314.327908901deg) translate3d(0, 60.516513588px, 0) scaleY(0.6051651359);
+}
+.warp .ring-17 .stripe-23 {
+  transform: rotate(323.196965693deg) translate3d(0, 93.764332334px, 0) scaleY(0.9376433233);
+}
+.warp .ring-17 .stripe-24 {
+  transform: rotate(336.9887094412deg) translate3d(0, 74.4656597159px, 0) scaleY(0.7446565972);
+}
+.warp .ring-18 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -2.2666666667s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -2.2666666667s infinite;
+}
+.warp .ring-18 .stripe-1 {
+  transform: rotate(-2.3453518263deg) translate3d(0, 72.2143094131px, 0) scaleY(0.7221430941);
+}
+.warp .ring-18 .stripe-2 {
+  transform: rotate(9.2750272005deg) translate3d(0, 70.4714768367px, 0) scaleY(0.7047147684);
+}
+.warp .ring-18 .stripe-3 {
+  transform: rotate(26.30320211deg) translate3d(0, 63.5932818922px, 0) scaleY(0.6359328189);
+}
+.warp .ring-18 .stripe-4 {
+  transform: rotate(38.4517483293deg) translate3d(0, 98.9556703901px, 0) scaleY(0.9895567039);
+}
+.warp .ring-18 .stripe-5 {
+  transform: rotate(50.8088534335deg) translate3d(0, 76.3329062917px, 0) scaleY(0.7633290629);
+}
+.warp .ring-18 .stripe-6 {
+  transform: rotate(71.4817284622deg) translate3d(0, 70.3259252514px, 0) scaleY(0.7032592525);
+}
+.warp .ring-18 .stripe-7 {
+  transform: rotate(87.9225074205deg) translate3d(0, 98.033338109px, 0) scaleY(0.9803333811);
+}
+.warp .ring-18 .stripe-8 {
+  transform: rotate(98.5895886149deg) translate3d(0, 76.3179575481px, 0) scaleY(0.7631795755);
+}
+.warp .ring-18 .stripe-9 {
+  transform: rotate(117.6625990663deg) translate3d(0, 97.254713486px, 0) scaleY(0.9725471349);
+}
+.warp .ring-18 .stripe-10 {
+  transform: rotate(129.6743783385deg) translate3d(0, 86.010204174px, 0) scaleY(0.8601020417);
+}
+.warp .ring-18 .stripe-11 {
+  transform: rotate(142.8050621185deg) translate3d(0, 72.8186769731px, 0) scaleY(0.7281867697);
+}
+.warp .ring-18 .stripe-12 {
+  transform: rotate(162.2938156893deg) translate3d(0, 74.6476482125px, 0) scaleY(0.7464764821);
+}
+.warp .ring-18 .stripe-13 {
+  transform: rotate(172.7011865661deg) translate3d(0, 67.9748645147px, 0) scaleY(0.6797486451);
+}
+.warp .ring-18 .stripe-14 {
+  transform: rotate(187.7892383569deg) translate3d(0, 88.2785802361px, 0) scaleY(0.8827858024);
+}
+.warp .ring-18 .stripe-15 {
+  transform: rotate(202.4609686067deg) translate3d(0, 99.0823998647px, 0) scaleY(0.9908239986);
+}
+.warp .ring-18 .stripe-16 {
+  transform: rotate(222.817744222deg) translate3d(0, 95.5805102592px, 0) scaleY(0.9558051026);
+}
+.warp .ring-18 .stripe-17 {
+  transform: rotate(235.4150911448deg) translate3d(0, 63.7793170666px, 0) scaleY(0.6377931707);
+}
+.warp .ring-18 .stripe-18 {
+  transform: rotate(252.2866886349deg) translate3d(0, 65.4974580592px, 0) scaleY(0.6549745806);
+}
+.warp .ring-18 .stripe-19 {
+  transform: rotate(261.8469296179deg) translate3d(0, 72.7886058993px, 0) scaleY(0.727886059);
+}
+.warp .ring-18 .stripe-20 {
+  transform: rotate(278.0528106433deg) translate3d(0, 94.4195773485px, 0) scaleY(0.9441957735);
+}
+.warp .ring-18 .stripe-21 {
+  transform: rotate(297.88019919deg) translate3d(0, 93.3883053682px, 0) scaleY(0.9338830537);
+}
+.warp .ring-18 .stripe-22 {
+  transform: rotate(307.8691221652deg) translate3d(0, 95.1739735488px, 0) scaleY(0.9517397355);
+}
+.warp .ring-18 .stripe-23 {
+  transform: rotate(327.1968911498deg) translate3d(0, 97.2132112997px, 0) scaleY(0.972132113);
+}
+.warp .ring-18 .stripe-24 {
+  transform: rotate(338.0035546753deg) translate3d(0, 97.712050744px, 0) scaleY(0.9771205074);
+}
+.warp .ring-19 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -2.4s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -2.4s infinite;
+}
+.warp .ring-19 .stripe-1 {
+  transform: rotate(-1.7146125273deg) translate3d(0, 93.7332355919px, 0) scaleY(0.9373323559);
+}
+.warp .ring-19 .stripe-2 {
+  transform: rotate(10.4684321869deg) translate3d(0, 76.153641803px, 0) scaleY(0.761536418);
+}
+.warp .ring-19 .stripe-3 {
+  transform: rotate(20.9796337906deg) translate3d(0, 80.9864351997px, 0) scaleY(0.809864352);
+}
+.warp .ring-19 .stripe-4 {
+  transform: rotate(38.3739511571deg) translate3d(0, 77.836999752px, 0) scaleY(0.7783699975);
+}
+.warp .ring-19 .stripe-5 {
+  transform: rotate(50.8019914144deg) translate3d(0, 62.0398676137px, 0) scaleY(0.6203986761);
+}
+.warp .ring-19 .stripe-6 {
+  transform: rotate(66.0100903235deg) translate3d(0, 62.4960701805px, 0) scaleY(0.6249607018);
+}
+.warp .ring-19 .stripe-7 {
+  transform: rotate(87.1330267116deg) translate3d(0, 74.4976265302px, 0) scaleY(0.7449762653);
+}
+.warp .ring-19 .stripe-8 {
+  transform: rotate(98.2474187784deg) translate3d(0, 68.1269963961px, 0) scaleY(0.681269964);
+}
+.warp .ring-19 .stripe-9 {
+  transform: rotate(111.4893407074deg) translate3d(0, 73.7626168935px, 0) scaleY(0.7376261689);
+}
+.warp .ring-19 .stripe-10 {
+  transform: rotate(133.5743098914deg) translate3d(0, 81.3380063209px, 0) scaleY(0.8133800632);
+}
+.warp .ring-19 .stripe-11 {
+  transform: rotate(145.7161832387deg) translate3d(0, 87.6828524507px, 0) scaleY(0.8768285245);
+}
+.warp .ring-19 .stripe-12 {
+  transform: rotate(163.041713853deg) translate3d(0, 70.1889144631px, 0) scaleY(0.7018891446);
+}
+.warp .ring-19 .stripe-13 {
+  transform: rotate(176.2871573947deg) translate3d(0, 99.1494601753px, 0) scaleY(0.9914946018);
+}
+.warp .ring-19 .stripe-14 {
+  transform: rotate(189.0941354331deg) translate3d(0, 85.2596116792px, 0) scaleY(0.8525961168);
+}
+.warp .ring-19 .stripe-15 {
+  transform: rotate(203.3500003674deg) translate3d(0, 60.9519827367px, 0) scaleY(0.6095198274);
+}
+.warp .ring-19 .stripe-16 {
+  transform: rotate(219.5230682827deg) translate3d(0, 73.2931757973px, 0) scaleY(0.732931758);
+}
+.warp .ring-19 .stripe-17 {
+  transform: rotate(230.9332597433deg) translate3d(0, 73.2406807908px, 0) scaleY(0.7324068079);
+}
+.warp .ring-19 .stripe-18 {
+  transform: rotate(249.37485303deg) translate3d(0, 64.2322624745px, 0) scaleY(0.6423226247);
+}
+.warp .ring-19 .stripe-19 {
+  transform: rotate(261.3305224213deg) translate3d(0, 95.8287173396px, 0) scaleY(0.9582871734);
+}
+.warp .ring-19 .stripe-20 {
+  transform: rotate(282.5834282464deg) translate3d(0, 73.2534675549px, 0) scaleY(0.7325346755);
+}
+.warp .ring-19 .stripe-21 {
+  transform: rotate(295.0835752023deg) translate3d(0, 79.3212984506px, 0) scaleY(0.7932129845);
+}
+.warp .ring-19 .stripe-22 {
+  transform: rotate(312.1288260179deg) translate3d(0, 86.9644085284px, 0) scaleY(0.8696440853);
+}
+.warp .ring-19 .stripe-23 {
+  transform: rotate(324.0372067908deg) translate3d(0, 92.6423495336px, 0) scaleY(0.9264234953);
+}
+.warp .ring-19 .stripe-24 {
+  transform: rotate(340.8060172982deg) translate3d(0, 62.975069751px, 0) scaleY(0.6297506975);
+}
+.warp .ring-20 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -2.5333333333s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -2.5333333333s infinite;
+}
+.warp .ring-20 .stripe-1 {
+  transform: rotate(-3.0402524501deg) translate3d(0, 91.4315451265px, 0) scaleY(0.9143154513);
+}
+.warp .ring-20 .stripe-2 {
+  transform: rotate(13.0571448908deg) translate3d(0, 89.3474343437px, 0) scaleY(0.8934743434);
+}
+.warp .ring-20 .stripe-3 {
+  transform: rotate(29.0818192066deg) translate3d(0, 73.2733563539px, 0) scaleY(0.7327335635);
+}
+.warp .ring-20 .stripe-4 {
+  transform: rotate(35.4077998984deg) translate3d(0, 64.8425618919px, 0) scaleY(0.6484256189);
+}
+.warp .ring-20 .stripe-5 {
+  transform: rotate(56.9910930949deg) translate3d(0, 87.6228147551px, 0) scaleY(0.8762281476);
+}
+.warp .ring-20 .stripe-6 {
+  transform: rotate(66.9752927855deg) translate3d(0, 72.6074874303px, 0) scaleY(0.7260748743);
+}
+.warp .ring-20 .stripe-7 {
+  transform: rotate(89.7802743289deg) translate3d(0, 99.9972777828px, 0) scaleY(0.9999727778);
+}
+.warp .ring-20 .stripe-8 {
+  transform: rotate(96.9241309823deg) translate3d(0, 69.7776446422px, 0) scaleY(0.6977764464);
+}
+.warp .ring-20 .stripe-9 {
+  transform: rotate(116.1930199655deg) translate3d(0, 95.0747727193px, 0) scaleY(0.9507477272);
+}
+.warp .ring-20 .stripe-10 {
+  transform: rotate(132.0672553626deg) translate3d(0, 92.3124849028px, 0) scaleY(0.923124849);
+}
+.warp .ring-20 .stripe-11 {
+  transform: rotate(142.3808594442deg) translate3d(0, 63.4293212516px, 0) scaleY(0.6342932125);
+}
+.warp .ring-20 .stripe-12 {
+  transform: rotate(162.112511682deg) translate3d(0, 68.4084049038px, 0) scaleY(0.684084049);
+}
+.warp .ring-20 .stripe-13 {
+  transform: rotate(176.9959469664deg) translate3d(0, 92.7268645714px, 0) scaleY(0.9272686457);
+}
+.warp .ring-20 .stripe-14 {
+  transform: rotate(187.5394270695deg) translate3d(0, 71.3618827164px, 0) scaleY(0.7136188272);
+}
+.warp .ring-20 .stripe-15 {
+  transform: rotate(204.5407408381deg) translate3d(0, 60.0309790674px, 0) scaleY(0.6003097907);
+}
+.warp .ring-20 .stripe-16 {
+  transform: rotate(221.6858146149deg) translate3d(0, 64.228154231px, 0) scaleY(0.6422815423);
+}
+.warp .ring-20 .stripe-17 {
+  transform: rotate(232.1825817737deg) translate3d(0, 63.4819388428px, 0) scaleY(0.6348193884);
+}
+.warp .ring-20 .stripe-18 {
+  transform: rotate(247.8106235925deg) translate3d(0, 89.4344594484px, 0) scaleY(0.8943445945);
+}
+.warp .ring-20 .stripe-19 {
+  transform: rotate(267.4956889804deg) translate3d(0, 64.3407052691px, 0) scaleY(0.6434070527);
+}
+.warp .ring-20 .stripe-20 {
+  transform: rotate(281.5179284984deg) translate3d(0, 78.7086046956px, 0) scaleY(0.787086047);
+}
+.warp .ring-20 .stripe-21 {
+  transform: rotate(296.7181644769deg) translate3d(0, 78.40165864px, 0) scaleY(0.7840165864);
+}
+.warp .ring-20 .stripe-22 {
+  transform: rotate(311.3060147385deg) translate3d(0, 77.0537745526px, 0) scaleY(0.7705377455);
+}
+.warp .ring-20 .stripe-23 {
+  transform: rotate(320.2070641589deg) translate3d(0, 96.5325855112px, 0) scaleY(0.9653258551);
+}
+.warp .ring-20 .stripe-24 {
+  transform: rotate(338.7924677824deg) translate3d(0, 74.5175228946px, 0) scaleY(0.7451752289);
+}
+.warp .ring-21 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -2.6666666667s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -2.6666666667s infinite;
+}
+.warp .ring-21 .stripe-1 {
+  transform: rotate(-3.492286118deg) translate3d(0, 90.7404665333px, 0) scaleY(0.9074046653);
+}
+.warp .ring-21 .stripe-2 {
+  transform: rotate(14.231092392deg) translate3d(0, 99.5395570351px, 0) scaleY(0.9953955704);
+}
+.warp .ring-21 .stripe-3 {
+  transform: rotate(22.6568120298deg) translate3d(0, 76.3295677971px, 0) scaleY(0.763295678);
+}
+.warp .ring-21 .stripe-4 {
+  transform: rotate(37.7204014502deg) translate3d(0, 67.4797186323px, 0) scaleY(0.6747971863);
+}
+.warp .ring-21 .stripe-5 {
+  transform: rotate(50.5820495609deg) translate3d(0, 99.0394346587px, 0) scaleY(0.9903943466);
+}
+.warp .ring-21 .stripe-6 {
+  transform: rotate(74.5715538898deg) translate3d(0, 90.6989216827px, 0) scaleY(0.9069892168);
+}
+.warp .ring-21 .stripe-7 {
+  transform: rotate(85.8769367336deg) translate3d(0, 93.0333719096px, 0) scaleY(0.9303337191);
+}
+.warp .ring-21 .stripe-8 {
+  transform: rotate(97.7471416212deg) translate3d(0, 82.9191149837px, 0) scaleY(0.8291911498);
+}
+.warp .ring-21 .stripe-9 {
+  transform: rotate(119.1782624588deg) translate3d(0, 68.686731863px, 0) scaleY(0.6868673186);
+}
+.warp .ring-21 .stripe-10 {
+  transform: rotate(127.6585509778deg) translate3d(0, 81.7537159857px, 0) scaleY(0.8175371599);
+}
+.warp .ring-21 .stripe-11 {
+  transform: rotate(141.1522983274deg) translate3d(0, 69.2225169311px, 0) scaleY(0.6922251693);
+}
+.warp .ring-21 .stripe-12 {
+  transform: rotate(163.9881831889deg) translate3d(0, 91.543957794px, 0) scaleY(0.9154395779);
+}
+.warp .ring-21 .stripe-13 {
+  transform: rotate(176.4541860078deg) translate3d(0, 87.5582474722px, 0) scaleY(0.8755824747);
+}
+.warp .ring-21 .stripe-14 {
+  transform: rotate(186.0877438592deg) translate3d(0, 83.8456966515px, 0) scaleY(0.8384569665);
+}
+.warp .ring-21 .stripe-15 {
+  transform: rotate(200.1099626606deg) translate3d(0, 81.0268454445px, 0) scaleY(0.8102684544);
+}
+.warp .ring-21 .stripe-16 {
+  transform: rotate(224.0529712905deg) translate3d(0, 91.617918966px, 0) scaleY(0.9161791897);
+}
+.warp .ring-21 .stripe-17 {
+  transform: rotate(234.6651330159deg) translate3d(0, 86.0525084887px, 0) scaleY(0.8605250849);
+}
+.warp .ring-21 .stripe-18 {
+  transform: rotate(247.2422417169deg) translate3d(0, 63.0314243523px, 0) scaleY(0.6303142435);
+}
+.warp .ring-21 .stripe-19 {
+  transform: rotate(266.2337198987deg) translate3d(0, 93.9482458688px, 0) scaleY(0.9394824587);
+}
+.warp .ring-21 .stripe-20 {
+  transform: rotate(284.3471531934deg) translate3d(0, 70.3032705124px, 0) scaleY(0.7030327051);
+}
+.warp .ring-21 .stripe-21 {
+  transform: rotate(294.3283804036deg) translate3d(0, 94.9096763203px, 0) scaleY(0.9490967632);
+}
+.warp .ring-21 .stripe-22 {
+  transform: rotate(311.2589908347deg) translate3d(0, 86.8740641614px, 0) scaleY(0.8687406416);
+}
+.warp .ring-21 .stripe-23 {
+  transform: rotate(328.9511733426deg) translate3d(0, 62.4675802573px, 0) scaleY(0.6246758026);
+}
+.warp .ring-21 .stripe-24 {
+  transform: rotate(340.1060972213deg) translate3d(0, 68.3376345584px, 0) scaleY(0.6833763456);
+}
+.warp .ring-22 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -2.8s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -2.8s infinite;
+}
+.warp .ring-22 .stripe-1 {
+  transform: rotate(-8.9600296054deg) translate3d(0, 84.0391450654px, 0) scaleY(0.8403914507);
+}
+.warp .ring-22 .stripe-2 {
+  transform: rotate(11.2820251773deg) translate3d(0, 86.1499352303px, 0) scaleY(0.8614993523);
+}
+.warp .ring-22 .stripe-3 {
+  transform: rotate(29.7567207263deg) translate3d(0, 66.3596184444px, 0) scaleY(0.6635961844);
+}
+.warp .ring-22 .stripe-4 {
+  transform: rotate(39.1844623875deg) translate3d(0, 84.1451404267px, 0) scaleY(0.8414514043);
+}
+.warp .ring-22 .stripe-5 {
+  transform: rotate(56.1829223739deg) translate3d(0, 81.5612889004px, 0) scaleY(0.815612889);
+}
+.warp .ring-22 .stripe-6 {
+  transform: rotate(69.7225938483deg) translate3d(0, 74.8894328042px, 0) scaleY(0.748894328);
+}
+.warp .ring-22 .stripe-7 {
+  transform: rotate(85.3217566872deg) translate3d(0, 85.6694355735px, 0) scaleY(0.8566943557);
+}
+.warp .ring-22 .stripe-8 {
+  transform: rotate(99.9904903993deg) translate3d(0, 72.1468195895px, 0) scaleY(0.7214681959);
+}
+.warp .ring-22 .stripe-9 {
+  transform: rotate(114.910802152deg) translate3d(0, 88.2773780187px, 0) scaleY(0.8827737802);
+}
+.warp .ring-22 .stripe-10 {
+  transform: rotate(133.1442653196deg) translate3d(0, 84.2191937322px, 0) scaleY(0.8421919373);
+}
+.warp .ring-22 .stripe-11 {
+  transform: rotate(145.6904286755deg) translate3d(0, 70.0134453067px, 0) scaleY(0.7001344531);
+}
+.warp .ring-22 .stripe-12 {
+  transform: rotate(162.9564646214deg) translate3d(0, 67.5988491056px, 0) scaleY(0.6759884911);
+}
+.warp .ring-22 .stripe-13 {
+  transform: rotate(179.5765385643deg) translate3d(0, 77.1773402451px, 0) scaleY(0.7717734025);
+}
+.warp .ring-22 .stripe-14 {
+  transform: rotate(187.4656713108deg) translate3d(0, 91.7266788618px, 0) scaleY(0.9172667886);
+}
+.warp .ring-22 .stripe-15 {
+  transform: rotate(208.1083826215deg) translate3d(0, 78.6910885293px, 0) scaleY(0.7869108853);
+}
+.warp .ring-22 .stripe-16 {
+  transform: rotate(221.8121397522deg) translate3d(0, 61.9653729622px, 0) scaleY(0.6196537296);
+}
+.warp .ring-22 .stripe-17 {
+  transform: rotate(235.7262701454deg) translate3d(0, 73.2900707449px, 0) scaleY(0.7329007074);
+}
+.warp .ring-22 .stripe-18 {
+  transform: rotate(250.5466482409deg) translate3d(0, 87.2838947663px, 0) scaleY(0.8728389477);
+}
+.warp .ring-22 .stripe-19 {
+  transform: rotate(266.0351403902deg) translate3d(0, 91.8240070777px, 0) scaleY(0.9182400708);
+}
+.warp .ring-22 .stripe-20 {
+  transform: rotate(280.9255950492deg) translate3d(0, 65.7822096346px, 0) scaleY(0.6578220963);
+}
+.warp .ring-22 .stripe-21 {
+  transform: rotate(293.0645066047deg) translate3d(0, 94.7161661637px, 0) scaleY(0.9471616616);
+}
+.warp .ring-22 .stripe-22 {
+  transform: rotate(313.3435083822deg) translate3d(0, 84.1165227435px, 0) scaleY(0.8411652274);
+}
+.warp .ring-22 .stripe-23 {
+  transform: rotate(328.4038241221deg) translate3d(0, 98.8616247116px, 0) scaleY(0.9886162471);
+}
+.warp .ring-22 .stripe-24 {
+  transform: rotate(340.198023099deg) translate3d(0, 73.5546786862px, 0) scaleY(0.7355467869);
+}
+.warp .ring-23 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -2.9333333333s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -2.9333333333s infinite;
+}
+.warp .ring-23 .stripe-1 {
+  transform: rotate(-9.7466979456deg) translate3d(0, 70.4771568511px, 0) scaleY(0.7047715685);
+}
+.warp .ring-23 .stripe-2 {
+  transform: rotate(6.5078539832deg) translate3d(0, 70.9588302237px, 0) scaleY(0.7095883022);
+}
+.warp .ring-23 .stripe-3 {
+  transform: rotate(25.6364849656deg) translate3d(0, 88.1999855382px, 0) scaleY(0.8819998554);
+}
+.warp .ring-23 .stripe-4 {
+  transform: rotate(39.8477578236deg) translate3d(0, 97.7217596848px, 0) scaleY(0.9772175968);
+}
+.warp .ring-23 .stripe-5 {
+  transform: rotate(59.5720997319deg) translate3d(0, 60.6092701959px, 0) scaleY(0.606092702);
+}
+.warp .ring-23 .stripe-6 {
+  transform: rotate(65.4875932315deg) translate3d(0, 70.7345922212px, 0) scaleY(0.7073459222);
+}
+.warp .ring-23 .stripe-7 {
+  transform: rotate(87.6061541443deg) translate3d(0, 97.6713731278px, 0) scaleY(0.9767137313);
+}
+.warp .ring-23 .stripe-8 {
+  transform: rotate(102.5418686049deg) translate3d(0, 67.0460325645px, 0) scaleY(0.6704603256);
+}
+.warp .ring-23 .stripe-9 {
+  transform: rotate(118.0416820726deg) translate3d(0, 84.5710718316px, 0) scaleY(0.8457107183);
+}
+.warp .ring-23 .stripe-10 {
+  transform: rotate(126.3465073079deg) translate3d(0, 68.3854114385px, 0) scaleY(0.6838541144);
+}
+.warp .ring-23 .stripe-11 {
+  transform: rotate(141.3897064288deg) translate3d(0, 80.4034999594px, 0) scaleY(0.8040349996);
+}
+.warp .ring-23 .stripe-12 {
+  transform: rotate(159.2924039365deg) translate3d(0, 69.0070313565px, 0) scaleY(0.6900703136);
+}
+.warp .ring-23 .stripe-13 {
+  transform: rotate(174.451776637deg) translate3d(0, 73.1165105578px, 0) scaleY(0.7311651056);
+}
+.warp .ring-23 .stripe-14 {
+  transform: rotate(189.846078969deg) translate3d(0, 71.9259364951px, 0) scaleY(0.719259365);
+}
+.warp .ring-23 .stripe-15 {
+  transform: rotate(207.117348759deg) translate3d(0, 88.5387760251px, 0) scaleY(0.8853877603);
+}
+.warp .ring-23 .stripe-16 {
+  transform: rotate(223.4326240615deg) translate3d(0, 96.0696987154px, 0) scaleY(0.9606969872);
+}
+.warp .ring-23 .stripe-17 {
+  transform: rotate(233.1481105844deg) translate3d(0, 66.6769106675px, 0) scaleY(0.6667691067);
+}
+.warp .ring-23 .stripe-18 {
+  transform: rotate(248.968813449deg) translate3d(0, 96.8095469094px, 0) scaleY(0.9680954691);
+}
+.warp .ring-23 .stripe-19 {
+  transform: rotate(269.5228894538deg) translate3d(0, 97.1252981026px, 0) scaleY(0.971252981);
+}
+.warp .ring-23 .stripe-20 {
+  transform: rotate(276.2411674454deg) translate3d(0, 79.3044006466px, 0) scaleY(0.7930440065);
+}
+.warp .ring-23 .stripe-21 {
+  transform: rotate(291.3649597093deg) translate3d(0, 96.7582666606px, 0) scaleY(0.9675826666);
+}
+.warp .ring-23 .stripe-22 {
+  transform: rotate(309.873383396deg) translate3d(0, 62.4025392875px, 0) scaleY(0.6240253929);
+}
+.warp .ring-23 .stripe-23 {
+  transform: rotate(320.5984317465deg) translate3d(0, 82.6073297709px, 0) scaleY(0.8260732977);
+}
+.warp .ring-23 .stripe-24 {
+  transform: rotate(336.0138419123deg) translate3d(0, 60.8914420865px, 0) scaleY(0.6089144209);
+}
+.warp .ring-24 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -3.0666666667s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -3.0666666667s infinite;
+}
+.warp .ring-24 .stripe-1 {
+  transform: rotate(-0.146487267deg) translate3d(0, 81.6395398735px, 0) scaleY(0.8163953987);
+}
+.warp .ring-24 .stripe-2 {
+  transform: rotate(6.640278911deg) translate3d(0, 81.2552570117px, 0) scaleY(0.8125525701);
+}
+.warp .ring-24 .stripe-3 {
+  transform: rotate(27.9485603248deg) translate3d(0, 72.6970764285px, 0) scaleY(0.7269707643);
+}
+.warp .ring-24 .stripe-4 {
+  transform: rotate(41.9050459297deg) translate3d(0, 92.0083322048px, 0) scaleY(0.920083322);
+}
+.warp .ring-24 .stripe-5 {
+  transform: rotate(51.90255127deg) translate3d(0, 70.7756627831px, 0) scaleY(0.7077566278);
+}
+.warp .ring-24 .stripe-6 {
+  transform: rotate(65.2667078767deg) translate3d(0, 74.1915987788px, 0) scaleY(0.7419159878);
+}
+.warp .ring-24 .stripe-7 {
+  transform: rotate(84.3690711387deg) translate3d(0, 80.0343590213px, 0) scaleY(0.8003435902);
+}
+.warp .ring-24 .stripe-8 {
+  transform: rotate(98.3537547353deg) translate3d(0, 95.0800441514px, 0) scaleY(0.9508004415);
+}
+.warp .ring-24 .stripe-9 {
+  transform: rotate(119.6452177585deg) translate3d(0, 77.8749204703px, 0) scaleY(0.7787492047);
+}
+.warp .ring-24 .stripe-10 {
+  transform: rotate(132.1752439056deg) translate3d(0, 73.196443176px, 0) scaleY(0.7319644318);
+}
+.warp .ring-24 .stripe-11 {
+  transform: rotate(140.4604375459deg) translate3d(0, 74.524130731px, 0) scaleY(0.7452413073);
+}
+.warp .ring-24 .stripe-12 {
+  transform: rotate(155.6548720833deg) translate3d(0, 89.3054089992px, 0) scaleY(0.89305409);
+}
+.warp .ring-24 .stripe-13 {
+  transform: rotate(179.6483471012deg) translate3d(0, 78.1548397172px, 0) scaleY(0.7815483972);
+}
+.warp .ring-24 .stripe-14 {
+  transform: rotate(190.5360946819deg) translate3d(0, 80.1216576133px, 0) scaleY(0.8012165761);
+}
+.warp .ring-24 .stripe-15 {
+  transform: rotate(207.4740626621deg) translate3d(0, 91.5504667472px, 0) scaleY(0.9155046675);
+}
+.warp .ring-24 .stripe-16 {
+  transform: rotate(221.0770295875deg) translate3d(0, 94.924242251px, 0) scaleY(0.9492424225);
+}
+.warp .ring-24 .stripe-17 {
+  transform: rotate(231.9580925857deg) translate3d(0, 65.1226789751px, 0) scaleY(0.6512267898);
+}
+.warp .ring-24 .stripe-18 {
+  transform: rotate(251.8213886389deg) translate3d(0, 65.0555465581px, 0) scaleY(0.6505554656);
+}
+.warp .ring-24 .stripe-19 {
+  transform: rotate(268.0937945012deg) translate3d(0, 77.7288415077px, 0) scaleY(0.7772884151);
+}
+.warp .ring-24 .stripe-20 {
+  transform: rotate(284.6254321937deg) translate3d(0, 76.3354192071px, 0) scaleY(0.7633541921);
+}
+.warp .ring-24 .stripe-21 {
+  transform: rotate(291.8324593417deg) translate3d(0, 62.3094991071px, 0) scaleY(0.6230949911);
+}
+.warp .ring-24 .stripe-22 {
+  transform: rotate(306.2791221508deg) translate3d(0, 66.0421547946px, 0) scaleY(0.6604215479);
+}
+.warp .ring-24 .stripe-23 {
+  transform: rotate(324.6607864966deg) translate3d(0, 60.9262004423px, 0) scaleY(0.6092620044);
+}
+.warp .ring-24 .stripe-24 {
+  transform: rotate(337.8349954163deg) translate3d(0, 77.3099517839px, 0) scaleY(0.7730995178);
+}
+.warp .ring-25 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -3.2s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -3.2s infinite;
+}
+.warp .ring-25 .stripe-1 {
+  transform: rotate(-2.8909582778deg) translate3d(0, 98.4305275981px, 0) scaleY(0.984305276);
+}
+.warp .ring-25 .stripe-2 {
+  transform: rotate(7.2533657794deg) translate3d(0, 77.2985842638px, 0) scaleY(0.7729858426);
+}
+.warp .ring-25 .stripe-3 {
+  transform: rotate(27.5340351217deg) translate3d(0, 94.2379575127px, 0) scaleY(0.9423795751);
+}
+.warp .ring-25 .stripe-4 {
+  transform: rotate(41.168637993deg) translate3d(0, 89.5149902464px, 0) scaleY(0.8951499025);
+}
+.warp .ring-25 .stripe-5 {
+  transform: rotate(53.7846179437deg) translate3d(0, 94.0716549143px, 0) scaleY(0.9407165491);
+}
+.warp .ring-25 .stripe-6 {
+  transform: rotate(70.3245134164deg) translate3d(0, 61.5554504864px, 0) scaleY(0.6155545049);
+}
+.warp .ring-25 .stripe-7 {
+  transform: rotate(87.8206848435deg) translate3d(0, 91.0861379499px, 0) scaleY(0.9108613795);
+}
+.warp .ring-25 .stripe-8 {
+  transform: rotate(97.622429287deg) translate3d(0, 64.9103832496px, 0) scaleY(0.6491038325);
+}
+.warp .ring-25 .stripe-9 {
+  transform: rotate(111.9175479747deg) translate3d(0, 68.8596131109px, 0) scaleY(0.6885961311);
+}
+.warp .ring-25 .stripe-10 {
+  transform: rotate(134.6820898088deg) translate3d(0, 85.332459472px, 0) scaleY(0.8533245947);
+}
+.warp .ring-25 .stripe-11 {
+  transform: rotate(145.8528613346deg) translate3d(0, 87.0149635949px, 0) scaleY(0.8701496359);
+}
+.warp .ring-25 .stripe-12 {
+  transform: rotate(162.9112743622deg) translate3d(0, 81.8735135031px, 0) scaleY(0.818735135);
+}
+.warp .ring-25 .stripe-13 {
+  transform: rotate(176.5455691203deg) translate3d(0, 95.9348111715px, 0) scaleY(0.9593481117);
+}
+.warp .ring-25 .stripe-14 {
+  transform: rotate(190.5791816663deg) translate3d(0, 92.7038527297px, 0) scaleY(0.9270385273);
+}
+.warp .ring-25 .stripe-15 {
+  transform: rotate(208.4382449798deg) translate3d(0, 79.4566737111px, 0) scaleY(0.7945667371);
+}
+.warp .ring-25 .stripe-16 {
+  transform: rotate(224.4493186506deg) translate3d(0, 95.2856934632px, 0) scaleY(0.9528569346);
+}
+.warp .ring-25 .stripe-17 {
+  transform: rotate(237.2212978947deg) translate3d(0, 74.6632262815px, 0) scaleY(0.7466322628);
+}
+.warp .ring-25 .stripe-18 {
+  transform: rotate(245.1982341294deg) translate3d(0, 63.4583519943px, 0) scaleY(0.6345835199);
+}
+.warp .ring-25 .stripe-19 {
+  transform: rotate(265.201646569deg) translate3d(0, 65.3828364463px, 0) scaleY(0.6538283645);
+}
+.warp .ring-25 .stripe-20 {
+  transform: rotate(276.1803412362deg) translate3d(0, 95.4430128788px, 0) scaleY(0.9544301288);
+}
+.warp .ring-25 .stripe-21 {
+  transform: rotate(291.4026038933deg) translate3d(0, 73.7946028853px, 0) scaleY(0.7379460289);
+}
+.warp .ring-25 .stripe-22 {
+  transform: rotate(306.9061635485deg) translate3d(0, 75.545591899px, 0) scaleY(0.755455919);
+}
+.warp .ring-25 .stripe-23 {
+  transform: rotate(321.5822756035deg) translate3d(0, 76.6444526702px, 0) scaleY(0.7664445267);
+}
+.warp .ring-25 .stripe-24 {
+  transform: rotate(336.0524877616deg) translate3d(0, 63.9574427947px, 0) scaleY(0.6395744279);
+}
+.warp .ring-26 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -3.3333333333s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -3.3333333333s infinite;
+}
+.warp .ring-26 .stripe-1 {
+  transform: rotate(-0.9651488334deg) translate3d(0, 99.27740571px, 0) scaleY(0.9927740571);
+}
+.warp .ring-26 .stripe-2 {
+  transform: rotate(14.0009421802deg) translate3d(0, 84.8316763768px, 0) scaleY(0.8483167638);
+}
+.warp .ring-26 .stripe-3 {
+  transform: rotate(22.928595504deg) translate3d(0, 72.5113956886px, 0) scaleY(0.7251139569);
+}
+.warp .ring-26 .stripe-4 {
+  transform: rotate(44.3887670885deg) translate3d(0, 94.8726700284px, 0) scaleY(0.9487267003);
+}
+.warp .ring-26 .stripe-5 {
+  transform: rotate(59.263059089deg) translate3d(0, 79.6595909207px, 0) scaleY(0.7965959092);
+}
+.warp .ring-26 .stripe-6 {
+  transform: rotate(73.6536842543deg) translate3d(0, 68.7259335888px, 0) scaleY(0.6872593359);
+}
+.warp .ring-26 .stripe-7 {
+  transform: rotate(80.1003616715deg) translate3d(0, 69.9593198004px, 0) scaleY(0.699593198);
+}
+.warp .ring-26 .stripe-8 {
+  transform: rotate(96.1467993056deg) translate3d(0, 74.2799598782px, 0) scaleY(0.7427995988);
+}
+.warp .ring-26 .stripe-9 {
+  transform: rotate(117.3896372046deg) translate3d(0, 64.6644694506px, 0) scaleY(0.6466446945);
+}
+.warp .ring-26 .stripe-10 {
+  transform: rotate(134.4870767943deg) translate3d(0, 87.4988627516px, 0) scaleY(0.8749886275);
+}
+.warp .ring-26 .stripe-11 {
+  transform: rotate(147.1349003998deg) translate3d(0, 96.6702261204px, 0) scaleY(0.9667022612);
+}
+.warp .ring-26 .stripe-12 {
+  transform: rotate(161.8708867928deg) translate3d(0, 71.8454878987px, 0) scaleY(0.718454879);
+}
+.warp .ring-26 .stripe-13 {
+  transform: rotate(176.3671004026deg) translate3d(0, 82.8310799268px, 0) scaleY(0.8283107993);
+}
+.warp .ring-26 .stripe-14 {
+  transform: rotate(188.3339265115deg) translate3d(0, 79.4222423569px, 0) scaleY(0.7942224236);
+}
+.warp .ring-26 .stripe-15 {
+  transform: rotate(205.0404907463deg) translate3d(0, 71.0139723902px, 0) scaleY(0.7101397239);
+}
+.warp .ring-26 .stripe-16 {
+  transform: rotate(221.948133449deg) translate3d(0, 68.9407253478px, 0) scaleY(0.6894072535);
+}
+.warp .ring-26 .stripe-17 {
+  transform: rotate(238.878689245deg) translate3d(0, 77.3708574944px, 0) scaleY(0.7737085749);
+}
+.warp .ring-26 .stripe-18 {
+  transform: rotate(246.0670055418deg) translate3d(0, 60.3495681613px, 0) scaleY(0.6034956816);
+}
+.warp .ring-26 .stripe-19 {
+  transform: rotate(268.7693582231deg) translate3d(0, 68.9860493874px, 0) scaleY(0.6898604939);
+}
+.warp .ring-26 .stripe-20 {
+  transform: rotate(282.2525346001deg) translate3d(0, 76.1296191099px, 0) scaleY(0.7612961911);
+}
+.warp .ring-26 .stripe-21 {
+  transform: rotate(290.0749837677deg) translate3d(0, 81.7732085018px, 0) scaleY(0.817732085);
+}
+.warp .ring-26 .stripe-22 {
+  transform: rotate(305.4569575638deg) translate3d(0, 99.430128182px, 0) scaleY(0.9943012818);
+}
+.warp .ring-26 .stripe-23 {
+  transform: rotate(326.3049555469deg) translate3d(0, 79.5249577742px, 0) scaleY(0.7952495777);
+}
+.warp .ring-26 .stripe-24 {
+  transform: rotate(336.278364016deg) translate3d(0, 88.5999876983px, 0) scaleY(0.885999877);
+}
+.warp .ring-27 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -3.4666666667s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -3.4666666667s infinite;
+}
+.warp .ring-27 .stripe-1 {
+  transform: rotate(-2.3346867447deg) translate3d(0, 94.044188489px, 0) scaleY(0.9404418849);
+}
+.warp .ring-27 .stripe-2 {
+  transform: rotate(5.7860286653deg) translate3d(0, 76.3830379087px, 0) scaleY(0.7638303791);
+}
+.warp .ring-27 .stripe-3 {
+  transform: rotate(22.9985087537deg) translate3d(0, 85.3780103842px, 0) scaleY(0.8537801038);
+}
+.warp .ring-27 .stripe-4 {
+  transform: rotate(35.5639484319deg) translate3d(0, 64.3286717331px, 0) scaleY(0.6432867173);
+}
+.warp .ring-27 .stripe-5 {
+  transform: rotate(56.5743607576deg) translate3d(0, 91.5298635553px, 0) scaleY(0.9152986356);
+}
+.warp .ring-27 .stripe-6 {
+  transform: rotate(67.9281806605deg) translate3d(0, 89.1375376094px, 0) scaleY(0.8913753761);
+}
+.warp .ring-27 .stripe-7 {
+  transform: rotate(82.0136544455deg) translate3d(0, 71.4867250967px, 0) scaleY(0.714867251);
+}
+.warp .ring-27 .stripe-8 {
+  transform: rotate(98.7996195753deg) translate3d(0, 96.3937747518px, 0) scaleY(0.9639377475);
+}
+.warp .ring-27 .stripe-9 {
+  transform: rotate(114.0726796565deg) translate3d(0, 72.8825447075px, 0) scaleY(0.7288254471);
+}
+.warp .ring-27 .stripe-10 {
+  transform: rotate(125.1003713389deg) translate3d(0, 92.4416905496px, 0) scaleY(0.9244169055);
+}
+.warp .ring-27 .stripe-11 {
+  transform: rotate(146.9883312181deg) translate3d(0, 64.5227206886px, 0) scaleY(0.6452272069);
+}
+.warp .ring-27 .stripe-12 {
+  transform: rotate(161.6771912092deg) translate3d(0, 80.2611894338px, 0) scaleY(0.8026118943);
+}
+.warp .ring-27 .stripe-13 {
+  transform: rotate(173.6833105992deg) translate3d(0, 96.8121773656px, 0) scaleY(0.9681217737);
+}
+.warp .ring-27 .stripe-14 {
+  transform: rotate(193.6719036767deg) translate3d(0, 96.8731407179px, 0) scaleY(0.9687314072);
+}
+.warp .ring-27 .stripe-15 {
+  transform: rotate(204.2046136861deg) translate3d(0, 83.0009473827px, 0) scaleY(0.8300094738);
+}
+.warp .ring-27 .stripe-16 {
+  transform: rotate(216.8267142904deg) translate3d(0, 99.941524922px, 0) scaleY(0.9994152492);
+}
+.warp .ring-27 .stripe-17 {
+  transform: rotate(234.3324101183deg) translate3d(0, 80.2208927458px, 0) scaleY(0.8022089275);
+}
+.warp .ring-27 .stripe-18 {
+  transform: rotate(246.5180206401deg) translate3d(0, 64.5244135927px, 0) scaleY(0.6452441359);
+}
+.warp .ring-27 .stripe-19 {
+  transform: rotate(260.3211656164deg) translate3d(0, 71.7103085445px, 0) scaleY(0.7171030854);
+}
+.warp .ring-27 .stripe-20 {
+  transform: rotate(275.1506804767deg) translate3d(0, 98.3932293769px, 0) scaleY(0.9839322938);
+}
+.warp .ring-27 .stripe-21 {
+  transform: rotate(293.1820417543deg) translate3d(0, 76.7541125508px, 0) scaleY(0.7675411255);
+}
+.warp .ring-27 .stripe-22 {
+  transform: rotate(308.1473597493deg) translate3d(0, 88.198501295px, 0) scaleY(0.881985013);
+}
+.warp .ring-27 .stripe-23 {
+  transform: rotate(329.2941035734deg) translate3d(0, 70.5467533521px, 0) scaleY(0.7054675335);
+}
+.warp .ring-27 .stripe-24 {
+  transform: rotate(340.0950285818deg) translate3d(0, 90.9025117463px, 0) scaleY(0.9090251175);
+}
+.warp .ring-28 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -3.6s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -3.6s infinite;
+}
+.warp .ring-28 .stripe-1 {
+  transform: rotate(-0.1257122005deg) translate3d(0, 78.2049686166px, 0) scaleY(0.7820496862);
+}
+.warp .ring-28 .stripe-2 {
+  transform: rotate(10.0589046186deg) translate3d(0, 75.7955412155px, 0) scaleY(0.7579554122);
+}
+.warp .ring-28 .stripe-3 {
+  transform: rotate(27.834788005deg) translate3d(0, 85.9863187994px, 0) scaleY(0.859863188);
+}
+.warp .ring-28 .stripe-4 {
+  transform: rotate(40.8659017767deg) translate3d(0, 70.8657152124px, 0) scaleY(0.7086571521);
+}
+.warp .ring-28 .stripe-5 {
+  transform: rotate(52.3868065947deg) translate3d(0, 67.2783561095px, 0) scaleY(0.6727835611);
+}
+.warp .ring-28 .stripe-6 {
+  transform: rotate(69.9864481875deg) translate3d(0, 90.8659026434px, 0) scaleY(0.9086590264);
+}
+.warp .ring-28 .stripe-7 {
+  transform: rotate(80.7586631571deg) translate3d(0, 94.1054611722px, 0) scaleY(0.9410546117);
+}
+.warp .ring-28 .stripe-8 {
+  transform: rotate(96.006273296deg) translate3d(0, 67.8893182136px, 0) scaleY(0.6788931821);
+}
+.warp .ring-28 .stripe-9 {
+  transform: rotate(113.6282123414deg) translate3d(0, 72.6471343165px, 0) scaleY(0.7264713432);
+}
+.warp .ring-28 .stripe-10 {
+  transform: rotate(129.4391461264deg) translate3d(0, 91.6634807001px, 0) scaleY(0.916634807);
+}
+.warp .ring-28 .stripe-11 {
+  transform: rotate(146.3008099173deg) translate3d(0, 68.2428147302px, 0) scaleY(0.6824281473);
+}
+.warp .ring-28 .stripe-12 {
+  transform: rotate(155.6267813609deg) translate3d(0, 73.3305814903px, 0) scaleY(0.7333058149);
+}
+.warp .ring-28 .stripe-13 {
+  transform: rotate(175.8812346659deg) translate3d(0, 81.8685246646px, 0) scaleY(0.8186852466);
+}
+.warp .ring-28 .stripe-14 {
+  transform: rotate(186.8040088488deg) translate3d(0, 62.9929057809px, 0) scaleY(0.6299290578);
+}
+.warp .ring-28 .stripe-15 {
+  transform: rotate(201.0081591654deg) translate3d(0, 82.7335861028px, 0) scaleY(0.827335861);
+}
+.warp .ring-28 .stripe-16 {
+  transform: rotate(223.7577754876deg) translate3d(0, 81.9067412324px, 0) scaleY(0.8190674123);
+}
+.warp .ring-28 .stripe-17 {
+  transform: rotate(236.0316787102deg) translate3d(0, 77.280858194px, 0) scaleY(0.7728085819);
+}
+.warp .ring-28 .stripe-18 {
+  transform: rotate(246.4260084856deg) translate3d(0, 66.8270548658px, 0) scaleY(0.6682705487);
+}
+.warp .ring-28 .stripe-19 {
+  transform: rotate(261.1070446232deg) translate3d(0, 93.3571953262px, 0) scaleY(0.9335719533);
+}
+.warp .ring-28 .stripe-20 {
+  transform: rotate(276.1569160911deg) translate3d(0, 88.5969302133px, 0) scaleY(0.8859693021);
+}
+.warp .ring-28 .stripe-21 {
+  transform: rotate(290.5759274751deg) translate3d(0, 67.2789114811px, 0) scaleY(0.6727891148);
+}
+.warp .ring-28 .stripe-22 {
+  transform: rotate(305.9003111592deg) translate3d(0, 76.6323971033px, 0) scaleY(0.766323971);
+}
+.warp .ring-28 .stripe-23 {
+  transform: rotate(326.6326616379deg) translate3d(0, 89.7559890187px, 0) scaleY(0.8975598902);
+}
+.warp .ring-28 .stripe-24 {
+  transform: rotate(341.5960438396deg) translate3d(0, 97.3749559305px, 0) scaleY(0.9737495593);
+}
+.warp .ring-29 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -3.7333333333s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -3.7333333333s infinite;
+}
+.warp .ring-29 .stripe-1 {
+  transform: rotate(-5.2483971872deg) translate3d(0, 89.0691998079px, 0) scaleY(0.8906919981);
+}
+.warp .ring-29 .stripe-2 {
+  transform: rotate(5.0658143872deg) translate3d(0, 71.5973509396px, 0) scaleY(0.7159735094);
+}
+.warp .ring-29 .stripe-3 {
+  transform: rotate(26.0818736349deg) translate3d(0, 99.6456565396px, 0) scaleY(0.9964565654);
+}
+.warp .ring-29 .stripe-4 {
+  transform: rotate(38.1719067318deg) translate3d(0, 86.8972169477px, 0) scaleY(0.8689721695);
+}
+.warp .ring-29 .stripe-5 {
+  transform: rotate(53.8622002809deg) translate3d(0, 87.8890636135px, 0) scaleY(0.8788906361);
+}
+.warp .ring-29 .stripe-6 {
+  transform: rotate(68.2039120146deg) translate3d(0, 76.889882592px, 0) scaleY(0.7688988259);
+}
+.warp .ring-29 .stripe-7 {
+  transform: rotate(81.8648467628deg) translate3d(0, 76.5925663513px, 0) scaleY(0.7659256635);
+}
+.warp .ring-29 .stripe-8 {
+  transform: rotate(99.3292933603deg) translate3d(0, 84.3008469387px, 0) scaleY(0.8430084694);
+}
+.warp .ring-29 .stripe-9 {
+  transform: rotate(114.8334655687deg) translate3d(0, 82.2870803588px, 0) scaleY(0.8228708036);
+}
+.warp .ring-29 .stripe-10 {
+  transform: rotate(131.6806046574deg) translate3d(0, 93.4381177358px, 0) scaleY(0.9343811774);
+}
+.warp .ring-29 .stripe-11 {
+  transform: rotate(144.1271572096deg) translate3d(0, 91.0209390716px, 0) scaleY(0.9102093907);
+}
+.warp .ring-29 .stripe-12 {
+  transform: rotate(160.9617368944deg) translate3d(0, 69.9648301806px, 0) scaleY(0.6996483018);
+}
+.warp .ring-29 .stripe-13 {
+  transform: rotate(177.0752279344deg) translate3d(0, 88.1912950537px, 0) scaleY(0.8819129505);
+}
+.warp .ring-29 .stripe-14 {
+  transform: rotate(193.7238282072deg) translate3d(0, 83.2806991364px, 0) scaleY(0.8328069914);
+}
+.warp .ring-29 .stripe-15 {
+  transform: rotate(206.6641154689deg) translate3d(0, 97.7387672378px, 0) scaleY(0.9773876724);
+}
+.warp .ring-29 .stripe-16 {
+  transform: rotate(222.0064059196deg) translate3d(0, 78.2000514775px, 0) scaleY(0.7820005148);
+}
+.warp .ring-29 .stripe-17 {
+  transform: rotate(238.385616502deg) translate3d(0, 97.0589006925px, 0) scaleY(0.9705890069);
+}
+.warp .ring-29 .stripe-18 {
+  transform: rotate(254.2348333674deg) translate3d(0, 69.5510887866px, 0) scaleY(0.6955108879);
+}
+.warp .ring-29 .stripe-19 {
+  transform: rotate(265.8277290324deg) translate3d(0, 82.2293503443px, 0) scaleY(0.8222935034);
+}
+.warp .ring-29 .stripe-20 {
+  transform: rotate(279.240916947deg) translate3d(0, 67.9576119694px, 0) scaleY(0.6795761197);
+}
+.warp .ring-29 .stripe-21 {
+  transform: rotate(298.051696843deg) translate3d(0, 61.543536305px, 0) scaleY(0.6154353631);
+}
+.warp .ring-29 .stripe-22 {
+  transform: rotate(308.0065201957deg) translate3d(0, 77.7527318524px, 0) scaleY(0.7775273185);
+}
+.warp .ring-29 .stripe-23 {
+  transform: rotate(323.7953162332deg) translate3d(0, 75.3007819187px, 0) scaleY(0.7530078192);
+}
+.warp .ring-29 .stripe-24 {
+  transform: rotate(336.4540470387deg) translate3d(0, 92.8708048124px, 0) scaleY(0.9287080481);
+}
+.warp .ring-30 {
+  -webkit-animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -3.8666666667s infinite;
+          animation: ring 4s cubic-bezier(0.98, 0.02, 0.97, 0.12) -3.8666666667s infinite;
+}
+.warp .ring-30 .stripe-1 {
+  transform: rotate(-3.3019654418deg) translate3d(0, 92.6598888192px, 0) scaleY(0.9265988882);
+}
+.warp .ring-30 .stripe-2 {
+  transform: rotate(14.4334754815deg) translate3d(0, 78.4778737263px, 0) scaleY(0.7847787373);
+}
+.warp .ring-30 .stripe-3 {
+  transform: rotate(25.5344995841deg) translate3d(0, 87.8120075402px, 0) scaleY(0.8781200754);
+}
+.warp .ring-30 .stripe-4 {
+  transform: rotate(44.5822581304deg) translate3d(0, 73.5416134948px, 0) scaleY(0.7354161349);
+}
+.warp .ring-30 .stripe-5 {
+  transform: rotate(54.7204368413deg) translate3d(0, 63.1794965765px, 0) scaleY(0.6317949658);
+}
+.warp .ring-30 .stripe-6 {
+  transform: rotate(71.0507701462deg) translate3d(0, 75.3686842692px, 0) scaleY(0.7536868427);
+}
+.warp .ring-30 .stripe-7 {
+  transform: rotate(85.5477246825deg) translate3d(0, 88.7235433514px, 0) scaleY(0.8872354335);
+}
+.warp .ring-30 .stripe-8 {
+  transform: rotate(102.1992710414deg) translate3d(0, 77.9543341845px, 0) scaleY(0.7795433418);
+}
+.warp .ring-30 .stripe-9 {
+  transform: rotate(118.7349415326deg) translate3d(0, 61.0470646622px, 0) scaleY(0.6104706466);
+}
+.warp .ring-30 .stripe-10 {
+  transform: rotate(125.9729513217deg) translate3d(0, 75.4758820132px, 0) scaleY(0.7547588201);
+}
+.warp .ring-30 .stripe-11 {
+  transform: rotate(142.110407729deg) translate3d(0, 64.1089623156px, 0) scaleY(0.6410896232);
+}
+.warp .ring-30 .stripe-12 {
+  transform: rotate(164.8308730637deg) translate3d(0, 79.1383256935px, 0) scaleY(0.7913832569);
+}
+.warp .ring-30 .stripe-13 {
+  transform: rotate(170.4220149586deg) translate3d(0, 71.4577839076px, 0) scaleY(0.7145778391);
+}
+.warp .ring-30 .stripe-14 {
+  transform: rotate(187.6449354178deg) translate3d(0, 88.7152873654px, 0) scaleY(0.8871528737);
+}
+.warp .ring-30 .stripe-15 {
+  transform: rotate(207.8033239568deg) translate3d(0, 92.3471692409px, 0) scaleY(0.9234716924);
+}
+.warp .ring-30 .stripe-16 {
+  transform: rotate(223.6613404901deg) translate3d(0, 83.6351199969px, 0) scaleY(0.8363512);
+}
+.warp .ring-30 .stripe-17 {
+  transform: rotate(237.3269986891deg) translate3d(0, 74.5046052966px, 0) scaleY(0.745046053);
+}
+.warp .ring-30 .stripe-18 {
+  transform: rotate(250.5373452699deg) translate3d(0, 65.0720210194px, 0) scaleY(0.6507202102);
+}
+.warp .ring-30 .stripe-19 {
+  transform: rotate(267.9579695006deg) translate3d(0, 74.1500341884px, 0) scaleY(0.7415003419);
+}
+.warp .ring-30 .stripe-20 {
+  transform: rotate(282.3955991194deg) translate3d(0, 84.2848920984px, 0) scaleY(0.842848921);
+}
+.warp .ring-30 .stripe-21 {
+  transform: rotate(291.8199009049deg) translate3d(0, 63.2382755747px, 0) scaleY(0.6323827557);
+}
+.warp .ring-30 .stripe-22 {
+  transform: rotate(311.0569279887deg) translate3d(0, 92.8810495247px, 0) scaleY(0.9288104952);
+}
+.warp .ring-30 .stripe-23 {
+  transform: rotate(322.8675016553deg) translate3d(0, 74.6722166247px, 0) scaleY(0.7467221662);
+}
+.warp .ring-30 .stripe-24 {
+  transform: rotate(341.9614519566deg) translate3d(0, 92.015197783px, 0) scaleY(0.9201519778);
+}
+
+@-webkit-keyframes ring {
+  0% {
+    transform: scale(0);
+    opacity: 0.1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 1;
+  }
+}
+
+@keyframes ring {
+  0% {
+    transform: scale(0);
+    opacity: 0.1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 1;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <div class="warp">
+          <div class="ring ring-1">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-2">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-3">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-4">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-5">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-6">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-7">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-8">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-9">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-10">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-11">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-12">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-13">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-14">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-15">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-16">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-17">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-18">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-19">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-20">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-21">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-22">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-23">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-24">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-25">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-26">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-27">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-28">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-29">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+          <div class="ring ring-30">
+            <div class="stripe stripe-1"></div>
+            <div class="stripe stripe-2"></div>
+            <div class="stripe stripe-3"></div>
+            <div class="stripe stripe-4"></div>
+            <div class="stripe stripe-5"></div>
+            <div class="stripe stripe-6"></div>
+            <div class="stripe stripe-7"></div>
+            <div class="stripe stripe-8"></div>
+            <div class="stripe stripe-9"></div>
+            <div class="stripe stripe-10"></div>
+            <div class="stripe stripe-11"></div>
+            <div class="stripe stripe-12"></div>
+            <div class="stripe stripe-13"></div>
+            <div class="stripe stripe-14"></div>
+            <div class="stripe stripe-15"></div>
+            <div class="stripe stripe-16"></div>
+            <div class="stripe stripe-17"></div>
+            <div class="stripe stripe-18"></div>
+            <div class="stripe stripe-19"></div>
+            <div class="stripe stripe-20"></div>
+            <div class="stripe stripe-21"></div>
+            <div class="stripe stripe-22"></div>
+            <div class="stripe stripe-23"></div>
+            <div class="stripe stripe-24"></div>
+          </div>
+        </div>
+      </div> 
+    
+</body>
+</html>
