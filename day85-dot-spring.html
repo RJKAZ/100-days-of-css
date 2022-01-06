@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 85 dot spring</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 1px 2px 10px 0px rgb(0 0 0 / 25%);
+            overflow: hidden;
+            background: #9b59b6;
+            color: #333;
+            font-family: "Open Sans", Helvetica, sans-serif;
+        }
+
+        .center {
+            position: absolute;
+            display: flex;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            justify-content: space-between;
+        }
+
+        .dot {
+            width: 5px;
+            height: 5px;
+            background: white;
+            margin: 2px;
+            border-radius: 50%;
+        }
+
+        .dot-24 {
+            animation: dot-24 5s ease-in-out infinite alternate;
+        }
+
+        .dot-23 {
+            animation: dot-23 5s ease-in-out infinite alternate;
+        }
+
+        .dot-22 {
+            animation: dot-22 5s ease-in-out infinite alternate;
+        }
+
+        .dot-21 {
+            animation: dot-21 5s ease-in-out infinite alternate;
+        }
+
+        .dot-20 {
+            animation: dot-20 5s ease-in-out infinite alternate;
+        }
+
+        .dot-19 {
+            animation: dot-19 5s ease-in-out infinite alternate;
+        }
+
+        .dot-18 {
+            animation: dot-18 5s ease-in-out infinite alternate;
+        }
+
+        .dot-17 {
+            animation: dot-17 5s ease-in-out infinite alternate;
+        }
+
+        .dot-16 {
+            animation: dot-16 5s ease-in-out infinite alternate;
+        }
+
+        .dot-15 {
+            animation: dot-15 5s ease-in-out infinite alternate;
+        }
+
+        .dot-14 {
+            animation: dot-14 5s ease-in-out infinite alternate;
+        }
+
+        .dot-13 {
+            animation: dot-13 5s ease-in-out infinite alternate;
+        }
+
+        .dot-12 {
+            animation: dot-12 5s ease-in-out infinite alternate;
+        }
+
+        .dot-11 {
+            animation: dot-11 5s ease-in-out infinite alternate;
+        }
+
+        .dot-10 {
+            animation: dot-10 5s ease-in-out infinite alternate;
+        }
+
+        .dot-9 {
+            animation: dot-9 5s ease-in-out infinite alternate;
+        }
+
+        .dot-8 {
+            animation: dot-8 5s ease-in-out infinite alternate;
+        }
+
+        .dot-7 {
+            animation: dot-7 5s ease-in-out infinite alternate;
+        }
+
+        .dot-6 {
+            animation: dot-6 5s ease-in-out infinite alternate;
+        }
+
+        .dot-5 {
+            animation: dot-5 5s ease-in-out infinite alternate;
+        }
+
+        .dot-4 {
+            animation: dot-4 5s ease-in-out infinite alternate;
+        }
+
+        .dot-3 {
+            animation: dot-3 5s ease-in-out infinite alternate;
+        }
+
+        .dot-2 {
+            animation: dot-2 5s ease-in-out infinite alternate;
+        }
+
+        .dot-1 {
+            animation: dot-1 5s ease-in-out infinite alternate;
+        }
+
+
+        .dot-25 {
+            animation: dot-24 5s ease-in-out infinite alternate;
+        }
+
+        .dot-26 {
+            animation: dot-23 5s ease-in-out infinite alternate;
+        }
+
+        .dot-27 {
+            animation: dot-22 5s ease-in-out infinite alternate;
+        }
+
+        .dot-28 {
+            animation: dot-21 5s ease-in-out infinite alternate;
+        }
+
+        .dot-29 {
+            animation: dot-20 5s ease-in-out infinite alternate;
+        }
+
+        .dot-30 {
+            animation: dot-19 5s ease-in-out infinite alternate;
+        }
+
+        .dot-31 {
+            animation: dot-18 5s ease-in-out infinite alternate;
+        }
+
+        .dot-32 {
+            animation: dot-17 5s ease-in-out infinite alternate;
+        }
+
+        .dot-33 {
+            animation: dot-16 5s ease-in-out infinite alternate;
+        }
+
+        .dot-34 {
+            animation: dot-15 5s ease-in-out infinite alternate;
+        }
+
+        .dot-35 {
+            animation: dot-14 5s ease-in-out infinite alternate;
+        }
+
+        .dot-36 {
+            animation: dot-13 5s ease-in-out infinite alternate;
+        }
+
+        .dot-37 {
+            animation: dot-12 5s ease-in-out infinite alternate;
+        }
+
+        .dot-38 {
+            animation: dot-11 5s ease-in-out infinite alternate;
+        }
+
+        .dot-39 {
+            animation: dot-10 5s ease-in-out infinite alternate;
+        }
+
+        .dot-40 {
+            animation: dot-9 5s ease-in-out infinite alternate;
+        }
+
+        .dot-41 {
+            animation: dot-8 5s ease-in-out infinite alternate;
+        }
+
+        .dot-42 {
+            animation: dot-7 5s ease-in-out infinite alternate;
+        }
+
+        .dot-43 {
+            animation: dot-6 5s ease-in-out infinite alternate;
+        }
+
+        .dot-44 {
+            animation: dot-5 5s ease-in-out infinite alternate;
+        }
+
+        .dot-45 {
+            animation: dot-4 5s ease-in-out infinite alternate;
+        }
+
+        .dot-46 {
+            animation: dot-3 5s ease-in-out infinite alternate;
+        }
+
+
+
+
+
+
+
+
+        @keyframes dot-24 {
+            50% {
+                transform: translateY(180px);
+            }
+
+            100% {
+                transform: translateY(-180px);
+            }
+        }
+
+        @keyframes dot-23 {
+            50% {
+                transform: translateY(170px);
+            }
+
+            100% {
+                transform: translateY(-170px);
+            }
+        }
+
+        @keyframes dot-22 {
+            50% {
+                transform: translateY(160px);
+            }
+
+            100% {
+                transform: translateY(-160px);
+            }
+        }
+
+        @keyframes dot-21 {
+            50% {
+                transform: translateY(150px);
+            }
+
+            100% {
+                transform: translateY(-150px);
+            }
+        }
+
+        @keyframes dot-20 {
+            50% {
+                transform: translateY(140px);
+            }
+
+            100% {
+                transform: translateY(-140px);
+            }
+        }
+
+        @keyframes dot-19 {
+            50% {
+                transform: translateY(130px);
+            }
+
+            100% {
+                transform: translateY(-130px);
+            }
+        }
+
+        @keyframes dot-18 {
+            50% {
+                transform: translateY(120px);
+            }
+
+            100% {
+                transform: translateY(-120px);
+            }
+        }
+
+        @keyframes dot-17 {
+            50% {
+                transform: translateY(110px);
+            }
+
+            100% {
+                transform: translateY(-110px);
+            }
+        }
+
+        @keyframes dot-16 {
+            50% {
+                transform: translateY(100px);
+            }
+
+            100% {
+                transform: translateY(-100px);
+            }
+        }
+
+        @keyframes dot-15 {
+            50% {
+                transform: translateY(90px);
+            }
+
+            100% {
+                transform: translateY(-90px);
+            }
+        }
+
+        @keyframes dot-14 {
+            50% {
+                transform: translateY(80px);
+            }
+
+            100% {
+                transform: translateY(-80px);
+            }
+        }
+
+        @keyframes dot-13 {
+            50% {
+                transform: translateY(70px);
+            }
+
+            100% {
+                transform: translateY(-70px);
+            }
+        }
+
+        @keyframes dot-12 {
+            50% {
+                transform: translateY(60px);
+            }
+
+            100% {
+                transform: translateY(-60px);
+            }
+        }
+
+
+        @keyframes dot-11 {
+            50% {
+                transform: translateY(50px);
+            }
+
+            100% {
+                transform: translateY(-50px);
+            }
+        }
+
+
+        @keyframes dot-10 {
+            50% {
+                transform: translateY(40px);
+            }
+
+            100% {
+                transform: translateY(-40px);
+            }
+        }
+
+
+        @keyframes dot-9 {
+            50% {
+                transform: translateY(30px);
+            }
+
+            100% {
+                transform: translateY(-30px);
+            }
+        }
+
+
+        @keyframes dot-8 {
+            50% {
+                transform: translateY(25px);
+            }
+
+            100% {
+                transform: translateY(-25px);
+            }
+        }
+
+
+        @keyframes dot-7 {
+            50% {
+                transform: translateY(20px);
+            }
+
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+
+
+        @keyframes dot-6 {
+            50% {
+                transform: translateY(15px);
+            }
+
+            100% {
+                transform: translateY(-15px);
+            }
+        }
+
+
+        @keyframes dot-5 {
+            50% {
+                transform: translateY(10px);
+            }
+
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+
+        @keyframes dot-4 {
+            50% {
+                transform: translateY(5px);
+            }
+
+            100% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    dot-7"></div>
+    <div class="dot dot-8"></div>
+    <div class="dot dot-9"></div>
+    <div class="dot dot-10"></div>
+    <div class="dot dot-11"></div>
+    <div class="dot dot-12"></div>
+    <div class="dot dot-13"></div>
+    <div class="dot dot-14"></div>
+    <div class="dot dot-15"></div>
+    <div class="dot dot-16"></div>
+    <div class="dot dot-17"></div>
+    <div class="dot dot-18"></div>
+    <div class="dot dot-19"></div>
+    <div class="dot dot-20"></div>
+    <div class="dot dot-21"></div>
+    <div class="dot dot-22"></div>
+    <div class="dot dot-23"></div>
+    <div class="dot dot-24"></div>
+    <div class="dot dot-25"></div>
+    <div class="dot dot-26"></div>
+    <div class="dot dot-27"></div>
+    <div class="dot dot-28"></div>
+    <div class="dot dot-29"></div>
+    <div class="dot dot-30"></div>
+    <div class="dot dot-31"></div>
+    <div class="dot dot-32"></div>
+    <div class="dot dot-33"></div>
+    <div class="dot dot-34"></div>
+    <div class="dot dot-35"></div>
+    <div class="dot dot-36"></div>
+    <div class="dot dot-37"></div>
+    <div class="dot dot-38"></div>
+    <div class="dot dot-39"></div>
+    <div class="dot dot-40"></div>
+    <div class="dot dot-41"></div>
+    <div class="dot dot-42"></div>
+    <div class="dot dot-43"></div>
+    <div class="dot dot-44"></div>
+    <div class="dot dot-45"></div>
+    <div class="dot dot-46"></div>
+    <div class="dot dot-47"></div>
+    <div class="dot dot-48"></div>
+    <div class="dot dot-49"></div>
+    <div class="dot dot-50"></div>
+
+
+    </div>
+    </div>
+
+</body>
+
+</html>
