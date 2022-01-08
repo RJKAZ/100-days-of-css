@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 86 Ball Effect</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #34495e;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .shelf {
+            background-color: #bdc3c7;
+            height: 8px;
+            width: 200px;
+            border-radius: 4px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+
+        .string {
+            height: 100px;
+            width: 1px;
+            background-color: #bdc3c7;
+            position: relative;
+            left: 20px;
+        }
+
+        .ball {
+            height: 40px;
+            width: 40px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+
+        .sst {
+            animation: stringl linear infinite 1.5s;
+        }
+
+        @keyframes stringl {
+            0% {
+                transform: rotate(0deg);
+                transform-origin: top center;
+            }
+
+            25% {
+                transform: rotate(30deg);
+                transform-origin: top center;
+            }
+
+            50% {
+                transform: rotate(0deg);
+                transform-origin: top center;
+            }
+        }
+
+        .sth {
+            animation: stringr linear infinite 1.5s;
+        }
+
+        @keyframes stringr {
+            50% {
+                transform: rotate(0deg);
+                transform-origin: top center;
+            }
+
+            75% {
+                transform: rotate(-30deg);
+                transform-origin: top center;
+            }
+
+            100% {
+                transform: rotate(0deg);
+                transform-origin: top center;
+            }
+        }
+
+        .bst {
+            animation: ball-l linear infinite 1.5s;
+        }
+
+        @keyframes ball-l {
+            0% {
+                transform: translate(0%, 0%);
+            }
+
+            25% {
+                transform: translate(-140%, -30%);
+            }
+
+            50% {
+                transform: translate(0%, 0%);
+            }
+        }
+
+        .bth {
+            animation: ball-r linear infinite 1.5s;
+        }
+
+        @keyframes ball-r {
+            50% {
+                transform: translate(0%, 0%);
+            }
+
+            75% {
+                transform: translate(140%, -30%);
+            }
+
+            100% {
+                transform: translate(0%, 0%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="shelf"></div>
+            <div class="container">
+                <div class="string sst"></div>
+                <div class="string"></div>
+                <div class="string"></div>
+                <div class="string"></div>
+                <div class="string sth"></div>
+                <div class="ball bst"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball bth"></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
