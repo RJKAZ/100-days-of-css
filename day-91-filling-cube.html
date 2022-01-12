@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filling Cube </title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #fff;
+            color: #333;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .frame {
+            background: #34495e;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .loader {
+            width: 120px;
+            height: 120px;
+            transform-style: preserve-3d;
+            transform: rotateX(-25deg) rotateY(45deg);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        .plane {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: rgba(0, 0, 0, 0.1);
+            top: 0;
+            left: 0;
+        }
+
+        .botton {
+            transform: rotateX(-90deg) translateZ(60px);
+            background: rgba(46, 204, 113, 0.8);
+            box-shadow: -8px -8px 10px 0 rgb(0 0 0 / 40%);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(60px);
+        }
+
+        .right {
+            transform: rotateY(-90deg) translateZ(-60px);
+        }
+
+        .back {
+            transform: translateZ(-60px);
+        }
+
+        .front {
+            transform: translateZ(60px);
+        }
+
+        .top {
+            transform: rotateX(-90deg) translateZ(-60px);
+            opacity: 0.5;
+        }
+
+        .fill-top {
+            background: rgba(46, 204, 113, 0.8);
+            animation: fill-top 4s ease-in-out infinite alternate
+        }
+
+        @keyframes fill-top {
+            from {
+                transform: rotateX(-90deg) translateZ(60px);
+            }
+
+            to {
+                transform: rotateX(-90deg) translateZ(-60px);
+            }
+        }
+
+        .left::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(46, 204, 113, 0.8);
+            transform-origin: 50% 100%;
+            -webkit-animation: fill 4s ease-in-out infinite alternate;
+            animation: fill 4s ease-in-out infinite alternate;
+        }
+
+        .right::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(46, 204, 113, 0.8);
+            transform-origin: 50% 100%;
+            -webkit-animation: fill 4s ease-in-out infinite alternate;
+            animation: fill 4s ease-in-out infinite alternate;
+        }
+
+        .front::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(46, 204, 113, 0.8);
+            transform-origin: 50% 100%;
+            -webkit-animation: fill 4s ease-in-out infinite alternate;
+            animation: fill 4s ease-in-out infinite alternate;
+        }
+
+        .back::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(46, 204, 113, 0.8);
+            transform-origin: 50% 100%;
+            -webkit-animation: fill 4s ease-in-out infinite alternate;
+            animation: fill 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes fill {
+            from {
+                transform: scaleY(0)
+            }
+
+            to {
+                transform: scaleY(1);
+            }
+        }
+
+        .loader:hover {
+            transform: translateY(100px) rotateX(-25px) rotateY(45px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="loader" onClick="void(0);">
+                <div class="plane botton"></div>
+                <div class="plane left"></div>
+                <div class="plane right"></div>
+                <div class="plane back"></div>
+                <div class="plane front"></div>
+                <div class="plane top"></div>
+                <div class="plane fill-top"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
