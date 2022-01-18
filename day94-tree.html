@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #e0f0e5;
+            color: #333;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .tree {
+            width: 300px;
+            height: 300px;
+        }
+
+        .leaves-left {
+            stroke: none;
+            fill: #B93A1E;
+            animation: 1s growX 1s cubic-bezier(0.45, 0.04, 0.32, 1.59);
+            animation-fill-mode: both;
+            transform-origin: center;
+        }
+
+        .leaves-right {
+            stroke: none;
+            fill: #E74624;
+            animation: 1s growX 1s cubic-bezier(0.45, 0.04, 0.32, 1.59);
+            animation-fill-mode: both;
+            transform-origin: center;
+        }
+
+        .branches {
+            stroke-width: 1.5;
+            stroke: #E8C87E;
+            stroke-linecap: round;
+            animation-fill-mode: both;
+            animation: 1s growY cubic-bezier(0.45, 0.04, 0.32, 1.59);
+            transform-origin: center 90%;
+        }
+
+        .ground {
+            stroke-width: 1.5;
+            stroke: #BAD6C2;
+            stroke-linecap: round;
+            animation-fill-mode: both;
+            animation: 1s growX cubic-bezier(0.45, 0.04, 0.32, 1.59);
+            transform-origin: center;
+        }
+
+        @keyframes growX {
+            from {
+                transform: scaleX(0);
+            }
+
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        @keyframes growY {
+            from {
+                transform: scaleY(0);
+            }
+
+            to {
+                transform: scaleY(1);
+            }
+        }
+    </style>
+    </syle>
+</head>
+<div class="frame">
+    <div class="center">
+        <svg class="tree" viewbox="0 0 100 100">
+            <polygon class="leaves-left" points="50,0 50,70 25,70" />
+            <polygon class="leaves-right" points="50,0 50,70 75,70" />
+            <path class="branches"
+                d="M50 90 L50 20 M50 28 L45 22 M50 40 L58 30 M50 50 L40 40 M50 60 L 63 47 M50 68 L35 55" />
+            <line class="ground" x1="35" y1="90" x2="65" y2="90" />
+        </svg>
+    </div>
+
+</div>
+
+<body>
+
+</body>
+
+</html>
