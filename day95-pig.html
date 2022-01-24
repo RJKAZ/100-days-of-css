@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pig</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #FFDCB5;
+            color: #333;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .pig {
+            height: 160px;
+            width: 160px;
+            background-color: #F7949A;
+            border-radius: 50%;
+        }
+
+        .ear {
+            top: -5px;
+            position: absolute;
+            box-sizing: border-box;
+            height: 60px;
+            width: 60px;
+            background-color: #FFB7BC;
+            border: 7px solid #F7949A;
+            z-index: -1;
+        }
+
+        .left {
+            border-radius: 15px 0px 0px 0px;
+            transform: skewX(27deg) rotate(15deg);
+            left: 10px;
+        }
+
+        .right {
+            border-radius: 0px 15px 0px 0px;
+            right: 10px;
+            transform: skewX(-27deg) rotate(-15deg);
+        }
+
+        .eye {
+            background-color: white;
+            height: 23px;
+            width: 23px;
+            position: absolute;
+            border-radius: 50%;
+            top: 42%;
+            animation: blink 15s ease-in-out infinite 2s;
+            overflow: hidden;
+        }
+
+        .l {
+            left: 23%;
+        }
+
+        .r {
+            right: 23%;
+        }
+
+        .pupil {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            height: 4px;
+            width: 4px;
+            background-color: black;
+        }
+
+        .nose {
+            position: absolute;
+            height: 50px;
+            width: 60px;
+            border-radius: 50%;
+            top: 70%;
+            left: 50%;
+            right: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #FFB7BC;
+        }
+
+        .nostril {
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            background-color: #CE666D;
+            top: 30%;
+            position: absolute;
+        }
+
+        .nl {
+            left: 23%;
+        }
+
+        .nr {
+            right: 23%;
+        }
+
+        @keyframes blink {
+
+            24%,
+            66%,
+            90% {
+                transform: scaleY(0);
+            }
+
+            0%,
+            23%,
+            25%,
+            65%,
+            67%,
+            89%,
+            91% {
+                transform: scaleY(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="pig">
+                <div class="ear left"></div>
+                <div class="ear right"></div>
+                <div class="eye l">
+                    <div class="pupil"></div>
+                </div>
+                <div class="eye r">
+                    <div class="pupil"></div>
+                </div>
+                <div class="nose">
+                    <div class="nostril nl"></div>
+                    <div class="nostril nr"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
