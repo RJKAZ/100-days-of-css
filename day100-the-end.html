@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The End</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:800,600,400,300);
+
+        $font: open sans;
+        $bg-color: #272C34;
+        $led-color: hsl(173, 82, 43);
+
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            background: $bg-color;
+            color: #fff;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @mixin animation() {
+            animation: flickr 6s ease-in-out ((random(400) / 100) * 1s) infinite alternate both;
+        }
+
+        .word {
+            position: absolute;
+            height: 120px;
+            width: 400px;
+            top: 140px;
+            left: 0;
+
+            .light {
+                position: absolute;
+                background: #1A1E24;
+                box-shadow: 0px 0px 6px 0px #1A1E24;
+                border-radius: 3px;
+            }
+
+            .ee {
+                position: absolute;
+                width: 69px;
+                height: 120px;
+                top: 0;
+                left: 68px;
+
+                .left {
+                    top: 0;
+                    left: 0;
+                    height: 120px;
+                    width: 6px;
+                    @include animation();
+                }
+
+                .top {
+                    top: 0;
+                    right: 0;
+                    height: 6px;
+                    width: 60px;
+                    @include animation();
+                }
+
+                .middle {
+                    top: 56px;
+                    left: 9px;
+                    height: 6px;
+                    width: 50px;
+                    @include animation();
+                }
+
+                .bottom {
+                    bottom: 0;
+                    right: 0;
+                    height: 6px;
+                    width: 60px;
+                    @include animation();
+                }
+
+            }
+
+            .nn {
+                position: absolute;
+                width: 85px;
+                height: 120px;
+                top: 0;
+                left: 162px;
+
+                .left {
+                    top: 0;
+                    left: 0;
+                    height: 120px;
+                    width: 6px;
+                    @include animation();
+                }
+
+                .middle {
+                    top: 0;
+                    left: 9px;
+                    height: 6px;
+                    width: 135px;
+                    transform-origin: 3px 3px;
+                    transform: rotate(62deg);
+                    @include animation();
+                }
+
+                .right {
+                    top: 0;
+                    right: 0;
+                    height: 120px;
+                    width: 6px;
+                    @include animation();
+                }
+
+            }
+
+            .dd {
+                position: absolute;
+                width: 72px;
+                height: 120px;
+                top: 0;
+                left: 274px;
+
+                .left {
+                    top: 0;
+                    left: 0;
+                    height: 120px;
+                    width: 6px;
+                    @include animation();
+                }
+
+                .right {
+                    position: absolute;
+                    z-index: 1;
+                    top: 0;
+                    right: 0;
+                    height: 120px;
+                    width: 70px;
+
+                    $delay: (random(400) / 100) * 1s;
+
+                    .circleBox .circle {
+                        animation: flickr-circle 6s ease-in-out $delay infinite alternate both;
+                    }
+
+                    .dot {
+                        animation: flickr-dots 6s ease-in-out $delay infinite alternate both;
+                    }
+
+                    .circleBox {
+                        position: absolute;
+                        top: -10px;
+                        right: -10px;
+                        bottom: -10px;
+                        width: 70px;
+                        overflow: hidden;
+
+                        .circle {
+                            box-sizing: border-box;
+                            position: absolute;
+                            width: 120px;
+                            height: 120px;
+                            top: 10px;
+                            right: 10px;
+                            border-style: solid;
+                            border-width: 6px;
+                            border-color: #1A1E24 #1A1E24 transparent transparent;
+                            border-radius: 50%;
+                            box-shadow: 0px 0px 10px 0px #1A1E24, inset 0px 0px 10px 0px #F1F4F5;
+                            transform: rotate(45deg);
+                        }
+
+                    }
+
+                    .topDotBox {
+                        position: absolute;
+                        top: -10px;
+                        right: 60px;
+                        width: 26px;
+                        height: 26px;
+                        overflow: hidden;
+                    }
+
+                    .bottomDotBox {
+                        position: absolute;
+                        bottom: -10px;
+                        right: 60px;
+                        width: 26px;
+                        height: 26px;
+                        overflow: hidden;
+                    }
+
+                    .dot {
+                        top: 10px;
+                        right: -12px;
+                        width: 15px;
+                        height: 6px;
+                    }
+
+                }
+
+                .rightSVG {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    fill: none;
+                    stroke: #1A1E24;
+                    stroke-width: 6;
+                    stroke-linecap: round;
+                    stroke-dasharray: 88 176 176;
+                    filter: drop-shadow(0px 0px 6px #1A1E24);
+                    //animation: flickr-svg 6s ease-in-out ( (random(400) / 100) * 1s ) infinite alternate;
+                }
+
+            }
+
+        }
+
+        @keyframes flickr {
+
+            35%,
+            37%,
+            39%,
+            41%,
+            100% {
+                background: #fff;
+                box-shadow: 0px 0px 10px 0px $led-color;
+            }
+
+            0%,
+            34%,
+            36%,
+            36%,
+            38%,
+            40% {
+                background: #1A1E24;
+                box-shadow: 0px 0px 6px 0px #1A1E24;
+            }
+        }
+
+        @keyframes flickr-circle {
+
+            35%,
+            37%,
+            39%,
+            41%,
+            100% {
+                border-color: #fff #fff transparent transparent;
+                box-shadow: 0px 0px 10px 0px $led-color, inset 0px 0px 10px 0px $led-color;
+            }
+
+            0%,
+            34%,
+            36%,
+            36%,
+            38%,
+            40% {
+                border-color: #1A1E24 #1A1E24 transparent transparent;
+                box-shadow: 0px 0px 6px 0px #1A1E24, inset 0px 0px 6px 0px #1A1E24;
+            }
+        }
+
+        @keyframes flickr-dots {
+
+            35%,
+            37%,
+            39%,
+            41%,
+            100% {
+                background: #fff;
+                box-shadow: 0px 0px 9px 1px $led-color;
+            }
+
+            0%,
+            34%,
+            36%,
+            36%,
+            38%,
+            40% {
+                background: #1A1E24;
+                box-shadow: 0px 0px 5px 1px #1A1E24;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="word">
+            <div class="ee">
+                <div class="light left"></div>
+                <div class="light top"></div>
+                <div class="light middle"></div>
+                <div class="light bottom"></div>
+            </div>
+            <div class="nn">
+                <div class="light left"></div>
+                <div class="light middle"></div>
+                <div class="light right"></div>
+            </div>
+            <div class="dd">
+                <div class="light left"></div>
+                <div class="right">
+                    <div class="circleBox">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="topDotBox">
+                        <div class="light dot"></div>
+                    </div>
+                    <div class="bottomDotBox">
+                        <div class="light dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
